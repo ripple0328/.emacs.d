@@ -15,6 +15,45 @@
 
     (eval-print-last-sexp)))
 
+(setq el-get-sources 
+      '(
+	anything
+	auto-complete
+	auto-complete-css
+	auto-complete-emacs-lisp
+	auto-complete-extension
+	auto-complete-ruby
+	auto-complete-yasnippet
+	babel
+	coffee-mode
+	el-get
+	emacschrome
+	emacsserver
+	flymake-ruby
+	inf-ruby
+	package
+	rdebug
+	ri-emacs
+	rinari
+	rspec-mode
+	ruby-block
+	ruby-comilation
+	ruby-electric
+	ruby-end
+	ruby-mode
+	ruby-test
+	rvm
+	scss-mode
+	xcode
+	itunes
+  skype
+  slime
+	)
+)
+
+
+
+
 (el-get 'sync)
 
 
