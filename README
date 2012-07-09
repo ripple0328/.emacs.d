@@ -12,5 +12,11 @@
 
 * org
   因为主要使用org作为笔记工具,所以对org项目做了特别的配置,配置了自己常用的tag等等.
+
+* rails
+  因为最近在学习ruby on rails开发,所以ruby和rails以及相关的coffee, scss等包会多一
+  些.
+
+  
   
  
