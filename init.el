@@ -16,3 +16,5 @@
 (require 'package-setting)
 (require 'general-setting)
 (require 'theme-setting)
+(require 'org-setting)
+
