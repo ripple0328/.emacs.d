@@ -60,7 +60,7 @@
         itunes
         skype
         autopair
-        yasnippet
+        twittering-mode
         zencoding-mode
         ))
 (el-get 'wait)
