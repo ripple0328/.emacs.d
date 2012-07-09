@@ -37,8 +37,8 @@
 (setq auto-image-file-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(setq make-backup-files nil)
-(setq auto-save-default nil)
+(setq make-backup-files t)
+(setq auto-save-default t)
 (setq default-tab-width 2)
 (setq default-indent-tabs-mode nil)
      

@@ -28,9 +28,9 @@
 (setq org-publish-project-alist
       '(
         ("org-notes"
-         :base-directory "~/Document/org"
+         :base-directory "~/Documents/org"
          :base-extension "org"
-         :publishing-directory "~/Document/html"
+         :publishing-directory "~/Documents/html"
 
          :recursive t
          :publishing-function org-publish-org-to-html
@@ -41,7 +41,7 @@
 
          :auto-sitemap t
          :sitemap-filename "sitemap0.org"
-         :sitemap-title "document sitemap"
+         :sitemap-title "Document Sitemap"
          :sitemap-style 'tree
 
          :headline-level 999
@@ -49,9 +49,9 @@
          :sub-superscript nil
 
          :style-include-default nil
-         :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/stylesheet.css\" />"
-;        在每一层的目录下面写了,不知道有好办法没有
-         :author "ripple"
+         ;; :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"~/.emacs.d/org-templates/css/stylesheet.css\" />"
+         ;;在每一层的目录下面写了,不知道有好办法没有
+         :author "Qingbo"
          :email "ripple0328@gmail.com"
          )
 
@@ -66,9 +66,9 @@
         ;;  )
 
         ("org-static"
-         :base-directory "~/Document/org/"
+         :base-directory "~/Documents/org/"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|tiff"
-         :publishing-directory "~/Document/html"
+         :publishing-directory "~/Documents/html"
          :recursive t
          :publishing-function org-publish-attachment
          )
