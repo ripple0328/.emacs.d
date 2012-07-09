@@ -5,21 +5,22 @@
 ;;------------------------------------------------------------------------------
 ;; active babel languages
 ;;------------------------------------------------------------------------------
+
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((ruby . t)
-   (ditaa . t)
-   (sh . t)
-   (gnuplot . t)
-   (matlab . t)
-   (css . t)
-   (python . t)
-   (js . t)
-   (C . t)
-   (dot . t)
-   (emacs-lisp . t)
+  '(
+ 	 (ruby . t)
+    (ditaa . t)
+    (sh . t)
+    (gnuplot . t)
+    (matlab . t)
+    (css . t)
+    (python . t)
+    (js . t)
+    (C . t)
+    (dot . t)
+    (emacs-lisp . t)
    ))
-
 
 ;;------------------------------------------------------------------------------
 ;; org project
