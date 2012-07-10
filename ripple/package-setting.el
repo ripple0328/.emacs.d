@@ -86,7 +86,8 @@
 				 textmate
 				 emacs-w3m
 				 twittering-mode
-;				 yasnippet
+				 yasnippet
+				 switch-window
 				 yari
 				 zencoding-mode
 				 )
