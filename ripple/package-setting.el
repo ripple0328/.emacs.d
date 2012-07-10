@@ -3,7 +3,12 @@
 ;;------------------------------------------------------------------------------
 
 (require 'package)
-(setq package-archives (cons '("tromey" . "http://tromey.com/elpa/") package-archives))
+(add-to-list 'package-archives
+						 '("tromey" . "http://tromey.com/elpa/") t)
+
+(add-to-list 'package-archives
+						 '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 (package-initialize)
 
 ;;------------------------------------------------------------------------------
@@ -56,6 +61,7 @@
 				 json
 				 magit
 				 mmm-mode
+				 nav
 				 nxhtml
 				 org-blog
 				 org-html5presentation
@@ -77,7 +83,11 @@
 				 itunes
 				 skype
 				 autopair
+				 textmate
+				 emacs-w3m
 				 twittering-mode
+;				 yasnippet
+				 yari
 				 zencoding-mode
 				 )
        (mapcar 'el-get-source-name el-get-sources)))
