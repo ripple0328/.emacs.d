@@ -4,5 +4,5 @@
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(message "we are in term system")
+(print-log "we are in term system")
 (provide 'term-setting)

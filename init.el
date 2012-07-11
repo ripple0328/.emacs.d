@@ -18,9 +18,10 @@
 
 (add-to-list 'load-path ripple-dir)
 
-(message "Hi %s, we are loading setting" (getenv "USER"))
-
-(message "Check packages setting...")
+(require 'custom-function)
+(print-log (concat "Hi " (getenv "USER")))
+(print-log "now loading all setting")
+(print-log "Check packages setting")
 (require 'package-setting)
 (require 'general-setting)
 (require 'theme-setting)
@@ -28,7 +29,7 @@
 
 
 (when (eq system-type 'darwin)
-	(message "you are using osx system, use specific setting...")
+	(print-log "we are using osx system with specific setting")
 	(require 'osx-setting))
 
 
