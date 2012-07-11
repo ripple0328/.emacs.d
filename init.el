@@ -26,6 +26,13 @@
 (require 'theme-setting)
 (require 'org-setting)
 
+
 (when (eq system-type 'darwin)
 	(message "you are using osx system, use specific setting...")
 	(require 'osx-setting))
+
+
+(if window-system
+		(require 'window-system-setting)
+		(require 'term-setting))
+

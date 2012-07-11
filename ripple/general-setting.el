@@ -42,20 +42,16 @@
 (setq default-indent-tabs-mode nil)
 
 (ido-mode t)
-(nav)
+;(nav)																		
 (electric-pair-mode t)
 (recentf-mode t)
 (delete-selection-mode t)
 (scroll-bar-mode -1)
-(tool-bar-mode -1)
-(menu-bar-mode t)
 (blink-cursor-mode t)
 (show-paren-mode t)
 
 (set-fringe-style -1)
 (tooltip-mode -1)
-
-
 
 ;-------------------------------------------------------------------------------
 (provide 'general-setting)
