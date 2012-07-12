@@ -14,6 +14,6 @@
 	     )
 	     (setq output-msg (concat splash-forty-dash splash-with-newline format-msg))
 	     (message output-msg msg)))
-				
+
 
 (provide 'custom-function)
