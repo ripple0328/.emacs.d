@@ -14,26 +14,30 @@
 	"The root dir of emacs configuration")
 
 (defvar ripple-dir (concat emacs-dir "ripple/")
-	"Customrized configration dir")
+	"Customerized configration dir")
+
+;; daemon下默认路径会是/
+(cd (expand-file-name "~/"))
 
 (add-to-list 'load-path ripple-dir)
 
+(message  "loading custom function")
 (require 'custom-function)
 (print-log (concat "Hi " (getenv "USER")))
-(print-log "now loading all setting")
-(print-log "Check packages setting")
+
 (require 'package-setting)
+
 (require 'general-setting)
+
 (require 'theme-setting)
+
 (require 'org-setting)
 
-
 (when (eq system-type 'darwin)
-	(print-log "we are using osx system with specific setting")
 	(require 'osx-setting))
-
 
 (if window-system
 		(require 'window-system-setting)
 		(require 'term-setting))
 
+(print-log "Emacs is ready to use")

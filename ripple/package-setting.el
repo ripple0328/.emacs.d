@@ -1,7 +1,9 @@
 ;;-------------------------------------------------------------------------------
 ;; change a repository for elpa
 ;;------------------------------------------------------------------------------
+(print-log "loading packages setting")
 
+(print-log "setting elpa repository")
 (require 'package)
 (add-to-list 'package-archives
 						 '("tromey" . "http://tromey.com/elpa/") t)
@@ -17,6 +19,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get") 
 
+(print-log "checking el-get installation")
 (unless 
     (require 'el-get nil t) 
   (with-current-buffer 
@@ -37,7 +40,7 @@
 ;;                :after (lambda () (yaml-mode-hook)))
 ;; 	))
 
-
+(print-log "checking and installing package")
 (setq ripple-packages
       (append
        '(
@@ -62,7 +65,6 @@
 				 magit
 				 mmm-mode
 				 nav
-				 nxhtml
 				 org-blog
 				 org-html5presentation
 				 package
@@ -81,7 +83,6 @@
 				 scss-mode
 				 xcode
 				 itunes
-				 skype
 				 autopair
 				 textmate
 				 emacs-w3m
