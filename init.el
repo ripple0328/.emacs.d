@@ -21,16 +21,13 @@
 
 (add-to-list 'load-path ripple-dir)
 
-(message  "loading custom function")
+(message  "*** loading custom function ***")
 (require 'custom-function)
 (print-log (concat "Hi " (getenv "USER")))
 
 (require 'package-setting)
-
 (require 'general-setting)
-
 (require 'theme-setting)
-
 (require 'org-setting)
 
 (when (eq system-type 'darwin)

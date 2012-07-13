@@ -82,7 +82,6 @@
 				 rvm
 				 scss-mode
 				 xcode
-				 itunes
 				 autopair
 				 textmate
 				 emacs-w3m

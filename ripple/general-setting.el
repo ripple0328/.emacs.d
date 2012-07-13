@@ -17,8 +17,9 @@
 (setq display-time-mode t)
 (setq display-time-24hr-format t)
 (setq display-time-day-and-date t)
+(setq display-time-interval 10)
 (setq display-time-use-mail-icon t)
-
+(display-time)
 (setq time-stamp-active t)
 (setq time-stamp-format "%:u %04y/%02m/%02d %02H02M02S")
 (add-hook 'write-file-hooks 'time-stamp)
@@ -32,8 +33,8 @@
 
 (auto-fill-mode t)
 (setq default-fill-column 80)
-(column-number-mode t)
-
+;; (column-number-mode t)
+;; (global-linum-mode t)
 (setq auto-image-file-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -43,7 +44,8 @@
 (setq default-indent-tabs-mode nil)
 
 (ido-mode t)
-;(nav)																		
+;(nav)
+(menu-bar-mode -1)
 (electric-pair-mode t)
 (recentf-mode t)
 (delete-selection-mode t)
@@ -53,6 +55,9 @@
 
 (set-fringe-style -1)
 (tooltip-mode -1)
+(tool-bar-mode -1)
 
+(setq suggest-key-bindings 1)
+(setq x-select-enable-clipboard t)
 ;-------------------------------------------------------------------------------
 (provide 'general-setting)
