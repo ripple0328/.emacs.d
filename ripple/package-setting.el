@@ -31,14 +31,15 @@
 ;; packages sources
 ;;------------------------------------------------------------------------------
 
-;; (setq el-get-sources
-;;       '(
-;;         (:name yaml-mode 
-;;                :type git
-;;                :url "http://github.com/yoshiki/yaml-mode.git"
-;;                :features yaml-mode
-;;                :after (lambda () (yaml-mode-hook)))
-;; 	))
+;; (setq el-get-sources 
+;; '((:name magit :after (lambda () (global-set-key (kbd "C-x C-z") 'magit-status)))
+;; (:name asciidoc :type elpa :after (lambda () (autoload 'doc-mode "doc-mode" nil t) (add-to-list 'auto-mode-alist '("\\.adoc$" . doc-mode)) (add-hook 'doc-mode-hook '(lambda () (turn-on-auto-fill) (require 'asciidoc))))) 
+;; (:name lisppaste :type elpa) 
+;; (:name emacs-goodies-el :type apt-get))) 
+;; (setq my-packages 
+;; (append '
+;; (cssh el-get switch-window vkill google-maps nxhtml xcscope yasnippet) 
+;; (mapcar 'el-get-source-name el-get-sources))) (el-get 'sync my-packages)
 
 (print-log "checking and installing package")
 (setq ripple-packages
@@ -65,7 +66,6 @@
 				 magit
 				 mmm-mode
 				 nav
-				 org-blog
 				 org-html5presentation
 				 package
 				 rails-el
