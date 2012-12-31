@@ -59,7 +59,6 @@
 				 emacsserver
 				 flymake-ruby
 				 go-mode
-				 google-contacts
 				 google-maps
 				 google-weather
  				 haml-mode
@@ -99,6 +98,8 @@
 				 ac-anything2
 				 gnuplot-mode
 				 google-translate
+				 weibo.emacs
+;				 matlab-mode
 				 ))
 
 

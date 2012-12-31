@@ -3,3 +3,8 @@ srecode-map.el
 el-get/
 auto-save-list/
 *.elc
+image.weibo/
+t.weibo/
+url/
+.recentf
+oauth2.plstore

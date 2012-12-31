@@ -25,6 +25,8 @@
 (require 'custom-function)
 (print-log (concat "Hi " (getenv "USER")))
 
+(require 'personal-info)
+(require 'file-location)
 (require 'package-setting)
 (require 'general-setting)
 (require 'theme-setting)
