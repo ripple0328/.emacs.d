@@ -1,0 +1,7 @@
+ (global-set-key "\C-ct" 'google-translate-at-point)
+ (global-set-key "\C-cT" 'google-translate-query-translate)
+ (global-set-key (kbd "C-c r") 'google-translate-at-point-reverse)
+ (global-set-key (kbd "C-c R") 'google-translate-query-translate-reverse)
+; (setq google-translate-enable-ido-completion t)
+ (setq google-translate-default-source-language "en")
+ (setq google-translate-default-target-language "zh-CN")

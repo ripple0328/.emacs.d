@@ -20,17 +20,17 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get") 
 
 (print-log "checking el-get installation")
-(unless 
-    (require 'el-get nil t) 
-  (with-current-buffer 
-      (url-retrieve-synchronously "https://raw.github.com/dimitri/el-get/master/el-get-install.el") 
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
     (let (el-get-master-branch)
       (goto-char (point-max))
       (eval-print-last-sexp))))
 
 ;;add its initialization code to a file named init-<package>.el with <package> replaced with the package name
 (setq el-get-user-package-directory "~/.emacs.d/el-get-init-files/")
-
+(add-to-list  'el-get-recipe-path  "~/.emacs.d/recipes/")
 ;;------------------------------------------------------------------------------
 ;; packages sources
 ;;------------------------------------------------------------------------------
@@ -46,18 +46,10 @@
 ;; (mapcar 'el-get-source-name el-get-sources))) (el-get 'sync my-packages)
 
 (print-log "checking and installing package")
-(require 'el-get)
 
 (setq el-get-sources
       '(
 				 anything
-				 auto-complete
-				 auto-complete-css
-				 auto-complete-emacs-lisp
-				 auto-complete-extension
-				 auto-complete-ruby
-				 auto-complete-yasnippet
-				 ac-anything2
 				 babel
 				 bbdb
 				 coffee-mode
@@ -98,6 +90,15 @@
 				 switch-window
 				 yari
 				 zencoding-mode
+				 auto-complete
+				 auto-complete-css
+				 auto-complete-emacs-lisp
+				 auto-complete-extension
+				 auto-complete-ruby
+				 auto-complete-yasnippet
+				 ac-anything2
+				 gnuplot-mode
+				 google-translate
 				 ))
 
 
