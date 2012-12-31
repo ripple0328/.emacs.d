@@ -24,8 +24,12 @@
     (require 'el-get nil t) 
   (with-current-buffer 
       (url-retrieve-synchronously "https://raw.github.com/dimitri/el-get/master/el-get-install.el") 
-    (goto-char (point-max)) 
-    (eval-print-last-sexp)))
+    (let (el-get-master-branch)
+      (goto-char (point-max))
+      (eval-print-last-sexp))))
+
+;;add its initialization code to a file named init-<package>.el with <package> replaced with the package name
+(setq el-get-user-package-directory "~/.emacs.d/el-get-init-files/")
 
 ;;------------------------------------------------------------------------------
 ;; packages sources
@@ -42,9 +46,10 @@
 ;; (mapcar 'el-get-source-name el-get-sources))) (el-get 'sync my-packages)
 
 (print-log "checking and installing package")
-(setq ripple-packages
-      (append
-       '(
+(require 'el-get)
+
+(setq el-get-sources
+      '(
 				 anything
 				 auto-complete
 				 auto-complete-css
@@ -52,13 +57,19 @@
 				 auto-complete-extension
 				 auto-complete-ruby
 				 auto-complete-yasnippet
+				 ac-anything2
 				 babel
+				 bbdb
 				 coffee-mode
 				 dired+
 				 el-get
 				 emacschrome
 				 emacsserver
 				 flymake-ruby
+				 go-mode
+				 google-contacts
+				 google-maps
+				 google-weather
  				 haml-mode
 				 inf-ruby
 				 js2-mode
@@ -68,7 +79,7 @@
 				 nav
 				 org-html5presentation
 				 package
-				 rails-el
+				 rails-el 
 				 rdebug
 				 ri-emacs
 				 rinari
@@ -76,23 +87,20 @@
 				 ruby-block
 				 ruby-compilation
 				 ruby-electric
-				 ruby-end
 				 ruby-mode
 				 ruby-test
 				 rvm
 				 scss-mode
-				 xcode
 				 autopair
-				 textmate
 				 emacs-w3m
 				 twittering-mode
 				 yasnippet
 				 switch-window
 				 yari
 				 zencoding-mode
-				 )
-       (mapcar 'el-get-source-name el-get-sources)))
+				 ))
 
-(el-get 'sync ripple-packages)
+
+(el-get 'sync (mapcar 'el-get-source-name el-get-sources))
 
 (provide 'package-setting)
