@@ -20,10 +20,12 @@
 (cd (expand-file-name "~/"))
 
 (add-to-list 'load-path ripple-dir)
+(add-to-list 'load-path "~/.emacs.d/el-get-to-submit")
 
 (message  "*** loading custom function ***")
 (require 'custom-function)
 (print-log (concat "Hi " (getenv "USER")))
+
 
 (require 'personal-info)
 (require 'file-location)
@@ -31,6 +33,7 @@
 (require 'general-setting)
 (require 'theme-setting)
 (require 'org-setting)
+(require 'tags-setting)
 
 (when (eq system-type 'darwin)
 	(require 'osx-setting))

@@ -5,11 +5,8 @@
 
 (print-log "setting elpa repository")
 (require 'package)
-(add-to-list 'package-archives
-						 '("tromey" . "http://tromey.com/elpa/") t)
-
-(add-to-list 'package-archives
-						 '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives	 '("tromey" . "http://tromey.com/elpa/") t)
+(add-to-list 'package-archives	 '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (package-initialize)
 
@@ -46,10 +43,11 @@
 ;; (mapcar 'el-get-source-name el-get-sources))) (el-get 'sync my-packages)
 
 (print-log "checking and installing package")
-
+;rcodetools recipe has problem, temporary fixed it
+(require 'rcodetools)
 (setq el-get-sources
       '(
-				 anything
+			 anything
 				 babel
 				 bbdb
 				 coffee-mode
@@ -57,11 +55,13 @@
 				 el-get
 				 emacschrome
 				 emacsserver
-				 flymake-ruby
+				 (:name flymake-ruby :after (progn
+							      (add-hook 'ruby-mode-hook 'flymake-ruby-load)))
 				 go-mode
 				 google-maps
 				 google-weather
  				 haml-mode
+				 flymake-coffee
 				 inf-ruby
 				 js2-mode
 				 json
@@ -93,16 +93,25 @@
 				 auto-complete-css
 				 auto-complete-emacs-lisp
 				 auto-complete-extension
-				 auto-complete-ruby
+				 (:name auto-complete-ruby :after  (progn
+                                           ;; make sure rcodetools is
+                                           ;; installed and available
+                                           ;; through (getenv "GEM_PATH")
+                                           (require 'auto-complete-ruby)
+                                           (ac-ruby-init)))
+				 auto-complete
 				 auto-complete-yasnippet
 				 ac-anything2
 				 gnuplot-mode
 				 google-translate
 				 weibo.emacs
+				 wanderlust
 ;				 matlab-mode
+				 auto-dictionnary
+				 eproject
 				 ))
+(setq ripple-packages (mapcar 'el-get-source-name el-get-sources))
 
-
-(el-get 'sync (mapcar 'el-get-source-name el-get-sources))
+(el-get 'sync ripple-packages)
 
 (provide 'package-setting)

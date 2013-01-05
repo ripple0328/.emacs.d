@@ -59,5 +59,8 @@
 
 (setq suggest-key-bindings 1)
 (setq x-select-enable-clipboard t)
+
+; auto-reload files that have been changed outside emacs
+(global-auto-revert-mode t)
 ;-------------------------------------------------------------------------------
 (provide 'general-setting)
