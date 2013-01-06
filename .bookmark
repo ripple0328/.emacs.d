@@ -2,7 +2,27 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("temp"
+(("recipes"
+ (filename . "~/.emacs.d/recipes/")
+ (front-context-string . "google-translate")
+ (rear-context-string . "194 12 31 18:00 ")
+ (position . 230))
+("package"
+ (filename . "~/.emacs.d/ripple/package-setting.el")
+ (front-context-string . ";;--------------")
+ (rear-context-string)
+ (position . 1))
+("org"
+ (filename . "~/Documents/org/")
+ (front-context-string . ".DS_Store\n  drwx")
+ (rear-context-string . "148 10 15 17:04 ")
+ (position . 195))
+("rails"
+ (filename . "~/Documents/rails/")
+ (front-context-string . "devise-experimen")
+ (rear-context-string . "714 11 14 21:51 ")
+ (position . 229))
+("temp"
  (filename . "~/temp/")
  (front-context-string)
  (rear-context-string . "  1  1 02:32 ..\n")

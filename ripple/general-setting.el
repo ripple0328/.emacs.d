@@ -62,5 +62,8 @@
 
 ; auto-reload files that have been changed outside emacs
 (global-auto-revert-mode t)
+
+;; rinari
+(setq global-rinari-mode t)
 ;-------------------------------------------------------------------------------
 (provide 'general-setting)

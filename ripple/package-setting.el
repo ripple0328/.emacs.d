@@ -108,7 +108,6 @@
 				 wanderlust
 ;				 matlab-mode
 				 auto-dictionnary
-				 eproject
 				 ))
 (setq ripple-packages (mapcar 'el-get-source-name el-get-sources))
 
