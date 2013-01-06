@@ -1,2 +1,0 @@
-(:name magit
-			 :after-hook (global-set-key (kdb 'C-c m) 'magit-status))

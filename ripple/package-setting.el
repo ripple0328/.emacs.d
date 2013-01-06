@@ -93,6 +93,7 @@
 				 auto-complete-css
 				 auto-complete-emacs-lisp
 				 auto-complete-extension
+				 auto-complete-etags
 				 (:name auto-complete-ruby :after  (progn
                                            ;; make sure rcodetools is
                                            ;; installed and available

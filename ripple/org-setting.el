@@ -115,4 +115,12 @@
 		      )
       )
 
+;;------------------------------------------------------------------------------
+;;  agenda
+;;------------------------------------------------------------------------------
+(org-agenda-files (concat emacs-dir "agenda"))
+(global-set-key (kbd "C-c a") 'org-agenda)
+(setq org-agenda-include-diary t)
+
+
 (provide 'org-setting)

@@ -2,7 +2,14 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("recipes"
+(("(org) Weekly/daily agenda"
+ (front-context-string . "     (setq org-a")
+ (rear-context-string . "e the variable\n\n")
+ (position . 303009)
+ (filename . "/Applications/Emacs.app/Contents/Resources/info/org")
+ (info-node . "Weekly/daily agenda")
+ (handler . Info-bookmark-jump))
+("recipes"
  (filename . "~/.emacs.d/recipes/")
  (front-context-string . "google-translate")
  (rear-context-string . "194 12 31 18:00 ")
