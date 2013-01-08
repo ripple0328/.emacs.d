@@ -41,7 +41,7 @@
 (setq make-backup-files t)
 (setq auto-save-default t)
 (setq default-tab-width 2)
-(setq default-indent-tabs-mode nil)
+(setq default-indent-tabs-mode nil) ; stop mixed tab and spaces
 
 (ido-mode t)
 ;(nav)

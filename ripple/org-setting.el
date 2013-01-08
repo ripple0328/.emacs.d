@@ -123,4 +123,15 @@
 (setq org-agenda-include-diary t)
 
 
+;; capture
+(setq org-default-notes-file "~/Dropbox/Emacs/notes/notes.org")
+(define-key global-map "\C-cc" 'org-capture)
+(setq org-capture-bookmark t)
+
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline (concat dropbox "note/gtd.org") "Tasks")
+				 "* TODO %?\n  %i\n  %a")
+        ("j" "Journal" entry (file+datetree (concat dropbox "note/journal.org")
+				 "* %?\nEntered on %U\n  %i\n  %a"))))
+
 (provide 'org-setting)

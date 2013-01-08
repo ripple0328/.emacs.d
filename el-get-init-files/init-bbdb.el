@@ -1,4 +1,4 @@
-(setq bbdb-file "~/Dropbox/bbdb")
+(setq bbdb-file "~/Dropbox/Emacs/bbdb")
 
 ;; contact complete setting
 (setq bbdb-complete-name-full-completion t)  

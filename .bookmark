@@ -19,17 +19,17 @@
  (front-context-string . ";;--------------")
  (rear-context-string)
  (position . 1))
-("org"
+("o"
  (filename . "~/Documents/org/")
  (front-context-string . ".DS_Store\n  drwx")
  (rear-context-string . "148 10 15 17:04 ")
  (position . 195))
-("rails"
+("r"
  (filename . "~/Documents/rails/")
  (front-context-string . "devise-experimen")
  (rear-context-string . "714 11 14 21:51 ")
  (position . 229))
-("temp"
+("tmp"
  (filename . "~/temp/")
  (front-context-string)
  (rear-context-string . "  1  1 02:32 ..\n")
