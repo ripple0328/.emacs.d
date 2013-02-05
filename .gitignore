@@ -9,3 +9,5 @@ url/
 .recentf
 oauth2.plstore
 /ac-comphist.dat
+/org-clock-save.el
+/eproject.lst

@@ -2,13 +2,23 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("(org) Weekly/daily agenda"
- (front-context-string . "     (setq org-a")
- (rear-context-string . "e the variable\n\n")
- (position . 303009)
+(("(org) Hyperlinks"
+ (front-context-string . "\n4 Hyperlinks\n**")
+ (rear-context-string . "ables,  Up: Top\n")
+ (position . 121116)
  (filename . "/Applications/Emacs.app/Contents/Resources/info/org")
- (info-node . "Weekly/daily agenda")
+ (info-node . "Hyperlinks")
  (handler . Info-bookmark-jump))
+("org-setting.el"
+ (filename . "~/.emacs.d/ripple/org-setting.el")
+ (front-context-string . "(define-key org-")
+ (rear-context-string . "espect-content)\n")
+ (position . 4498))
+("tags"
+ (filename . "~/.emacs.d/ripple/tags-setting.el")
+ (front-context-string . ";reference\n; htt")
+ (rear-context-string)
+ (position . 1))
 ("recipes"
  (filename . "~/.emacs.d/recipes/")
  (front-context-string . "google-translate")
@@ -29,7 +39,7 @@
  (front-context-string . "devise-experimen")
  (rear-context-string . "714 11 14 21:51 ")
  (position . 229))
-("tmp"
+("t"
  (filename . "~/temp/")
  (front-context-string)
  (rear-context-string . "  1  1 02:32 ..\n")
