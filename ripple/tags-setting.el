@@ -6,7 +6,10 @@
   (interactive)
   (message "building project tags")
   (let ((root (eproject-root)))
-    (shell-command (concat "ctags -e -R --extra=+fq --exclude=db --exclude=test --exclude=.git --exclude=public -f " root "TAGS " root)))
+    (shell-command
+		 (concat "ctags -e --extra=+fq -f " root "TAGS " " -R " root " -R "
+						 (concat (replace-regexp-in-string "\n" ""
+																							 (shell-command-to-string "rvm gemdir")) "/gems/"))))
   (visit-project-tags)
   (message "tags built successfully"))
 

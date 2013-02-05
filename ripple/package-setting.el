@@ -47,69 +47,83 @@
 (require 'rcodetools)
 (setq el-get-sources
       '(
-			 anything
-				 babel
-				 bbdb
-				 coffee-mode
-				 dired+
-				 el-get
-				 emacschrome
-				 emacsserver
-				 (:name flymake-ruby :after (progn
-							      (add-hook 'ruby-mode-hook 'flymake-ruby-load)))
-				 go-mode
-				 google-maps
-				 google-weather
- 				 haml-mode
-				 flymake-coffee
-				 inf-ruby
-				 js2-mode
-				 json
-				 magit
-				 mmm-mode
-				 nav
-				 org-html5presentation
-				 package
-				 rails-el 
-				 rdebug
-				 ri-emacs
-				 rinari
-				 rspec-mode
-				 ruby-block
-				 ruby-compilation
-				 ruby-electric
-				 ruby-mode
-				 ruby-test
-				 rvm
-				 scss-mode
-				 autopair
-				 emacs-w3m
-				 twittering-mode
-				 yasnippet
-				 switch-window
-				 yari
-				 zencoding-mode
-				 auto-complete
-				 auto-complete-css
-				 auto-complete-emacs-lisp
-				 auto-complete-extension
-				 auto-complete-etags
-				 (:name auto-complete-ruby :after  (progn
-                                           ;; make sure rcodetools is
-                                           ;; installed and available
-                                           ;; through (getenv "GEM_PATH")
-                                           (require 'auto-complete-ruby)
-                                           (ac-ruby-init)))
-				 auto-complete
-				 auto-complete-yasnippet
-				 ac-anything2
-				 gnuplot-mode
-				 google-translate
-				 weibo.emacs
-				 wanderlust
-;				 matlab-mode
-				 auto-dictionnary
-				 ))
+				anything
+				babel
+				bbdb
+				bbdb-vcard
+				coffee-mode
+				dired+
+				el-get
+				emacschrome
+				emacsserver
+				(:name flymake-ruby :after (progn
+																		 (add-hook 'ruby-mode-hook 'flymake-ruby-load)))
+				go-mode
+				google-maps
+				google-weather
+				haml-mode
+				flymake
+				flymake-haml
+				flymake-sass
+				flymake-coffee
+				inf-ruby
+				js2-mode
+				json
+				magit
+				magithub
+				mmm-mode
+				nav
+				org-html5presentation
+				package
+				rails-el 
+				rdebug
+				ri-emacs
+				rinari
+				rspec-mode
+				ruby-block
+				ruby-compilation
+				ruby-electric
+				ruby-mode
+				ruby-test
+				rvm
+				scss-mode
+				autopair
+				emacs-w3m
+				twittering-mode
+				yasnippet
+				switch-window
+				yari
+				zencoding-mode
+				auto-complete
+				auto-complete-css
+				auto-complete-emacs-lisp
+				auto-complete-extension
+				auto-complete-etags
+				(:name auto-complete-ruby :after  (progn
+																						;; make sure rcodetools is
+																						;; installed and available
+																						;; through (getenv "GEM_PATH")
+																						(require 'auto-complete-ruby)
+																						(ac-ruby-init)))
+				auto-complete
+				auto-complete-clang
+				auto-complete-yasnippet
+				ac-anything2
+				gnuplot-mode
+				google-translate
+				weibo.emacs
+				wanderlust
+																				;				 matlab-mode
+				auto-dictionnary
+				eproject
+				etags-select
+				etags-extension
+				anything-etags
+				slime
+				auctex
+				ctags
+				rcodetools
+				))
 (setq ripple-packages (mapcar 'el-get-source-name el-get-sources))
 
 (el-get 'sync ripple-packages)

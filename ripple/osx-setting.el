@@ -40,6 +40,12 @@
 (setq mac-option-modifier 'super)
 (setq mac-option-modifier 'meta)
 
+
+;; fullscreen
+(set-frame-parameter nil 'fullscreen 'fullboth)
+
+
+
 ;-------------------------------------------------------------------------------
 (provide 'osx-setting)		 
 

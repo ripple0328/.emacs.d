@@ -134,4 +134,37 @@
         ("j" "Journal" entry (file+datetree (concat dropbox "note/journal.org")
 				 "* %?\nEntered on %U\n  %i\n  %a"))))
 
+
+
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+; insert mode line on empty file
+; like this: 
+; MY PROJECTS    -*- mode: org; -*-
+(setq org-insert-mode-line-in-empty-file t)
+
+(add-hook 'org-mode-hook 'turn-on-font-lock)
+
+
+; add structure editing keybindings not set by default
+;; (define-key org-mode-map (kbd "C-RET") 'org-insert-heading-respect-content)
+;; (define-key org-mode-map (kbd "M-S-RET") 'org-insert-todo-heading)
+;; (define-key org-mode-map (kbd "C-S-RET") 'org-insert-todo-heading-respect-content)
+
+;; 将常用的sparse tree搜索定义为快捷键
+;; (setq org-agenda-custom-commands
+;;       '(("f" occur-tree "FIXME")))
+
+;; whether hide blocks on startup
+(setq org-hide-block-startup nil)
+
+;;  save the clock history across Emacs sessions
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+
+;; automatically adjust footnotes after insert/delete.
+(setq org-footnote-auto-adjust t)
+
 (provide 'org-setting)
+

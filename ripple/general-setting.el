@@ -44,8 +44,7 @@
 (setq default-indent-tabs-mode nil) ; stop mixed tab and spaces
 
 (ido-mode t)
-;(nav)
-(menu-bar-mode -1)
+;(nav)																		
 (electric-pair-mode t)
 (recentf-mode t)
 (delete-selection-mode t)
@@ -55,10 +54,14 @@
 
 (set-fringe-style -1)
 (tooltip-mode -1)
-(tool-bar-mode -1)
+;(menu-bar-mode -1)
+;(tool-bar-mode -1)
 
 (setq suggest-key-bindings 1)
 (setq x-select-enable-clipboard t)
+
+;; kill line and the blank with a single C-k
+(setq kill-whole-line t)
 
 ; auto-reload files that have been changed outside emacs
 (global-auto-revert-mode t)
