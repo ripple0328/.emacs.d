@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("(org) Hyperlinks"
+(("init"
+ (filename . "~/.emacs.d/el-get-init-files/")
+ (front-context-string . "init-auto-comple")
+ (rear-context-string . "636  1  6 16:08 ")
+ (position . 245))
+("(org) Hyperlinks"
  (front-context-string . "\n4 Hyperlinks\n**")
  (rear-context-string . "ables,  Up: Top\n")
  (position . 121116)

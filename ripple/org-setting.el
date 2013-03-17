@@ -129,9 +129,9 @@
 (setq org-capture-bookmark t)
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline (concat dropbox "note/gtd.org") "Tasks")
+      '(("t" "Todo" entry (file+headline (concat dropbox "notes/gtd.org") "Tasks")
 				 "* TODO %?\n  %i\n  %a")
-        ("j" "Journal" entry (file+datetree (concat dropbox "note/journal.org")
+        ("j" "Journal" entry (file+datetree (concat dropbox "notes/journal.org")
 				 "* %?\nEntered on %U\n  %i\n  %a"))))
 
 
