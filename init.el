@@ -44,7 +44,7 @@
 (require 'theme-setting)
 (require 'org-setting)
 (require 'tags-setting)
-
+(require 'package-not-in-repo)
 (when (eq system-type 'darwin)
 	(require 'osx-setting))
 

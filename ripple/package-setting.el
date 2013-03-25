@@ -48,14 +48,14 @@
 (require 'rcodetools)
 (setq el-get-sources
       '(
-;				babel
+				babel
 				coffee-mode
 ;				dired+
 				el-get
-;				(:name flymake-ruby :after (progn
-;																		 (add-hook 'ruby-mode-hook 'flymake-ruby-load)))
-;				haml-mode
-;				flymake
+				(:name flymake-ruby :after (progn
+							     (add-hook 'ruby-mode-hook 'flymake-ruby-load)))
+				haml-mode
+				flymake
 				js2-mode
 				json
 				magit
@@ -63,7 +63,7 @@
 				rinari
 				rspec-mode
 				ruby-block
-			 ruby-compilation								
+				ruby-compilation								
 				ruby-electric
 				ruby-mode
 				ruby-test
@@ -81,48 +81,48 @@
 				ctags
 				rcodetools
 
-;				anything
-;				anything-etags
+				anything
+				anything-etags
 ;				emacschrome
 ;				emacsserver 
-;				auto-complete
-;				auto-complete-css
-;				auto-complete-emacs-lisp
-;				auto-complete-extension
-;				auto-complete-etags
-;				(:name auto-complete-ruby :after  (progn
-																						;; make sure rcodetools is
-																						;; installed and available
-																						;; through (getenv "GEM_PATH")
-																;						(require 'auto-complete-ruby)
-;																						(ac-ruby-init)))
-;				auto-complete-clang
-;				auto-complete-yasnippet
+				auto-complete
+				auto-complete-css
+				auto-complete-emacs-lisp
+				auto-complete-extension
+				auto-complete-etags
+				(:name auto-complete-ruby :after  (progn
+								    ;; make sure rcodetools is
+								    ;; installed and available
+								    ;; through (getenv "GEM_PATH")
+								    (require 'auto-complete-ruby)
+								    (ac-ruby-init)))
+				auto-complete-clang
+				auto-complete-yasnippet
 ;				ac-anything2
 ;				go-mode
 ;				google-maps
 ;				google-weather
-;				rails-el 
-;				rdebug
-;				ri-emacs
+				rails-el 
+				rdebug
+				ri-emacs
 ;				yari
 ;				zencoding-mode
-;				gnuplot-mode
+				gnuplot-mode
 ;				magithub
 ;				mmm-mode
 ;				nav
 ;				org-html5presentation
 ;				wanderlust
-;       matlab-mode
-;				twittering-mode
+;				matlab-mode 
+				twittering-mode
 ;				auctex
 ;				rvm
-;				flymake-haml
-;				flymake-sass
-;				flymake-coffee
-;				inf-ruby
-;				emacs-w3m
-;				scss-mode
+				flymake-haml
+				flymake-sass
+				flymake-coffee
+				inf-ruby
+				emacs-w3m
+				scss-mode
 				))
 (setq ripple-packages (mapcar 'el-get-source-name el-get-sources))
 
