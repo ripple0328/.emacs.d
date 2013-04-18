@@ -44,13 +44,14 @@
 (setq default-indent-tabs-mode nil) ; stop mixed tab and spaces
 
 (ido-mode t)
-;(nav)																		
-(electric-pair-mode t)
+;(nav)
+; 括号自动配对，与ruby-electric功能冲突，设置成nil仍然关不掉
+;(electric-pair-mode nil) 
 (recentf-mode t)
 (delete-selection-mode t)
 (scroll-bar-mode -1)
 (blink-cursor-mode t)
-(show-paren-mode t)
+;(show-paren-mode t)
 
 (set-fringe-style -1)
 (tooltip-mode -1)

@@ -6,7 +6,7 @@
 (print-log "setting elpa repository")
 
 (require 'package)
-;(add-to-list 'package-archives	 '("tromey" . "http://tromey.com/elpa/") t)
+(add-to-list 'package-archives	 '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives	 '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (package-initialize)
@@ -50,7 +50,7 @@
       '(
 				babel
 				coffee-mode
-;				dired+
+				dired+
 				el-get
 				(:name flymake-ruby :after (progn
 							     (add-hook 'ruby-mode-hook 'flymake-ruby-load)))
@@ -63,12 +63,12 @@
 				rinari
 				rspec-mode
 				ruby-block
+				
 				ruby-compilation								
 				ruby-electric
 				ruby-mode
 				ruby-test
 
-				autopair
 				yasnippet
 				switch-window
 				google-translate
@@ -83,8 +83,8 @@
 
 				anything
 				anything-etags
-;				emacschrome
-;				emacsserver 
+				emacschrome
+				emacsserver 
 				auto-complete
 				auto-complete-css
 				auto-complete-emacs-lisp
@@ -105,23 +105,23 @@
 				rails-el 
 				rdebug
 				ri-emacs
-;				yari
-;				zencoding-mode
+				yari
+				zencoding-mode
 				gnuplot-mode
-;				magithub
+				magithub
 ;				mmm-mode
-;				nav
+				nav
 ;				org-html5presentation
 ;				wanderlust
 ;				matlab-mode 
 				twittering-mode
 ;				auctex
-;				rvm
+				rvm
 				flymake-haml
 				flymake-sass
 				flymake-coffee
 				inf-ruby
-				emacs-w3m
+;				emacs-w3m
 				scss-mode
 				))
 (setq ripple-packages (mapcar 'el-get-source-name el-get-sources))

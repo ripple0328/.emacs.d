@@ -11,13 +11,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-;; 如果server没起来，先启动个server
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+;; ;; 如果server没起来，先启动个server
+;; (require 'server)
+;; (unless (server-running-p)
+;;   (server-start))
 
-;; 如果找不到server就试试这个
-(setq server-socket-dir (format "/tmp/emacs%d" (user-uid)))
+;; ;; 如果找不到server就试试这个
+;; (setq server-socket-dir (format "/tmp/emacs%d" (user-uid)))
 
 
 (defvar emacs-dir (file-name-directory load-file-name)
@@ -35,7 +35,6 @@
 (message  "*** loading custom function ***")
 (require 'custom-function)
 (print-log (concat "Hi " (getenv "USER")))
-
 
 (require 'personal-info)
 (require 'file-location)
