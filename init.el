@@ -1,49 +1,32 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                          Emacs configuration                               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Filename:               init.el
-;; Copyright (c) 2012:     qingbo
-;; Version:                1.0
-;; Author:                 qingbo<ripple0328@rubyer.info>
-;; Created:                July 6 2012
-;;
-;; Description:            此文件用于emacs的初始化配置
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Filename:               init.el                                            ;;
+;; Copyright (c) 2012:     qingbo zhang																				;;
+;; Version:                1.1																								;;
+;; Author:                 qingbo<ripple0328@rubyer.info>											;;
+;; Created:                July 6 2012																				;;
+;; Updated:                August 4 2013																			;;
+;; Description:            此文件用于emacs的初始化配置                        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-;; ;; 如果server没起来，先启动个server
-;; (require 'server)
-;; (unless (server-running-p)
-;;   (server-start))
-
-;; ;; 如果找不到server就试试这个
-;; (setq server-socket-dir (format "/tmp/emacs%d" (user-uid)))
-
-
-(defvar emacs-dir (file-name-directory load-file-name)
+;; initialize load path 
+(defvar emacs-dir "~/Dropbox/Emacs/.emacs.d/"
 	"The root dir of emacs configuration")
-
 (defvar ripple-dir (concat emacs-dir "ripple/")
 	"Customerized configration dir")
-
-;; daemon下默认路径会是/
-(cd (expand-file-name "~/"))
-
 (add-to-list 'load-path ripple-dir)
-(add-to-list 'load-path "~/.emacs.d/el-get-to-submit")
 
-(message  "*** loading custom function ***")
-(require 'custom-function)
-(print-log (concat "Hi " (getenv "USER")))
-
+;; load custom setting and package
+(require 'log-function)
+(require 'path-and-location)
+(require 'backup-file-setting)
 (require 'personal-info)
-(require 'file-location)
 (require 'package-setting)
 (require 'general-setting)
 (require 'theme-setting)
 (require 'org-setting)
 (require 'tags-setting)
-(require 'package-not-in-repo)
+(require 'edit-function)
 (when (eq system-type 'darwin)
 	(require 'osx-setting))
 
@@ -52,15 +35,5 @@
 		(require 'term-setting))
 
 (print-log "Emacs is ready to use")
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/temp/temp.org"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(put 'dired-find-alternate-file 'disabled nil)
+(put 'set-goal-column 'disabled nil)

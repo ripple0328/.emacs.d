@@ -2,56 +2,49 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("init"
- (filename . "~/.emacs.d/el-get-init-files/")
+(("ripple"
+ (filename . "~/Dropbox/Emacs/.emacs.d/ripple/")
+ (front-context-string . "backup-file-sett")
+ (rear-context-string . "30 Aug  3 17:34 ")
+ (position . 252))
+("e"
+ (filename . "~/Dropbox/Emacs/.emacs.d/")
+ (front-context-string . ".bookmark\n  drwx")
+ (rear-context-string . "26 Aug  3 21:13 ")
+ (position . 244))
+("app"
+ (filename . "~/Rea/investor-app/")
+ (front-context-string . ".git\n  -rw-r--r-")
+ (rear-context-string . "544  8  3 20:45 ")
+ (position . 235))
+("el-get-init-files"
+ (filename . "~/Dropbox/Emacs/.emacs.d/el-get-init-files/")
  (front-context-string . "init-auto-comple")
- (rear-context-string . "636  1  6 16:08 ")
- (position . 245))
-("(org) Hyperlinks"
- (front-context-string . "\n4 Hyperlinks\n**")
- (rear-context-string . "ables,  Up: Top\n")
- (position . 121116)
- (filename . "/Applications/Emacs.app/Contents/Resources/info/org")
- (info-node . "Hyperlinks")
- (handler . Info-bookmark-jump))
-("org-setting.el"
- (filename . "~/.emacs.d/ripple/org-setting.el")
- (front-context-string . "(define-key org-")
- (rear-context-string . "espect-content)\n")
- (position . 4498))
-("tags"
- (filename . "~/.emacs.d/ripple/tags-setting.el")
- (front-context-string . ";reference\n; htt")
- (rear-context-string)
- (position . 1))
-("recipes"
- (filename . "~/.emacs.d/recipes/")
- (front-context-string . "google-translate")
- (rear-context-string . "194 12 31 18:00 ")
- (position . 230))
-("package"
- (filename . "~/.emacs.d/ripple/package-setting.el")
+ (rear-context-string . "636  7 23 13:19 ")
+ (position . 329))
+("theme"
+ (filename . "~/Dropbox/Emacs/.emacs.d/ripple/theme-setting.el")
  (front-context-string . ";;--------------")
  (rear-context-string)
  (position . 1))
-("o"
- (filename . "~/Documents/org/")
- (front-context-string . ".DS_Store\n  drwx")
- (rear-context-string . "148 10 15 17:04 ")
- (position . 195))
+("init"
+ (filename . "~/Dropbox/Emacs/.emacs.d/init.el")
+ (front-context-string . "init-auto-comple")
+ (rear-context-string . "636  1  6 16:08 ")
+ (position . 245))
+("recipes"
+ (filename . "~/Dropbox/Emacs/.emacs.d/el-get-recipes/")
+ (front-context-string . "..\n  -rw-r--r-- ")
+ (rear-context-string . "680  8  3 19:02 ")
+ (position . 201))
+("package"
+ (filename . "~/Dropbox/Emacs/.emacs.d/ripple/package-setting.el")
+ (front-context-string . ";;--------------")
+ (rear-context-string)
+ (position . 1))
 ("r"
  (filename . "~/Documents/rails/")
  (front-context-string . "devise-experimen")
  (rear-context-string . "714 11 14 21:51 ")
  (position . 229))
-("t"
- (filename . "~/temp/")
- (front-context-string)
- (rear-context-string . "  1  1 02:32 ..\n")
- (position . 172))
-("emacs"
- (filename . "~/.emacs.d/")
- (front-context-string . ".bookmark\n  drwx")
- (rear-context-string . "357 12 31 22:45 ")
- (position . 226))
 )

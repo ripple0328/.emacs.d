@@ -32,9 +32,9 @@
 (setq org-publish-project-alist
       '(
         ("org-notes"
-         :base-directory "~/Documents/org"
+         :base-directory "~/Dropbox/org"
          :base-extension "org"
-         :publishing-directory "~/Documents/html"
+         :publishing-directory "~/Dropbox/html"
 ;				 :publishing-directory "/Volumes/econoline.websitewelcome.com"
 				 
          :recursive t
@@ -71,9 +71,9 @@
         ;;  )
 
         ("org-static"
-         :base-directory "~/Documents/org/"
+         :base-directory "~/Dropbox/org/"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|tiff"
-         :publishing-directory "~/Documents/html"
+         :publishing-directory "~/Dropbox/html"
 ;				 :publishing-directory  "/Volumes/econoline.websitewelcome.com"
 
          :recursive t
@@ -124,7 +124,7 @@
 
 
 ;; capture
-(setq org-default-notes-file "~/Dropbox/Emacs/notes/notes.org")
+
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-capture-bookmark t)
 

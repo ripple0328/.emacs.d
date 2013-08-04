@@ -7,19 +7,21 @@
   (message "building project tags")
   (let ((root (eproject-root)))
     (shell-command
-		 (concat "ctags -e --extra=+fq -f " root "TAGS " " -R " root " -R "
-						 (concat (replace-regexp-in-string "\n" ""
-																							 (shell-command-to-string "rvm gemdir")) "/gems/"))))
+		 (concat "ctags -e  --extra=+fq -f " root "TAGS"
+						 " -R app lib vendor config features spec script"
+						 " -R " (concat (replace-regexp-in-string "\n" ""
+						 																	 (shell-command-to-string "rvm gemdir")) "/gems/"))))
   (visit-project-tags)
   (message "tags built successfully"))
 
+; variable control case sensitive
+; tags-case-fold-search
 (defun visit-project-tags ()
   (interactive)
   (let ((tags-file (concat (eproject-root) "TAGS")))
     (visit-tags-table tags-file)
     (message (concat "Loaded " tags-file))))
-; variable control case sensitive
-; tags-case-fold-search
+
 
 (defun my-find-tag ()
   (interactive)
@@ -28,7 +30,7 @@
     (build-ctags))
   (etags-select-find-tag-at-point))
 
-;(global-unset-key (kbd"M-."))
+(global-unset-key (kbd"M-."))
 (global-set-key (kbd "M-.") 'my-find-tag)
 
 (provide 'tags-setting)

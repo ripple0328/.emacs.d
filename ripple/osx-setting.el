@@ -42,9 +42,7 @@
 
 
 ;; fullscreen
-(set-frame-parameter nil 'fullscreen 'fullboth)
-
-
+;(set-frame-parameter nil 'fullscreen 'fullboth)
 
 ;-------------------------------------------------------------------------------
 (provide 'osx-setting)		 

@@ -4,13 +4,6 @@
 
 (print-log "loading general setting")
 ;;------------------------------------------------------------------------------
-;; user setting
-;;------------------------------------------------------------------------------
-
-(setq user-full-name "Qingbo ZHANG")
-(setq user-mail-address "ripple0328@gmail.com")
-
-;;------------------------------------------------------------------------------
 ;; time setting
 ;;------------------------------------------------------------------------------
 
@@ -33,13 +26,11 @@
 
 (auto-fill-mode t)
 (setq default-fill-column 80)
-;; (column-number-mode t)
-;; (global-linum-mode t)
+(column-number-mode t)
+(global-linum-mode t)
 (setq auto-image-file-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(setq make-backup-files t)
-(setq auto-save-default t)
 (setq default-tab-width 2)
 (setq default-indent-tabs-mode nil) ; stop mixed tab and spaces
 
@@ -51,12 +42,12 @@
 (delete-selection-mode t)
 (scroll-bar-mode -1)
 (blink-cursor-mode t)
-;(show-paren-mode t)
+(show-paren-mode t)
 
 (set-fringe-style -1)
 (tooltip-mode -1)
 ;(menu-bar-mode -1)
-;(tool-bar-mode -1)
+(tool-bar-mode -1)
 
 (setq suggest-key-bindings 1)
 (setq x-select-enable-clipboard t)
@@ -67,7 +58,6 @@
 ; auto-reload files that have been changed outside emacs
 (global-auto-revert-mode t)
 
-;; rinari
-(setq global-rinari-mode t)
+(global-visual-line-mode 1)
 ;-------------------------------------------------------------------------------
 (provide 'general-setting)
