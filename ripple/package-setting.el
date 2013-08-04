@@ -59,10 +59,9 @@
 			   json
 			   magit
 			   package
-;			   rinari
+				 rinari
 			   rspec-mode
 			   ruby-block
-			   
 			   ruby-compilation								
 			   ruby-electric
 			   ruby-mode
