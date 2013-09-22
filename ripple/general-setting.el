@@ -64,5 +64,7 @@
 (setq cua-enable-cua-keys nil) 
 (cua-mode 1) 
 
+;; fullscreen
+(setq ns-use-native-fullscreen nil)
 (provide 'general-setting)
 

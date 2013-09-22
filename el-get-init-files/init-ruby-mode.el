@@ -18,5 +18,5 @@
 			     (require 'inf-ruby)
 			     (require 'ruby-compilation)
 			     ))
-(electric-pair-mode -1) 
+(electric-pair-mode -1)
 ;; (getenv "GEM_PATH")											
