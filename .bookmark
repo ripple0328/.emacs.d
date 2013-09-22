@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("emacs"
+(("ripple"
+ (filename . "~/.emacs.d/ripple/")
+ (front-context-string . "backup-file-sett")
+ (rear-context-string . "383  8  4 01:55 ")
+ (position . 235))
+("emacs"
  (filename . "~/.emacs.d/")
  (front-context-string . ".bookmark\n  drwx")
  (rear-context-string . "274  8 23 22:01 ")

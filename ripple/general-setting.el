@@ -37,7 +37,7 @@
 (ido-mode t)
 ;(nav)
 ; 括号自动配对，与ruby-electric功能冲突，设置成nil仍然关不掉
-;(electric-pair-mode nil) 
+(electric-pair-mode t) 
 (recentf-mode t)
 (delete-selection-mode t)
 (scroll-bar-mode -1)
@@ -57,11 +57,10 @@
 
 ; auto-reload files that have been changed outside emacs
 (global-auto-revert-mode t)
-
 (global-visual-line-mode 1)
+
 ;-------------------------------------------------------------------------------
 ;; cua-mode
-
 (setq cua-enable-cua-keys nil) 
 (cua-mode 1) 
 
