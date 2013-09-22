@@ -66,7 +66,7 @@
 			   ruby-electric
 			   ruby-mode
 			   ruby-test
-
+				 textmate
 			   yasnippet
 			   switch-window
 			   weibo.emacs
@@ -105,6 +105,9 @@
 			   color-theme
 			   powerline
 			   dash-at-point
+				 skewer-mode
+				 web-mode
+				 ace-jump-mode
 			   )
 (mapcar 'el-get-source-name el-get-sources)))
 (el-get-cleanup ripple-packages)

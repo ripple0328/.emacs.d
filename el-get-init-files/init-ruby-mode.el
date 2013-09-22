@@ -18,3 +18,4 @@
 			     (require 'inf-ruby)
 			     (require 'ruby-compilation)
 			     ))
+(getenv "GEM_PATH")

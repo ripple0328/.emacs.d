@@ -1,3 +1,3 @@
 (print-log "setting color theme")
-(color-theme-euphoria)
+(color-theme-lethe)
 

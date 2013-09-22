@@ -27,7 +27,7 @@
 (auto-fill-mode t)
 (setq default-fill-column 80)
 (column-number-mode t)
-(global-linum-mode t)
+(global-linum-mode -1)
 (setq auto-image-file-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -60,4 +60,10 @@
 
 (global-visual-line-mode 1)
 ;-------------------------------------------------------------------------------
+;; cua-mode
+
+(setq cua-enable-cua-keys nil) 
+(cua-mode 1) 
+
 (provide 'general-setting)
+

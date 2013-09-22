@@ -2,14 +2,23 @@
 (print-log "setting data file location")
 
 ;; path setting
+
+;; set path
+(setenv "PATH"
+			 (concat
+				(getenv "PATH")))
+
 ;; daemon下默认路径会是/
 (cd (expand-file-name "~/"))
 ;; 没有提交到el-get的自己装的包
 (add-to-list 'load-path (concat emacs-dir "el-get-to-submit"))
 
+
 (defvar user-tmp "~/tmp/"
 	"user temporary dir")
-
+(unless (file-exists-p user-tmp)
+	(make-directory user-tmp))
+	
 ; el-get relative 
 (add-to-list 'load-path (concat emacs-dir "el-get/el-get"))
 (setq el-get-dir (concat emacs-dir "el-get"))

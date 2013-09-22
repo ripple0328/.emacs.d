@@ -9,8 +9,9 @@
 ;; Updated:                August 4 2013																			;;
 ;; Description:            此文件用于emacs的初始化配置                        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; initialize load path 
-(defvar emacs-dir "~/Dropbox/Emacs/.emacs.d/"
+;; initialize load path
+;; TODO not compatible
+(defvar emacs-dir "~/.emacs.d/"
 	"The root dir of emacs configuration")
 (defvar ripple-dir (concat emacs-dir "ripple/")
 	"Customerized configration dir")
@@ -37,3 +38,5 @@
 (print-log "Emacs is ready to use")
 (put 'dired-find-alternate-file 'disabled nil)
 (put 'set-goal-column 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)

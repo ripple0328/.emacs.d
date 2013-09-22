@@ -2,7 +2,27 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("ripple"
+(("ruby"
+ (filename . "~/Dropbox/org/program/ruby/ruby-blocks.org")
+ (front-context-string . "#+SETUPFILE: ~/.")
+ (rear-context-string)
+ (position . 1))
+("org"
+ (filename . "~/Dropbox/org/")
+ (front-context-string . ".DS_Store\n  drwx")
+ (rear-context-string . "48 Jul 23 22:17 ")
+ (position . 233))
+("api"
+ (filename . "~/Rea/investor-api/")
+ (front-context-string . ".git\n  -rw-r--r-")
+ (rear-context-string . "544  8 12 21:52 ")
+ (position . 250))
+("tmp"
+ (filename . "~/tmp/")
+ (front-context-string . "data.sql\n  drwxr")
+ (rear-context-string . "53 Aug  9 21:28 ")
+ (position . 225))
+("ripple"
  (filename . "~/Dropbox/Emacs/.emacs.d/ripple/")
  (front-context-string . "backup-file-sett")
  (rear-context-string . "30 Aug  3 17:34 ")

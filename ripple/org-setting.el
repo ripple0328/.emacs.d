@@ -26,7 +26,7 @@
 ;;------------------------------------------------------------------------------
 ;; org project
 ;;------------------------------------------------------------------------------
-;;(require 'org-publish)
+(require 'org-publish)
 (setq org-publish-use-timestamps-flag nil)
 
 (setq org-publish-project-alist
