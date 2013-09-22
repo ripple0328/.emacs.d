@@ -18,7 +18,7 @@
 (add-to-list 'load-path ripple-dir)
 
 ;; load custom setting and package
-(require 'log-function)
+(require 'functions)
 (require 'path-and-location)
 (require 'backup-file-setting)
 (require 'personal-info)

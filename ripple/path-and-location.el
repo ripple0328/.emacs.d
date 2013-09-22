@@ -11,19 +11,20 @@
 ;; daemon下默认路径会是/
 (cd (expand-file-name "~/"))
 ;; 没有提交到el-get的自己装的包
+
 (add-to-list 'load-path (concat emacs-dir "el-get-to-submit"))
 
 
-(defvar user-tmp "~/tmp/"
-	"user temporary dir")
-(unless (file-exists-p user-tmp)
-	(make-directory user-tmp))
-	
 ; el-get relative 
 (add-to-list 'load-path (concat emacs-dir "el-get/el-get"))
 (setq el-get-dir (concat emacs-dir "el-get"))
 (setq el-get-user-package-directory (concat emacs-dir "el-get-init-files/"))
 (add-to-list 'load-path (concat emacs-dir "el-get-init-files/"))
+
+; emacs temporary directory
+(defvar user-tmp "~/tmp"
+	"users temporary directory")
+(mkdir user-tmp)
 
 ; backup setting
 (setq make-backup-files t)

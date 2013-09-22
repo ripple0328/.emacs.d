@@ -13,4 +13,11 @@
 		(setq output-msg (concat splash-forty-dash splash-with-newline format-msg))
 		(message output-msg msg)))
 (print-log (concat "Hi " (getenv "USER")))
-(provide 'log-function)
+
+
+(defun mkdir (dir)
+	"test exist and make directory"
+	(unless (file-exists-p dir)
+		(make-directory dir)))
+
+(provide 'functions)
