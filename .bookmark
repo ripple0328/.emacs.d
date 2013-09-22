@@ -2,11 +2,11 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("ruby"
- (filename . "~/Dropbox/org/program/ruby/ruby-blocks.org")
- (front-context-string . "#+SETUPFILE: ~/.")
- (rear-context-string)
- (position . 1))
+(("emacs"
+ (filename . "~/.emacs.d/")
+ (front-context-string . ".bookmark\n  drwx")
+ (rear-context-string . "274  8 23 22:01 ")
+ (position . 230))
 ("org"
  (filename . "~/Dropbox/org/")
  (front-context-string . ".DS_Store\n  drwx")
@@ -22,43 +22,23 @@
  (front-context-string . "data.sql\n  drwxr")
  (rear-context-string . "53 Aug  9 21:28 ")
  (position . 225))
-("ripple"
- (filename . "~/Dropbox/Emacs/.emacs.d/ripple/")
- (front-context-string . "backup-file-sett")
- (rear-context-string . "30 Aug  3 17:34 ")
- (position . 252))
-("e"
- (filename . "~/Dropbox/Emacs/.emacs.d/")
- (front-context-string . ".bookmark\n  drwx")
- (rear-context-string . "26 Aug  3 21:13 ")
- (position . 244))
 ("app"
  (filename . "~/Rea/investor-app/")
  (front-context-string . ".git\n  -rw-r--r-")
  (rear-context-string . "544  8  3 20:45 ")
  (position . 235))
 ("el-get-init-files"
- (filename . "~/Dropbox/Emacs/.emacs.d/el-get-init-files/")
+ (filename . "~/.emacs.d/el-get-init-files/")
  (front-context-string . "init-auto-comple")
  (rear-context-string . "636  7 23 13:19 ")
  (position . 329))
-("theme"
- (filename . "~/Dropbox/Emacs/.emacs.d/ripple/theme-setting.el")
- (front-context-string . ";;--------------")
- (rear-context-string)
- (position . 1))
 ("init"
- (filename . "~/Dropbox/Emacs/.emacs.d/init.el")
+ (filename . "~/.emacs.d/init.el")
  (front-context-string . "init-auto-comple")
  (rear-context-string . "636  1  6 16:08 ")
  (position . 245))
-("recipes"
- (filename . "~/Dropbox/Emacs/.emacs.d/el-get-recipes/")
- (front-context-string . "..\n  -rw-r--r-- ")
- (rear-context-string . "680  8  3 19:02 ")
- (position . 201))
 ("package"
- (filename . "~/Dropbox/Emacs/.emacs.d/ripple/package-setting.el")
+ (filename . "~/.emacs.d/ripple/package-setting.el")
  (front-context-string . ";;--------------")
  (rear-context-string)
  (position . 1))
