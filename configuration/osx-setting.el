@@ -37,8 +37,10 @@
 ;;  modify modifier key
 ;;------------------------------------------------------------------------------
 
-(setq mac-option-modifier 'alt)
-(setq mac-control-modifier 'meta)
+;; TODO adjust key binding systemly
+(setq mac-option-modifier 'meta)
+(setq mac-right-command-modifier 'super)
+;; (setq mac-control-modifier 'ctrl)
 
 
 ;; fullscreen
