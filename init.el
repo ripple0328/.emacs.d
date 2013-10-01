@@ -28,6 +28,7 @@
 (require 'org-setting)
 (require 'tags-setting)
 (require 'edit-function)
+(require 'shell-configuration)
 (when (eq system-type 'darwin)
 	(require 'osx-setting))
 

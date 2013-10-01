@@ -52,7 +52,6 @@
 			   babel
 			   coffee-mode
 			   dired+
-			   el-get
 			   haml-mode
 			   flymake
 			   js2-mode
@@ -62,7 +61,8 @@
 				 rinari
 			   rspec-mode
 			   ruby-block
-			   ruby-compilation								
+			   ruby-compilation
+				 ;; el-get
 			   ruby-electric
 			   ruby-mode
 			   ruby-test
@@ -88,22 +88,21 @@
 			   auto-complete-clang
 			   auto-complete-yasnippet
 			   rails-el 
-			   ri-emacs
 			   yari
 			   zencoding-mode
 			   gnuplot-mode
-			   magithub
+			   ;; magithub
 			   nav
-			   twittering-mode
+			   ;; twittering-mode
 			   rvm
 			   flymake-haml
 			   flymake-sass
 			   flymake-coffee
 			   inf-ruby
-			   emacs-w3m
+			   ;; emacs-w3m
 			   scss-mode
 			   color-theme
-			   powerline
+			   ;; powerline
 			   dash-at-point
 				 skewer-mode
 				 web-mode

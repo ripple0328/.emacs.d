@@ -17,10 +17,18 @@
 (setq time-stamp-format "%:u %04y/%02m/%02d %02H02M02S")
 (add-hook 'write-file-hooks 'time-stamp)
 
+
+
+;;-------------------------------------------------------------------------------
+;; default coding system
+;;------------------------------------------------------------------------------
+(setq default-terminal-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
+(setq default-file-name-coding-system 'utf-8)
+
 ;;-------------------------------------------------------------------------------
 ;; default setting
 ;;------------------------------------------------------------------------------
-
 (setq default-major-mode 'org-mode)
 (setq inhibit-startup-message t)
 
