@@ -37,8 +37,8 @@
 ;;  modify modifier key
 ;;------------------------------------------------------------------------------
 
-(setq mac-option-modifier 'super)
-(setq mac-option-modifier 'meta)
+(setq mac-option-modifier 'alt)
+(setq mac-control-modifier 'meta)
 
 
 ;; fullscreen

@@ -7,7 +7,8 @@
 ;; Author:                 qingbo<ripple0328@rubyer.info>											;;
 ;; Created:                July 6 2012																				;;
 ;; Updated:                August 4 2013																			;;
-;; Description:            此文件用于emacs的初始化配置                        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Description:            此文件用于emacs的初始化配置                        ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; initialize load path
 ;; TODO not compatible

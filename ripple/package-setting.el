@@ -107,6 +107,7 @@
 				 skewer-mode
 				 web-mode
 				 ace-jump-mode
+				 exec-path-from-shell
 			   )
 (mapcar 'el-get-source-name el-get-sources)))
 (el-get-cleanup ripple-packages)

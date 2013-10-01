@@ -9,7 +9,29 @@
   需要对自己的包列表进行配置和管理就可以了,包本身不再需要自己维护,升级管理和版本
   控制都比较方便.并且支持每个包的自定义初始化内容等.功能相对也丰富而且在活跃开发
   中,是目前我知道比较理想的emacs包管理工具了.
+* install(osx)
+	 mac自带的emacs还停留在22.1.1,即使你系统已经10.9. 老且难用，还不如不带。建议mac
+	 用户安装[[http://emacsformacosx.com/][emacs for osx]]：
+	 1. 新
+	 2. cocoa，
+	 3. retina 
 
+	 也可以用brew编译安装
+	 #+BEGIN_SRC bash
+	 brew install emacs --cocoa
+	 #+END_SRC
+
+	 如果想命令行使用可以给.bash_profile或者.zshrc添加
+	 #+BEGIN_SRC bash
+	 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+	 #+END_SRC
+	 或者添加文件/usr/local/bin/emacs
+	 #+BEGIN_SRC bash
+	 #!/bin/bash
+   /Applications/Emacs.app/Contents/MacOS/Emacs -nw
+	 #+END_SRC
+* configuration
+** daemon
 * org
   因为主要使用org作为笔记工具,所以对org项目做了特别的配置,配置了自己常用的tag,以
   及org的默认模板等等.
