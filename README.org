@@ -5,15 +5,15 @@
 * 包管理
   emacs从24开始内置了elpa作为默认包管理系统,但是elpa的官方仓库包含了比较少和老旧
   的包,所以在这里增加了elpa的包仓库地址. el-get仍然能够使用elpa作为一种包来源,但
-  是它还支持git和emacswiki之类的其他来源,所以包源相对丰富,而且是用el-get以后你只
-  需要对自己的包列表进行配置和管理就可以了,包本身不再需要自己维护,升级管理和版本
-  控制都比较方便.并且支持每个包的自定义初始化内容等.功能相对也丰富而且在活跃开发
-  中,是目前我知道比较理想的emacs包管理工具了.
+  是它还支持git和emacswiki之类的其他来源,所以包源相对丰富,el-ge只需要对自己的包列
+  表进行配置和管理就可以了,包本身不再需要自己维护,升级管理和版本控制都比较方便.并
+  且支持每个包的自定义初始化内容等.功能相对也丰富而且在活跃开发中,是目前我知道比
+  较理想的emacs包管理工具了.
 * install(osx)
 	 mac自带的emacs还停留在22.1.1,即使你系统已经10.9. 老且难用，还不如不带。建议mac
 	 用户安装[[http://emacsformacosx.com/][emacs for osx]]：
 	 1. 新
-	 2. cocoa，
+	 2. cocoa not X11
 	 3. retina 
 
 	 也可以用brew编译安装
@@ -21,17 +21,21 @@
 	 brew install emacs --cocoa
 	 #+END_SRC
 
-	 如果想命令行使用可以给.bash_profile或者.zshrc添加
+* configuration
+** command line launch
+ 	 如果想命令行使用可以给.bash_profile或者.zshrc添加
 	 #+BEGIN_SRC bash
 	 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 	 #+END_SRC
-	 或者添加文件/usr/local/bin/emacs
+	 或者添加文件/usr/bin/emacs(这种比较好，很多第三方包会假设emacs路径在/usr/bin/
+	 下面，比如magit.所以加个alias，terminal知道emacs不知道。有时候会找不到emacs执
+	 行文件。
 	 #+BEGIN_SRC bash
 	 #!/bin/bash
    /Applications/Emacs.app/Contents/MacOS/Emacs -nw
 	 #+END_SRC
-* configuration
 ** daemon
+	 
 * org
   因为主要使用org作为笔记工具,所以对org项目做了特别的配置,配置了自己常用的tag,以
   及org的默认模板等等.
