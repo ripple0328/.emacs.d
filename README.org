@@ -35,7 +35,6 @@
    /Applications/Emacs.app/Contents/MacOS/Emacs -nw
 	 #+END_SRC
 ** daemon
-	 
 * org
   因为主要使用org作为笔记工具,所以对org项目做了特别的配置,配置了自己常用的tag,以
   及org的默认模板等等.
