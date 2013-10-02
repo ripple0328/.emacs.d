@@ -14,7 +14,7 @@
 ;; TODO not compatible
 (defvar emacs-dir "~/.emacs.d/"
 	"The root dir of emacs configuration")
-(defvar ripple-dir (concat emacs-dir "ripple/")
+(defvar ripple-dir (concat emacs-dir "configuration/")
 	"Customerized configration dir")
 (add-to-list 'load-path ripple-dir)
 
