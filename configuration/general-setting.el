@@ -34,7 +34,6 @@
 (setq default-major-mode 'org-mode)
 (setq inhibit-startup-message t)
 
-(electric-indent-mode t)
 (auto-fill-mode t)
 (setq default-fill-column 80)
 (column-number-mode t)

@@ -36,14 +36,14 @@
  (filename . "~/.emacs.d/el-get-init-files/")
  (front-context-string . "init-auto-comple")
  (rear-context-string . "636  7 23 13:19 ")
- (position . 245))
+ (position . 246))
 ("init"
  (filename . "~/.emacs.d/init.el")
  (front-context-string . "init-auto-comple")
  (rear-context-string . "636  1  6 16:08 ")
  (position . 245))
 ("package"
- (filename . "~/.emacs.d/configuration/package-setting.el")
+ (filename . "~/.emacs.d/ripple/package-setting.el")
  (front-context-string . ";;--------------")
  (rear-context-string)
  (position . 1))

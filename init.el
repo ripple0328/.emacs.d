@@ -4,7 +4,7 @@
 ;; Filename:               init.el                                            ;;
 ;; Copyright (c) 2012:     qingbo zhang																				;;
 ;; Version:                1.1																								;;
-;; Author:                 qingbo<ripple0328@gmail.com>  											;;
+;; Author:                 qingbo<ripple0328@rubyer.info>											;;
 ;; Created:                July 6 2012																				;;
 ;; Updated:                August 4 2013																			;;
 ;; Description:            此文件用于emacs的初始化配置                        ;;
@@ -14,7 +14,7 @@
 ;; TODO not compatible
 (defvar emacs-dir "~/.emacs.d/"
 	"The root dir of emacs configuration")
-(defvar ripple-dir (concat emacs-dir "configuration/")
+(defvar ripple-dir (concat emacs-dir "ripple/")
 	"Customerized configration dir")
 (add-to-list 'load-path ripple-dir)
 
@@ -38,3 +38,7 @@
 		(require 'term-setting))
 
 (print-log "Emacs is ready to use")
+(put 'dired-find-alternate-file 'disabled nil)
+(put 'set-goal-column 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)

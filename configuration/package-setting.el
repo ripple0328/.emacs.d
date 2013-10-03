@@ -53,8 +53,6 @@
 			   coffee-mode
 			   dired+
 			   haml-mode
-				 web-mode
-         tidy
 			   flymake
 			   js2-mode
 			   json
@@ -114,5 +112,5 @@
 (mapcar 'el-get-source-name el-get-sources)))
 (el-get-cleanup ripple-packages)
 (el-get 'sync ripple-packages)
-(provide 'package-setting)
 
+(provide 'package-setting)
