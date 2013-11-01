@@ -11,13 +11,17 @@
     (selection-face . ac-yasnippet-selection-face))
   "Source for Yasnippet.")
 
+
+(add-to-list 'ac-modes 'enh-ruby-mode)
+(add-to-list 'ac-modes 'web-mode)
 ; setting ac backend
 (setq-default ac-sources '(ac-source-words-in-same-mode-buffers
                            ac-source-abbrev
                            ac-source-dictionary
 													 ac-source-filename
 													 ac-source-css-property
-                           ac-source-yasnippet))
+                           ac-source-yasnippet
+													 ac-source-robe))
 ;(setq ac-auto-start 2) ; less then 8, otherwise use yasnippet.
 (setq ac-use-quick-help t)
 (setq ac-auto-show-menu t)

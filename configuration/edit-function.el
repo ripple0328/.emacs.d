@@ -36,4 +36,15 @@
 
 (global-set-key (kbd "C-c p") 'move-text-up)
 (global-set-key (kbd "C-c n") 'move-text-down)
+
+;; check english spell
+(require 'flyspell)
+(setq flyspell-issue-message-flg nil)
+(add-hook 'enh-ruby-mode-hook
+          (lambda () (flyspell-prog-mode)))
+
+(add-hook 'web-mode-hook
+          (lambda () (flyspell-prog-mode)))
+;; flyspell mode breaks auto-complete mode without this.
+(ac-flyspell-workaround)
 (provide 'edit-function)

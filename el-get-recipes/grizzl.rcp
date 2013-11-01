@@ -1,0 +1,4 @@
+(:name grizzl
+       :description "A fuzzy-search utility for Emacs"
+       :type github
+       :pkgname "d11wtq/grizzl")

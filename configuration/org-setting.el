@@ -57,7 +57,7 @@
          ;; :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"~/.emacs.d/org-templates/css/stylesheet.css\" />"
          ;;在每一层的目录下面写了,不知道有好办法没有
          :author "Qingbo"
-         :email "ripple0328@rubyer.info"
+         :email "ripple0328@gmail.com"
          )
 
         

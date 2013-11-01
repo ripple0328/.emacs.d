@@ -16,3 +16,5 @@ notes/
 vendor/
 /.emacs-places
 /eshell/history
+/projectile-bookmarks.eld
+/projectile.cache

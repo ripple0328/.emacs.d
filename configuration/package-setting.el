@@ -54,9 +54,12 @@
 			   dired+
 			   haml-mode
 			   flymake
+				 flyspell-guess
 			   js2-mode
 			   json
+				 swank-js
 			   magit
+				 git-commit-mode
 			   package
 				 rinari
 			   rspec-mode
@@ -65,11 +68,19 @@
 				 ;; el-get
 			   ruby-electric
 			   ruby-mode
+				 enh-ruby-mode
 			   ruby-test
+				 ruby-tools
+				 robe-mode
+				 highlight-indentation
+				 dash
+				 rubocop
+				 simple-httpd
 				 textmate
 			   yasnippet
 			   switch-window
 			   weibo.emacs
+				 smartparens
 			   eproject
 			   etags-select
 			   etags-extension
@@ -108,6 +119,31 @@
 				 web-mode
 				 ace-jump-mode
 				 exec-path-from-shell
+				 adaptive-wrap
+				 wrap-region
+				 maxframe
+				 multi-term
+				 es-lib
+				 grizzl
+				 s
+				 project-explorer
+				 projectile
+				 pkg-info
+				 recentf-ext
+				 tabbar
+				 color-theme-sanityinc
+				 rainbow-mode
+				 rainbow-delimiters
+				 highlight
+				 idle-highlight-mode
+				 findr
+				 enclose
+				 drag-stuff
+				 calfw
+				 ac-js2
+				 ag
+				 popup
+				 multiple-cursors
 			   )
 (mapcar 'el-get-source-name el-get-sources)))
 (el-get-cleanup ripple-packages)

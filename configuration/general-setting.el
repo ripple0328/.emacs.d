@@ -41,8 +41,8 @@
 (setq auto-image-file-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(setq default-tab-width 2)
-(setq default-indent-tabs-mode nil) ; stop mixed tab and spaces
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil) ; stop mixed tab and spaces
 
 (ido-mode t)
 ;(nav)
@@ -76,5 +76,27 @@
 
 ;; fullscreen
 (setq ns-use-native-fullscreen nil)
+
+
+ ;; Navigate between windows using Alt-1, Alt-2, Shift-left, shift-up, shift-right
+(windmove-default-keybindings)
+
+;; Enable copy and pasting from clipboard
+ (setq x-select-enable-clipboard t)
+
+;; To get rid of Weird color escape sequences in Emacs.
+;; Instruct Emacs to use emacs term-info not system term info
+;; http://stackoverflow.com/questions/8918910/weird-character-zsh-in-emacs-terminal
+(setq system-uses-terminfo nil)
+
+
+(set-cursor-color "red")
+ 
+(setq default-frame-alist
+      '((cursor-color . "red")))
+
+(setq search-highlight t)
+(transient-mark-mode t)
+ 
 (provide 'general-setting)
 
