@@ -35,6 +35,28 @@
    /Applications/Emacs.app/Contents/MacOS/Emacs -nw
 	 #+END_SRC
 ** daemon
+*** emacsosx
+    如果装的是emacsosx
+    #+BEGIN_SRC bash
+    git clone https://github.com/ferlatte/emacs-daemon-osx.git
+    cd emacs-daemon-osx
+    cp org.gnu.emacs.plist ~/Library/LaunchAgents
+    launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist
+    make
+    rm -r /Applications/emacs-client.app
+    cp -r emacs-client.app /Applications
+    
+    #+END_SRC
+*** source
+    :PROPERTIES:
+    :END:
+    如果brew emacs 从源码装的
+
+    #+BEGIN_SRC bash
+     tell application "Terminal"
+     do shell script "/Applications/Emacs.app/Contents/MacOS/Emacs --daemon"
+    endtell
+    #+END_SRC
 * org
   因为主要使用org作为笔记工具,所以对org项目做了特别的配置,配置了自己常用的tag,以
   及org的默认模板等等.

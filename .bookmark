@@ -2,11 +2,21 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("ripple"
- (filename . "~/.emacs.d/ripple/")
+(("recipe"
+ (filename . "~/.emacs.d/el-get-recipes/")
+ (front-context-string . "ac-js2.rcp\n  -rw")
+ (rear-context-string . "78 Nov  1 23:15 ")
+ (position . 244))
+("package"
+ (filename . "~/.emacs.d/configuration/package-setting.el")
+ (front-context-string . ";---------------")
+ (rear-context-string)
+ (position . 1))
+("configuration"
+ (filename . "~/.emacs.d/configuration/")
  (front-context-string . "backup-file-sett")
- (rear-context-string . "383  8  4 01:55 ")
- (position . 235))
+ (rear-context-string . "328  9 22 21:49 ")
+ (position . 241))
 ("emacs"
  (filename . "~/.emacs.d/")
  (front-context-string . ".bookmark\n  drwx")
@@ -35,18 +45,13 @@
 ("el-get-init-files"
  (filename . "~/.emacs.d/el-get-init-files/")
  (front-context-string . "init-auto-comple")
- (rear-context-string . "636  7 23 13:19 ")
- (position . 246))
+ (rear-context-string . "39 Nov  2 01:10 ")
+ (position . 248))
 ("init"
  (filename . "~/.emacs.d/init.el")
  (front-context-string . "init-auto-comple")
  (rear-context-string . "636  1  6 16:08 ")
  (position . 245))
-("package"
- (filename . "~/.emacs.d/ripple/package-setting.el")
- (front-context-string . ";;--------------")
- (rear-context-string)
- (position . 1))
 ("r"
  (filename . "~/Documents/rails/")
  (front-context-string . "devise-experimen")

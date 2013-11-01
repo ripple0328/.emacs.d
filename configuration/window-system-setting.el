@@ -5,7 +5,7 @@
 (print-log " we are in window system")
 
 (menu-bar-mode t)
-font setting
+;; font setting
 (set-default-font "Inconsolata for Power-14")
 (set-face-attribute 'default nil :font "Inconsolata for Power") 
 

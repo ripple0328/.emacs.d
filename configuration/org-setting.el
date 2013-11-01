@@ -165,6 +165,5 @@
 
 ;; automatically adjust footnotes after insert/delete.
 (setq org-footnote-auto-adjust t)
-
 (provide 'org-setting)
 

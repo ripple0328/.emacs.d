@@ -18,3 +18,9 @@ vendor/
 /eshell/history
 /projectile-bookmarks.eld
 /projectile.cache
+/el-get-init-files/init-powerline.el
+/el-get-init-files/init-rainbow-delimiters.el
+/el-get-init-files/init-rainbow-mode.el
+/el-get-recipes/color-theme-sanityinc-tomorrow.rcp
+/el-get-recipes/color-theme-soft-morning.rcp
+/el-get-recipes/powerline.rcp

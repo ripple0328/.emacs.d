@@ -6,8 +6,11 @@
 (print-log "setting elpa repository")
 
 (require 'package)
-(add-to-list 'package-archives	 '("tromey" . "http://tromey.com/elpa/") t)
-(add-to-list 'package-archives	 '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("tromey" . "http://tromey.com/elpa/")
+                         ))
 (package-initialize)
 
 
@@ -113,7 +116,7 @@
 			   ;; emacs-w3m
 			   scss-mode
 			   color-theme
-			   ;; powerline
+			   powerline
 			   dash-at-point
 				 skewer-mode
 				 web-mode
@@ -131,7 +134,6 @@
 				 pkg-info
 				 recentf-ext
 				 tabbar
-				 color-theme-sanityinc
 				 rainbow-mode
 				 rainbow-delimiters
 				 highlight
@@ -144,6 +146,11 @@
 				 ag
 				 popup
 				 multiple-cursors
+         google-maps
+         google-contacts
+         color-theme-sanityinc-tomorrow
+         color-theme-soft-morning
+         color-theme-solarized
 			   )
 (mapcar 'el-get-source-name el-get-sources)))
 (el-get-cleanup ripple-packages)
