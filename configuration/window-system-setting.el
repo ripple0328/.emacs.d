@@ -13,4 +13,7 @@
 ;; 只有这个在daemon模式下面可以设置x的字体
 (add-to-list 'default-frame-alist '(font . "Inconsolata for Power-14"))
 
+
+(toggle-frame-fullscreen);
+
 (provide 'window-system-setting)
