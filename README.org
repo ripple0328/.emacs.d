@@ -53,7 +53,7 @@
     如果brew emacs 从源码装的
 
     #+BEGIN_SRC bash
-     tell application "Terminal"
+    tell application "Terminal"
      do shell script "/Applications/Emacs.app/Contents/MacOS/Emacs --daemon"
     endtell
     #+END_SRC
