@@ -1,3 +1,4 @@
+
 ;;------------------------------------------------------------------------------
 ;; theme setting
 ;;------------------------------------------------------------------------------
@@ -18,5 +19,17 @@
           (modify-frame-parameters frame '((menu-bar-lines . 0)))))
     (menu-bar-mode -1)))
 (add-hook 'after-make-frame-functions 'prelude-frame-config)
+
+(if window-system
+ 		(color-theme-subtle-hacker)
+    ;; (color-theme-solarized-dark)
+	;; (color-theme-dark-green)
+;; (color-theme-lethe)
+
+	;; (color-theme-lawrence)
+	;; (color-theme-hober)
+	;; (color-theme-arjen)
+)
+
 
 (provide 'theme-setting)
