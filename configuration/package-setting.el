@@ -57,7 +57,6 @@
 			   dired+
 			   haml-mode
 			   flymake
-				 flyspell-guess
 			   js2-mode
 			   json
 				 swank-js
@@ -67,12 +66,12 @@
 				 rinari
 			   rspec-mode
 			   ruby-block
+         inf-ruby
 			   ruby-compilation
-				 ;; el-get
 			   ruby-electric
 			   ruby-mode
 				 enh-ruby-mode
-			   ruby-test
+			   ruby-test-mode
 				 ruby-tools
 				 robe-mode
 				 highlight-indentation
@@ -86,14 +85,14 @@
 				 smartparens
 			   eproject
 			   etags-select
-			   etags-extension
+			   ;; etags-extension
 			   slime
 			   ctags
 			   rcodetools
 			   anything
-			   anything-etags
+			   ;; anything-etags
 			   emacschrome
-			   emacsserver 
+			   emacs-http-server 
 			   auto-complete
 			   auto-complete-css
 			   auto-complete-emacs-lisp
@@ -112,8 +111,7 @@
 			   flymake-haml
 			   flymake-sass
 			   flymake-coffee
-			   inf-ruby
-			   ;; emacs-w3m
+			   emacs-w3m
 			   scss-mode
 			   color-theme
 			   powerline
@@ -136,7 +134,7 @@
 				 tabbar
 				 rainbow-mode
 				 rainbow-delimiters
-				 highlight
+				 highlight-indentation
 				 idle-highlight-mode
 				 findr
 				 enclose
@@ -148,8 +146,6 @@
 				 multiple-cursors
          google-maps
          google-contacts
-         color-theme-sanityinc-tomorrow
-         color-theme-soft-morning
          color-theme-solarized
 			   )
 (mapcar 'el-get-source-name el-get-sources)))
