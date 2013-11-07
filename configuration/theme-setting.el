@@ -21,8 +21,8 @@
 (add-hook 'after-make-frame-functions 'prelude-frame-config)
 
 (if window-system
- 		(color-theme-subtle-hacker)
-    ;; (color-theme-solarized-dark)
+ 		;; (color-theme-subtle-hacker)
+    (color-theme-solarized-dark)
 	;; (color-theme-dark-green)
 ;; (color-theme-lethe)
 

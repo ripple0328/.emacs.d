@@ -48,8 +48,6 @@
     
     #+END_SRC
 *** source
-    :PROPERTIES:
-    :END:
     如果brew emacs 从源码装的
 
     #+BEGIN_SRC bash
@@ -57,6 +55,105 @@
      do shell script "/Applications/Emacs.app/Contents/MacOS/Emacs --daemon"
     endtell
     #+END_SRC
+
+    把这个加到用户的login item里面就可以了
+* packages
+   -  babel
+   -  coffee-mode
+   -  dired+
+   -  haml-mode
+   -  flymake
+   -  js2-mode
+   -  json
+   -  swank-js
+   -  magit
+   -  git-commit-mode
+   -  package
+   -  rinari
+   -  rspec-mode
+   -  ruby-block
+   -  inf-ruby
+   -  ruby-compilation
+   -  ruby-electric
+   -  ruby-mode
+   -  enh-ruby-mode
+   -  ruby-test-mode
+   -  ruby-tools
+   -  robe-mode
+   -  highlight-indentation
+   -  dash
+   -  rubocop
+   -  simple-httpd
+   -  textmate
+   -  yasnippet
+   -  switch-window
+   -  weibo.emacs
+   -  smartparens
+   -  eproject
+   -  etags-select
+   -  ;; etags-extension
+   -  slime
+   -  ctags
+   -  rcodetools
+   -  anything
+   -  ;; anything-etags
+   -  emacschrome
+   -  emacs-http-server 
+   -  auto-complete
+   -  auto-complete-css
+   -  auto-complete-emacs-lisp
+   -  auto-complete-extension
+   -  auto-complete-etags
+   -  auto-complete-clang
+   -  auto-complete-yasnippet
+   -  rails-el 
+   -  yari
+   -  zencoding-mode
+   -  gnuplot-mode
+   -  ;; magithub
+   -  nav
+   -  ;; twittering-mode
+   -  rvm
+   -  flymake-haml
+   -  flymake-sass
+   -  flymake-coffee
+   -  emacs-w3m
+   -  scss-mode
+   -  color-theme
+   -  powerline
+   -  dash-at-point
+   -  skewer-mode
+   -  web-mode
+   -  ace-jump-mode
+   -  exec-path-from-shell
+   -  adaptive-wrap
+   -  wrap-region
+   -  maxframe
+   -  multi-term
+   -  es-lib
+   -  grizzl
+   -  s
+   -  project-explorer
+   -  projectile
+   -  pkg-info
+   -  recentf-ext
+   -  tabbar
+   -  rainbow-mode
+   -  rainbow-delimiters
+   -  highlight-indentation
+   -  idle-highlight-mode
+   -  findr
+   -  enclose
+   -  drag-stuff
+   -  calfw
+   -  ac-js2
+   -  ag
+   -  popup
+   -  multiple-cursors
+   -  google-maps
+   -  google-contacts
+   -  color-theme-solarized
+
 * org
   因为主要使用org作为笔记工具,所以对org项目做了特别的配置,配置了自己常用的tag,以
   及org的默认模板等等.
