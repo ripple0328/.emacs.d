@@ -57,6 +57,12 @@
     #+END_SRC
 
     把这个加到用户的login item里面就可以了
+** key binding
+   对于mac用户的建议： 
+   System preferences-> keyboard -> keyboard tab -> modifier keys(right buttom corner)
+
+   change Caps Lock Key ----> ^ Control
+
 * packages
   一些我常用的包，以后抽空会给每个介绍一下用途
    -  babel
