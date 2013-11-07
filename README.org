@@ -1,42 +1,57 @@
 
-* 概述
-  这是我的emacs配置文件. 跟以前最大的区别是使用了el-get作为包管理系统
+* general
+  This is my emacs configuration files, the most different with previous version
+  is now I use el-get as package manager. 
+  
+* package manage
+  Since emacs version 24, emacs has buildin *elpa* as it's default package
+  system. But official repo can not contain every package either every new
+  versions of a package. Not every author like to contribute his package to the
+  official repo. most of them just put it on github or even his own blog.
 
-* 包管理
-  emacs从24开始内置了elpa作为默认包管理系统,但是elpa的官方仓库包含了比较少和老旧
-  的包,所以在这里增加了elpa的包仓库地址. el-get仍然能够使用elpa作为一种包来源,但
-  是它还支持git和emacswiki之类的其他来源,所以包源相对丰富,el-ge只需要对自己的包列
-  表进行配置和管理就可以了,包本身不再需要自己维护,升级管理和版本控制都比较方便.并
-  且支持每个包的自定义初始化内容等.功能相对也丰富而且在活跃开发中,是目前我知道比
-  较理想的emacs包管理工具了.
+  *el-get* support almost every kind a package source, including elpa, wiki,
+  github, ftp and so on.  So el-get has more abundant package resouces.
+
+  now you only need to configure and manage your package recipe instead of whole
+  package. there is already most recipe in hand contributed by others. based on
+  package recipes, maintainance and update became more easier.
+
+  el-get also support customized initial script.
+
+  most important, el-get is vert  activity by now. and it is the most powerfull
+  packge manager as I know.
 * install(osx)
-	 mac自带的emacs还停留在22.1.1,即使你系统已经10.9. 老且难用，还不如不带。建议mac
-	 用户安装[[http://emacsformacosx.com/][emacs for osx]]：
-	 1. 新
+  emacs that comes with osx is still 22.1.1, even you have upgrade your system to 10.9.
+  it pretty old and hard to use.  why not apple just do not pre-bundled such emacs.
+
+  for mac user those who don't want to have heavy configuration, my suggestion
+  is [[http://emacsformacosx.com/][emacs for osx]]：
+	 1. newer
 	 2. cocoa not X11
 	 3. retina 
 
-	 也可以用brew编译安装
+   for mac user those want to toss of emacs, just brew install it by source code.
 	 #+BEGIN_SRC bash
 	 brew install emacs --cocoa
 	 #+END_SRC
 
 * configuration
 ** command line launch
- 	 如果想命令行使用可以给.bash_profile或者.zshrc添加
+   if you want to lanuch emacs from command line, add such command alias to your .bash_profile or .zshrc
 	 #+BEGIN_SRC bash
 	 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 	 #+END_SRC
-	 或者添加文件/usr/bin/emacs(这种比较好，很多第三方包会假设emacs路径在/usr/bin/
-	 下面，比如magit.所以加个alias，terminal知道emacs不知道。有时候会找不到emacs执
-	 行文件。
-	 #+BEGIN_SRC bash
+   or add a script file */usr/bin/emacs* this is better I think, cas many third
+	 party package would assume the emacs path to be '/usr/bin/'， for example
+	 magit. so only terminal know how to find executable emacs but not emacs
+	 itself if you only add a alias.
+   	 #+BEGIN_SRC bash
 	 #!/bin/bash
    /Applications/Emacs.app/Contents/MacOS/Emacs -nw
 	 #+END_SRC
 ** daemon
 *** emacsosx
-    如果装的是emacsosx
+    for those using emacsosxna
     #+BEGIN_SRC bash
     git clone https://github.com/ferlatte/emacs-daemon-osx.git
     cd emacs-daemon-osx
@@ -48,23 +63,23 @@
     
     #+END_SRC
 *** source
-    如果brew emacs 从源码装的
-
+    for those install from source by brew
     #+BEGIN_SRC bash
     tell application "Terminal"
      do shell script "/Applications/Emacs.app/Contents/MacOS/Emacs --daemon"
     endtell
     #+END_SRC
 
-    把这个加到用户的login item里面就可以了
+    add this to users login tem
 ** key binding
-   对于mac用户的建议： 
+   advice for mac users:
    System preferences-> keyboard -> keyboard tab -> modifier keys(right buttom corner)
 
    change Caps Lock Key ----> ^ Control
 
 * packages
-  一些我常用的包，以后抽空会给每个介绍一下用途
+  packages I use frequenctly. I will eventually add a description to the usage
+  of every packge if have time.
    -  babel
    -  coffee-mode
    -  dired+
@@ -162,13 +177,8 @@
    -  color-theme-solarized
 
 * org
-  因为主要使用org作为笔记工具,所以对org项目做了特别的配置,配置了自己常用的tag,以
-  及org的默认模板等等.
-
-* rails
-  因为最近在学习ruby on rails开发,所以ruby和rails以及相关的coffee, scss等包会多一
-  些.
-  
+  I mainly use org as a note tools, so have many specticular configuration to
+  org, such as customize tags, default templates...
 
   
   
