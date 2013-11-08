@@ -106,7 +106,20 @@
    -  robe-mode
    -  highlight-indentation
    -  dash
-   -  rubocop
+   -  [[https://github.com/bbatsov/rubocop-emacs][rubocop]]
+      A simple Emacs interface for [[https://github.com/bbatsov/rubocop][RuboCop]] which is a Ruby static code analyzer.
+      
+#+NAME: tab: rubocop usage      
+| Command                               | Description                                                                        | RuboCop mode binding |
+|---------------------------------------+------------------------------------------------------------------------------------+----------------------|
+| M-x  rubocop-check-project            | Runs    RuboCop      on  the         entire      project                           | C-c  C-r  p          |
+| M-x  rubocop-check-directory          | Prompts from         a   directory   on          which    to     run  RuboCop      | C-c  C-r  d          |
+| M-x  rubocop-check-current-file       | Runs    RuboCop      on  the         currently   visited  file                     | C-c  C-r  f          |
+| M-x  rubocop-autocorrect-project      | Runs    auto-correct on  the         entire      project                           | C-c  C-r  P          |
+| M-x  rubocop-autocorrect-directory    | Prompts for          a   directory   on          which    to     run  auto-correct | C-c  C-r  D          |
+| M-x  rubocop-autocorrect-current-file | Runs    auto-correct on  the         currently   visited  file.                    | C-c  C-r  F          | 
+
+
    -  simple-httpd
    -  textmate
    -  yasnippet
