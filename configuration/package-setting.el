@@ -59,7 +59,7 @@
 			   flymake
 			   js2-mode
 			   json
-				 swank-js
+				 ;; swank-js
 			   magit
 				 git-commit-mode
 			   package
@@ -122,6 +122,7 @@
 				 exec-path-from-shell
 				 adaptive-wrap
 				 wrap-region
+         expand-region
 				 maxframe
 				 multi-term
 				 es-lib

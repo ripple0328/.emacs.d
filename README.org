@@ -82,114 +82,186 @@
 * packages
   packages I use frequenctly. I will eventually add a description to the usage
   of every packge if have time.
-   -  babel
-   -  coffee-mode
-   -  dired+
-   -  haml-mode
-   -  flymake
-   -  js2-mode
-   -  json
-   -  swank-js
-   -  magit
-   -  git-commit-mode
-   -  package
-   -  rinari
-   -  rspec-mode
-   -  ruby-block
-   -  inf-ruby
-   -  ruby-compilation
-   -  ruby-electric
-   -  ruby-mode
-   -  enh-ruby-mode
-   -  ruby-test-mode
-   -  ruby-tools
-   -  robe-mode
-   -  highlight-indentation
+
+  with * prefix is package not used currently
+   
+   - babel
+   - coffee-mode
+   - dired+
+   - haml-mode
+   - flymake
+   - js2-mode
+   - json
+   - magit
+   - git-commit-mode
+   - package
+   - rinari
+   - rspec-mode
+   - ruby-block
+   - inf-ruby
+   - ruby-compilation
+   - ruby-electric
+   - ruby-mode
+   - enh-ruby-mode
+   - ruby-test-mode
+   - ruby-tools
+   - robe-mode
+   - highlight-indentation
+      
+     Did you use sublime before, this package provide the same thing like sublime guideline indentation
+      
+     * highlight-indentation-mode displays guidelines indentation (space indentation only).
+     * highlight-indentation-current-column-mode displays guidelines for the current-point indentation (space indentation only).
+    
+     color configuration 
+     
+     * (set-face-background 'highlight-indentation-face "#e3e3d3")
+     * (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+
    -  dash
+
+      A modern list api for Emacs. No 'cl required
    -  [[https://github.com/bbatsov/rubocop-emacs][rubocop]]
+      
       A simple Emacs interface for [[https://github.com/bbatsov/rubocop][RuboCop]] which is a Ruby static code analyzer.
       
 #+NAME: tab: rubocop usage      
-| Command                               | Description                                                                        | RuboCop mode binding |
-|---------------------------------------+------------------------------------------------------------------------------------+----------------------|
-| M-x  rubocop-check-project            | Runs    RuboCop      on  the         entire      project                           | C-c  C-r  p          |
-| M-x  rubocop-check-directory          | Prompts from         a   directory   on          which    to     run  RuboCop      | C-c  C-r  d          |
-| M-x  rubocop-check-current-file       | Runs    RuboCop      on  the         currently   visited  file                     | C-c  C-r  f          |
-| M-x  rubocop-autocorrect-project      | Runs    auto-correct on  the         entire      project                           | C-c  C-r  P          |
-| M-x  rubocop-autocorrect-directory    | Prompts for          a   directory   on          which    to     run  auto-correct | C-c  C-r  D          |
-| M-x  rubocop-autocorrect-current-file | Runs    auto-correct on  the         currently   visited  file.                    | C-c  C-r  F          | 
+| Command                              | Description                                                     | RuboCop mode binding |
+|--------------------------------------+-----------------------------------------------------------------+----------------------|
+| M-x rubocop-check-project            | Runs RuboCop on the entire project                              | C-c  C-r  p          |
+| M-x rubocop-check-directory          | Prompts from a directory on which to run  RuboCop               | C-c  C-r  d          |
+| M-x rubocop-check-current-file       | Runs    RuboCop      on  the         currently   visited  file  | C-c  C-r  f          |
+| M-x rubocop-autocorrect-project      | Runs    auto-correct on  the         entire      project        | C-c  C-r  P          |
+| M-x rubocop-autocorrect-directory    | Prompts for a directory on which to run auto-correct            | C-c  C-r  D          |
+| M-x rubocop-autocorrect-current-file | Runs    auto-correct on  the         currently   visited  file. | C-c  C-r  F          |
+   - simple-httpd
+   - textmate
+   - yasnippet
+   - switch-window
+   - weibo.emacs
+   - smartparens
+   - eproject
+   - etags-select
+   - ;; etags-extension
+   - slime
+   - ctags
+   - rcodetools
+   - anything
+   - ;; anything-etags
+   - emacschrome
+   - emacs-http-server 
+   - auto-complete
+   - auto-complete-css
+   - auto-complete-emacs-lisp
+   - auto-complete-extension
+   - auto-complete-etags
+   - auto-complete-clang
+   - auto-complete-yasnippet
+   - rails-el 
+   - yari
+   - zencoding-mode
+   - gnuplot-mode
+   - ;; magithub
+   - nav
+   - ;; twittering-mode
+   - rvm
+   - flymake-haml
+   - flymake-sass
+   - flymake-coffee
+   - emacs-w3m
+   - scss-mode
+   - color-theme
+   - powerline
+     
+     powerline theme for emacs modeline
+     
+   - dash-at-point
 
+     dash integrate for emacs to query program language api
+     keybinding - C-c d
 
-   -  simple-httpd
-   -  textmate
-   -  yasnippet
-   -  switch-window
-   -  weibo.emacs
-   -  smartparens
-   -  eproject
-   -  etags-select
-   -  ;; etags-extension
-   -  slime
-   -  ctags
-   -  rcodetools
-   -  anything
-   -  ;; anything-etags
-   -  emacschrome
-   -  emacs-http-server 
-   -  auto-complete
-   -  auto-complete-css
-   -  auto-complete-emacs-lisp
-   -  auto-complete-extension
-   -  auto-complete-etags
-   -  auto-complete-clang
-   -  auto-complete-yasnippet
-   -  rails-el 
-   -  yari
-   -  zencoding-mode
-   -  gnuplot-mode
-   -  ;; magithub
-   -  nav
-   -  ;; twittering-mode
-   -  rvm
-   -  flymake-haml
-   -  flymake-sass
-   -  flymake-coffee
-   -  emacs-w3m
-   -  scss-mode
-   -  color-theme
-   -  powerline
-   -  dash-at-point
-   -  skewer-mode
-   -  web-mode
-   -  ace-jump-mode
-   -  exec-path-from-shell
-   -  adaptive-wrap
-   -  wrap-region
-   -  maxframe
-   -  multi-term
-   -  es-lib
-   -  grizzl
-   -  s
-   -  project-explorer
-   -  projectile
-   -  pkg-info
-   -  recentf-ext
-   -  tabbar
-   -  rainbow-mode
-   -  rainbow-delimiters
-   -  highlight-indentation
-   -  idle-highlight-mode
-   -  findr
-   -  enclose
-   -  drag-stuff
-   -  calfw
-   -  ac-js2
-   -  ag
-   -  popup
-   -  multiple-cursors
-   -  google-maps
-   -  google-contacts
-   -  color-theme-solarized
+   - [[https://github.com/skeeto/skewer-mode][skewer-mode]] 
+      
+     live web development with Emacs
+     * start
+       - M-x run-skewer to attach a browser to Emacs
+       - From a js2-mode buffer with skewer-mode minor mode enabled, send forms to the browser to evaluate
+
+     * js evaluating expressions
+       - C-x C-e: Evaluate the form before the point and display the result in
+         the minibuffer. If given a prefix argument, insert the result into the
+         current buffer.
+       - C-M-x: Evaluate the top-level form around the point.
+       - C-c C-k: Load the current buffer.
+       - C-c C-z: Select the REPL buffer.
+     * css 
+       - C-x C-e: Load the declaration at the point.
+       - C-M-x: Load the entire rule around the point.
+       - C-c C-k: Load the current buffer as a stylesheet.
+     * html
+       - C-M-x: Load the HTML tag immediately around the point.
+
+   - web-mode
+   - ace-jump-mode
+   - exec-path-from-shell
+   - adaptive-wrap
+   - [[https://github.com/rejeep/wrap-region][wrap-region]]
+     
+     Wrap Region is a minor mode for Emacs that wraps a region with
+     punctuations.. For "tagged" markup modes, such as HTML and XML, it wraps
+     with tags.
+   - [[https://github.com/magnars/expand-region.el][expand-region]]
+     
+     Expand region increases the selected region by semantic units. 
+     (global-set-key (kbd "C-=") 'er/expand-region)
+     
+   - * maxframe
+     
+     instead of buildin toogle-frame-fullscreen
+   - multi-term
+   - es-lib
+   - grizzl
+   - s
+   - project-explorer
+   - projectile
+   - pkg-info
+   - recentf-ext
+   - tabbar
+   - rainbow-mode
+     Colorize color names in buffers
+     
+   - rainbow-delimitewrs
+     
+      highlights parentheses, brackets, and braces according to their
+     depth. Each successive level is highlighted in a different color.
+   - highlight-indentation
+   - idle-highlight-mode
+     
+     buildin highlight symbol C-x w . , M-s h .
+     idle-highlight-mode sets an idle timer that highlights
+     all occurences in the buffer of the word under the point.
+   - findr
+   - enclose
+   - drag-stuff
+   - calfw
+   - [[https://github.com/ScottyB/ac-js2a][ac-js2]] 
+      
+     context sensitive auto-completion for Javascript in Emacs using js2-mode's parser and Skewer-mode
+      
+     navigation: placing the cursor on foo, bar or baz and executing
+     ac-js2-jump-to-definition or M-. will take you straight to their
+     respective definitions. Executing M-, will jump you back to where you
+     were.
+      
+     ac-js2-expand-function that will expand a function's parameters bound to
+     C-c C-c. Expansion will only work if the cursor is after the function.
+
+   - ag
+   - popup
+   - multiple-cursors
+   - google-maps
+   - google-contacts
+   - color-theme-solarized
 
 * org
   I mainly use org as a note tools, so have many specticular configuration to

@@ -1,0 +1,13 @@
+(:name dash-functional
+       :description " Collection of useful combinators for Emacs Lisp"
+       :type elpa
+       :depends dash)
+
+
+
+
+
+
+
+
+
