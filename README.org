@@ -223,7 +223,46 @@
    - grizzl
    - s
    - project-explorer
-   - projectile
+
+   - flx
+     
+     Fuzzy matching for Emacs ... a la Sublime Text.
+    
+   - projectile 
+     
+     Projectile is a project interaction library for Emacs. Its goal
+     is to provide a nice set of features operating on a project level without
+     introducing external dependencies
+     
+      C-c p f (command-p) projectile-find-file 
+      C-c p s (command-b) projectile-switch-project
+      
+      complete keybinding
+      
+#+NAME: tab:  Keybinding	Description
+| key binding | description                                                                                             |
+|-------------+---------------------------------------------------------------------------------------------------------|
+| C-c p f,    | Display a list of all files in the project. With a prefix argument it will clear the cache first.       |
+| C-c p d,    | Display a list of all directories in the project. With a prefix argument it will clear the cache first. |
+| C-c p T,    | Display a list of all test files(specs, features, etc) in the project.                                  |
+| C-c p l,    | Display a list of all files in a directory (that's not necessarily a project)                           |
+| C-c p g,    | Run grep on the files in the project.                                                                   |
+| C-c p b,    | Display a list of all project buffers currently open.                                                   |
+| C-c p o,    | Runs multi-occur on all project buffers currently open.                                                 |
+| C-c p r,    | Runs interactive query-replace on all files in the projects.                                            |
+| C-c p i,    | Invalidates the project cache (if existing).                                                            |
+| C-c p R,    | Regenerates the projects TAGS file.                                                                     |
+| C-c p k,    | Kills all project buffers.                                                                              |
+| C-c p D,    | Opens the root of the project in dired.                                                                 |
+| C-c p e,    | Shows a list of recently visited project files.                                                         |
+| C-c p a,    | Runs ack on the project. Requires the presence of ack-and-a-half.                                       |
+| C-c p A,    | Runs ag on the project. Requires the presence of ag.el.                                                 |
+| C-c p c,    | Runs a standard compilation command for your type of project.                                           |
+| C-c p p,    | Runs a standard test command for your type of project.                                                  |
+| C-c p z,    | Adds the currently visited to the cache.                                                                |
+| C-c p s,    | Display a list of known projects you can switch to.                                                     |
+
+      
    - pkg-info
    - recentf-ext
    - tabbar

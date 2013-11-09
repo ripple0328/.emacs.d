@@ -126,9 +126,10 @@
 				 maxframe
 				 multi-term
 				 es-lib
-				 grizzl
 				 s
 				 project-explorer
+         grizzl
+         flx
 				 projectile
 				 pkg-info
 				 recentf-ext
