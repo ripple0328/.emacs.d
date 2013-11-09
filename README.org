@@ -79,6 +79,18 @@
 
    change Caps Lock Key ----> ^Control
 
+* basic keybinding
+  naming and custom keybingding without conflicts must be the hardest thing in
+  programming.
+
+  1. C-c w copy-work
+  2. C-c j copy-line ( this is definte not good, but God all meaning full keybinding is been occupied)
+  3. C-c o copy-paragraph
+  4. C-c u copy-string
+  5. s-n move-text-down
+  6. s-p move-text-up
+  
+  
 * packages
   packages I use frequenctly. I will eventually add a description to the usage
   of every packge if have time.
@@ -125,7 +137,6 @@
       
       A simple Emacs interface for [[https://github.com/bbatsov/rubocop][RuboCop]] which is a Ruby static code analyzer.
       
-#+NAME: tab: rubocop usage      
 | Command                              | Description                                                     | RuboCop mode binding |
 |--------------------------------------+-----------------------------------------------------------------+----------------------|
 | M-x rubocop-check-project            | Runs RuboCop on the entire project                              | C-c  C-r  p          |
@@ -239,7 +250,6 @@
       
       complete keybinding
       
-#+NAME: tab:  Keybinding	Description
 | key binding | description                                                                                             |
 |-------------+---------------------------------------------------------------------------------------------------------|
 | C-c p f,    | Display a list of all files in the project. With a prefix argument it will clear the cache first.       |
