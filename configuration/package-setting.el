@@ -39,7 +39,10 @@
 (setq el-get-sources
       '(
 	(:name flymake-ruby :after (progn
-				     (add-hook 'ruby-mode-hook 'flymake-ruby-load)))
+            (add-hook 'enh-ruby-mode-hook 'flymake-ruby-load)
+				     (add-hook 'ruby-mode-hook 'flymake-ruby-load)
+             
+             ))
 	(:name auto-complete-ruby :after  (progn
 					    ;; make sure rcodetools is
 					    ;; installed and available
@@ -57,6 +60,7 @@
 			   dired+
 			   haml-mode
 			   flymake
+         flycheck
 			   js2-mode
 			   json
 				 ;; swank-js

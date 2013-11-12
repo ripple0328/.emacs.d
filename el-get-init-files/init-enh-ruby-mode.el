@@ -1,0 +1,11 @@
+(add-hook 'enh-ruby-mode-hook '(lambda ()
+			     (setq ruby-deep-arglist t)
+			     (setq ruby-deep-indent-paren nil)
+			     (setq c-tab-always-indent nil)
+			     (require 'inf-ruby)
+			     (require 'ruby-compilation)
+			     ))
+
+(add-hook 'enh-ruby-mode-hook 'rubocop-mode)
+(add-hook 'enh-ruby-mode-hook 'flycheck-mode)
+(add-hook 'enh-ruby-mode-hook 'inf-ruby-minor-mode)

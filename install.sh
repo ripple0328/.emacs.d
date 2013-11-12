@@ -21,3 +21,7 @@ brew install --use-gcc fontforge
 msg "installing silver searcher ispell csv gpg and so on"
 brew tap epichub/homebrew-epicbrews 
 brew install the_silver_searcher ispell gpg cvs
+
+
+msg "install javascript synatic check jslint"
+brew install jslint

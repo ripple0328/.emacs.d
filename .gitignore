@@ -26,3 +26,4 @@ vendor/
 /el-get-recipes/powerline.rcp
 /tramp
 elpa/
+/flycheck-org-clock-save.el

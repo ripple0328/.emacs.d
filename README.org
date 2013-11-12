@@ -90,7 +90,6 @@
   5. s-n move-text-down
   6. s-p move-text-up
   
-  
 * packages
   packages I use frequenctly. I will eventually add a description to the usage
   of every packge if have time.
@@ -102,6 +101,12 @@
    - dired+
    - haml-mode
    - flymake
+
+   - [[http://flycheck.github.io/][flycheck]]
+     
+     Modern on-the-fly syntax checking
+     
+     
    - js2-mode
    - json
    - magit
@@ -110,7 +115,9 @@
    - rinari
    - rspec-mode
    - ruby-block
-   - inf-ruby
+   - [[https://github.com/nonsequitur/inf-ruby][inf-ruby]]
+     inf-ruby provides a REPL buffer connected to a Ruby subprocess.
+     
    - ruby-compilation
    - ruby-electric
    - ruby-mode
@@ -130,12 +137,12 @@
      * (set-face-background 'highlight-indentation-face "#e3e3d3")
      * (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
 
-   -  dash
+   - dash
 
-      A modern list api for Emacs. No 'cl required
-   -  [[https://github.com/bbatsov/rubocop-emacs][rubocop]]
+     A modern list api for Emacs. No 'cl required
+   - [[https://github.com/bbatsov/rubocop-emacs][rubocop]]
       
-      A simple Emacs interface for [[https://github.com/bbatsov/rubocop][RuboCop]] which is a Ruby static code analyzer.
+     A simple Emacs interface for [[https://github.com/bbatsov/rubocop][RuboCop]] which is a Ruby static code analyzer.
       
 | Command                              | Description                                                     | RuboCop mode binding |
 |--------------------------------------+-----------------------------------------------------------------+----------------------|
@@ -146,7 +153,25 @@
 | M-x rubocop-autocorrect-directory    | Prompts for a directory on which to run auto-correct            | C-c  C-r  D          |
 | M-x rubocop-autocorrect-current-file | Runs    auto-correct on  the         currently   visited  file. | C-c  C-r  F          |
    - simple-httpd
-   - textmate
+   - [[https://github.com/defunkt/textmate.el][textma]]te
+     
+     This minor mode exists to mimick TextMate's awesome
+     
+| ⌘T   | Go       to           File                                                            |
+| ⇧⌘T  | Go       to           Symbol                                                          |
+| ⌘L   | Go       to           Line                                                            |
+| ⇧⌘L  | Select   Line         (or         expand             Selection     to  select  lines) |
+| ⌘/   | Comment  Line         (or         Selection/Region)                                   |
+| ⌘]   | Shift    Right        (currently  indents            region)                          |
+| ⌘[   | Shift    Left         (not        yet                implemented)                     |
+| ⌥⌘]  | Align    Assignments                                                                  |
+| ⌥⌘[  | Indent   Line                                                                         |
+| ⌥↑   | Column   Up                                                                           |
+| ⌥↓   | Column   Down                                                                         |
+| ⌘RET | Insert   Newline      at          Line's             End                              |
+| ⌥⌘T  | Reset    File         Cache       (for               Go            to  File)          |
+     
+     
    - yasnippet
    - switch-window
    - weibo.emacs

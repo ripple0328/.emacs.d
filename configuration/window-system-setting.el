@@ -14,6 +14,6 @@
 (add-to-list 'default-frame-alist '(font . "Inconsolata for Power-14"))
 
 
-(toggle-frame-fullscreen);
+(toggle-frame-fullscreen)
 
 (provide 'window-system-setting)

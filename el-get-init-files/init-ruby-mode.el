@@ -18,6 +18,7 @@
 			     (require 'inf-ruby)
 			     (require 'ruby-compilation)
 			     ))
-
+(add-hook 'enh-ruby-mode-hook 'inf-ruby-minor-mode)
+(add-hook 'ruby-mode-hook 'rubocop-mode)
 (electric-pair-mode -1)
 ;; (getenv "GEM_PATH")											
