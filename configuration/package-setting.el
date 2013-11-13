@@ -63,7 +63,7 @@
          flycheck
 			   js2-mode
 			   json
-				 ;; swank-js
+				 ;; swank-js ;; repalaced with skewer-mode
 			   magit
 				 git-commit-mode
 			   package

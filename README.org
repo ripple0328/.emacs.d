@@ -240,7 +240,13 @@
    - auto-complete-yasnippet
    - rails-el 
    - yari
-   - zencoding-mode
+   - [[https://github.com/rooney/zencoding][zencoding-mode]]
+     
+     letting you write HTML based on CSS selectors.
+     
+     C-j: place point in a zencoding snippet and press C-j to expand it 
+     C-c C-j: you'll transform your snippet into the appropriate tag structure.
+   
    - gnuplot-mode
    - ;; magithub
    - nav

@@ -30,6 +30,7 @@
 (require 'tags-setting)
 (require 'edit-function)
 (require 'shell-configuration)
+(require 'hooks)
 (when (eq system-type 'darwin)
 	(require 'osx-setting))
 
