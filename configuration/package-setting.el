@@ -127,6 +127,7 @@
 				 adaptive-wrap
 				 wrap-region
          expand-region
+         multiple-cursors
 				 maxframe
 				 multi-term
 				 es-lib
@@ -159,3 +160,5 @@
 (el-get 'sync ripple-packages)
 
 (provide 'package-setting)
+
+;;; package-setting.el ends here

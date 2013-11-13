@@ -250,6 +250,17 @@
      
      Expand region increases the selected region by semantic units. 
      (global-set-key (kbd "C-=") 'er/expand-region)
+
+   - [[https://github.com/magnars/multiple-cursors.el][multiple-cursors]]
+     
+     [[http://emacsrocks.com/e13.html][video]]
+     
+     (Global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+     (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+     (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+     (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+     
+     To get out of multiple-cursors-mode, press <return> or C-g. 
      
    - * maxframe
      
