@@ -238,7 +238,26 @@
        - C-M-x: Load the HTML tag immediately around the point.
 
    - web-mode
-   - ace-jump-mode
+   - [[https://github.com/winterTTr/ace-jump-mode][ace-jump-mode]]
+
+     help you to move the cursor within Emacs,ou can move your cursor to ANY
+     position ( across window and frame ) in emacs by using only 3 times key
+     press.
+     
+     [[http://emacsrocks.com/e10.html][video]]
+     
+     
+    "C-c SPC" ==> ace-jump-word-mode
+    
+    enter first character of a word, select the highlighted key to move to it.
+    "C-u C-c SPC" ==> ace-jump-char-mode
+    
+    enter a character for query, select the highlighted key to move to it.
+    "C-u C-u C-c SPC" ==> ace-jump-line-mode
+    
+    each non-empty line will be marked, select the highlighted key to move to it.
+     
+     
    - exec-path-from-shell
    - adaptive-wrap
    - [[https://github.com/rejeep/wrap-region][wrap-region]]
@@ -255,7 +274,7 @@
      
      [[http://emacsrocks.com/e13.html][video]]
      
-     (Global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+     (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
      (global-set-key (kbd "C->") 'mc/mark-next-like-this)
      (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
      (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
