@@ -113,9 +113,21 @@
    - git-commit-mode
    - package
    - rinari
-   - rspec-mode
+   - [[https://github.com/pezra/rspec-mode][rspec-mode]]
+     
+    - toggle back and forth between a spec and its target (bound to `\C-c ,t`)
+    - verify the spec file associated with the current buffer (bound to `\C-c ,v`)
+    - verify the spec defined in the current buffer if it is a spec file (bound to `\C-c ,v`)
+    - verify the example defined at the point of the current buffer (bound to `\C-c ,s`)
+    - re-run the last verification process (bound to `\C-c ,r`)
+    - toggle the pendingness of the example at the point (bound to `\C-c ,d`)
+    - disable the example at the point by making it pending
+    - reenable the disabled example at the point
+    - run all specifications for project (bound to `\C-c ,a`)
+           
    - ruby-block
    - [[https://github.com/nonsequitur/inf-ruby][inf-ruby]]
+     
      inf-ruby provides a REPL buffer connected to a Ruby subprocess.
      
    - ruby-compilation
@@ -258,16 +270,16 @@
      [[http://emacsrocks.com/e10.html][video]]
      
      
-    "C-c SPC" ==> ace-jump-word-mode
-    
-    enter first character of a word, select the highlighted key to move to it.
-    "C-u C-c SPC" ==> ace-jump-char-mode
-    
-    enter a character for query, select the highlighted key to move to it.
-    "C-u C-u C-c SPC" ==> ace-jump-line-mode
-    
-    each non-empty line will be marked, select the highlighted key to move to it.
-     
+           "C-c SPC" ==> ace-jump-word-mode
+           
+           enter first character of a word, select the highlighted key to move to it.
+           "C-u C-c SPC" ==> ace-jump-char-mode
+           
+           enter a character for query, select the highlighted key to move to it.
+           "C-u C-u C-c SPC" ==> ace-jump-line-mode
+           
+           each non-empty line will be marked, select the highlighted key to move to it.
+            
      
    - exec-path-from-shell
    - adaptive-wrap
