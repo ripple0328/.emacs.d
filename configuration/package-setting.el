@@ -122,6 +122,7 @@
 			   dash-at-point
 				 skewer-mode
 				 web-mode
+         jump-char
 				 ace-jump-mode
 				 exec-path-from-shell
 				 adaptive-wrap

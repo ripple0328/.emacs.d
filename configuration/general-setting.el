@@ -64,6 +64,7 @@
 
 ;; kill line and the blank with a single C-k
 (setq kill-whole-line t)
+(pending-delete-mode t)
 
 ; auto-reload files that have been changed outside emacs
 (global-auto-revert-mode t)

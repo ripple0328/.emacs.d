@@ -90,7 +90,7 @@
   5. s-n move-text-down
   6. s-p move-text-up
   
-* packages
+* COMMENT packages
   packages I use frequenctly. I will eventually add a description to the usage
   of every packge if have time.
 
@@ -238,6 +238,17 @@
        - C-M-x: Load the HTML tag immediately around the point.
 
    - web-mode
+
+   - [[https://github.com/lewang/jump-char][jump-char]]
+     
+     Navigate by char
+     
+    M-m jump-char-farword
+     <char>	move to the next match in the current direction.
+    ;	next match forward (towards end of buffer)
+    ,	next match backward (towards beginning of buffer)
+    C-c C-c	invoke `ace-jump-mode’ if available
+     
    - [[https://github.com/winterTTr/ace-jump-mode][ace-jump-mode]]
 
      help you to move the cursor within Emacs,ou can move your cursor to ANY
@@ -269,6 +280,8 @@
      
      Expand region increases the selected region by semantic units. 
      (global-set-key (kbd "C-=") 'er/expand-region)
+     
+     (pending-delete-mode t)
 
    - [[https://github.com/magnars/multiple-cursors.el][multiple-cursors]]
      
