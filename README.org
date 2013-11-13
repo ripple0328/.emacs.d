@@ -34,6 +34,7 @@
    code. you can control many things through pass different compile flags.
 	 #+BEGIN_SRC bash
 	 brew install emacs --cocoa
+   brew linkapps
 	 #+END_SRC
 
 * configuration
@@ -65,13 +66,45 @@
     
     #+END_SRC
 *** source
-    for those install from source by brew
+    1. create a plist file in /~/Library/LaunchAgents/, for exapmle /org.gnu.emacs.daemon.plist/
+
+    #+BEGIN_SRC xml
+     <?xml version="1.0" encoding="UTF-8"?>
+       <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+       <plist version="1.0">
+         <dict>
+           <key>Label</key>
+           <string>gnu.emacs.daemon</string>
+           <key>ProgramArguments</key>
+           <array>
+             <string>/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs</string>
+             <string>--daemon</string>
+           </array>
+           <key>RunAtLoad</key>
+           <true/>
+           <key>ServiceDescription</key>
+           <string>Gnu Emacs Daemon</string>
+           <key>UserName</key>
+           <string>qingbo</string>
+         </dict>
+       </plist>
+    #+END_SRC
+
+    next time you login, os will automatic launch program descript in LaunchAgents.
+
+    making a shortcut in you .bash_profile
+    #+BEGIN_SRC bash
+    alias e='emacsclient -t' 
+    #+END_SRC
+
+    another method:
+    2. create a applescript. paste below
     #+BEGIN_SRC bash
     tell application "Terminal"
      do shell script "/Applications/Emacs.app/Contents/MacOS/Emacs --daemon"
     endtell
     #+END_SRC
-
+    
     add this to users login tem
 ** key binding
    advice for mac users:
