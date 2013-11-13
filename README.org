@@ -90,7 +90,7 @@
   5. s-n move-text-down
   6. s-p move-text-up
   
-* COMMENT packages
+* packages
   packages I use frequenctly. I will eventually add a description to the usage
   of every packge if have time.
 
