@@ -27,3 +27,4 @@ vendor/
 /tramp
 elpa/
 /flycheck-org-clock-save.el
+.#*

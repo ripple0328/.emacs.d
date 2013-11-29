@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("README.org"
+(("sd"
+ (filename . "~/Rea/sold-data-api/")
+ (front-context-string . ".git\n  -rw-r--r-")
+ (rear-context-string . "76 Oct 31 09:04 ")
+ (position . 238))
+("README.org"
  (filename . "~/.emacs.d/README.org")
  (front-context-string . "* general\n  This")
  (rear-context-string)
