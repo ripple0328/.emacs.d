@@ -2,4 +2,5 @@
        :description "An attempt at context sensitive auto-completion for Javascript"
        :type github
        :pkgname "ScottyB/ac-js2"
-       :load "ac-js2.el")
+       :depends (skewer-mode auto-complete)
+       :feature ac-js2)

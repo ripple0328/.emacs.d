@@ -101,8 +101,4 @@
 
 (add-hook 'web-mode-hook
           (lambda () (flyspell-prog-mode)))
-;; flyspell mode breaks auto-complete mode without this.
-
-
-(ac-flyspell-workaround)
 (provide 'edit-function)

@@ -29,13 +29,26 @@
 	 1. newer
 	 2. cocoa not X11
 	 3. retina 
+     
+  another way to install emacsosx for brew user
+  #+BEGIN_SRC bash
+  brew tap phinze/homebrew-cask && brew install brew-cask
+  brew cask install emacs
+  brew cask alfred link # let alfred to know apps install by cask
+  #+END_SRC
 
    for mac user those want to toss of emacs, just brew install it by source
    code. you can control many things through pass different compile flags.
 	 #+BEGIN_SRC bash
 	 brew install emacs --cocoa
-   brew linkapps
+   
+   brew linkapps  #make symbolic to /Applications/
+   # let some command like emacsclient also available at /Applications/Emacs.app/ location
+   ln -s /usr/local/Cellar/emacs/HEAD/bin/ /Applications/Emacs.app/Contents/MacOS/bin
 	 #+END_SRC
+
+   for Alfred to index Emacs app
+   add /usr/local/Cellar/ into Alfred's search scope to find Emacs
 
 * configuration
 ** command line launch
@@ -106,6 +119,8 @@
     #+END_SRC
     
     add this to users login tem
+
+    
 ** key binding
    advice for mac users:
    System preferences-> keyboard -> keyboard tab -> modifier keys(right buttom corner)

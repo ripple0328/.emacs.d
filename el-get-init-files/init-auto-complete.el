@@ -42,3 +42,5 @@
         try-expand-line                    ; 补全当前行
         try-complete-lisp-symbol-partially ; 部分补全 elisp symbol
         try-complete-lisp-symbol))         ; 补全 lisp symbol
+
+(ac-flyspell-workaround)

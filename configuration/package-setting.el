@@ -1,4 +1,4 @@
-;-------------------------------------------------------------------------------
+;;; Package --- package list
 ;; change a repository for elpa
 ;;------------------------------------------------------------------------------
 (print-log "loading packages setting")
@@ -33,128 +33,131 @@
 ;; packages sources
 ;;------------------------------------------------------------------------------
 ;rcodetools recipe has problem, temporary fixed it
-(require 'rcodetools)
-
-; for local sources
-(setq el-get-sources
-      '(
-	(:name flymake-ruby :after (progn
-            (add-hook 'enh-ruby-mode-hook 'flymake-ruby-load)
-				     (add-hook 'ruby-mode-hook 'flymake-ruby-load)
-             
-             ))
-	(:name auto-complete-ruby :after  (progn
-					    ;; make sure rcodetools is
-					    ;; installed and available
-					    ;; through (getenv "GEM_PATH")
-					    (require 'auto-complete-ruby)
-					    (ac-ruby-init)))
-	google-translate
-	))
+;; (require 'rcodetools)
 
 (setq ripple-packages
 			(append
 			 '(
-			   babel
-			   coffee-mode
-			   dired+
-			   haml-mode
-			   flymake
-         flycheck
-			   js2-mode
-			   json
-				 ;; swank-js ;; repalaced with skewer-mode
-			   magit
-				 git-commit-mode
-			   package
-				 rinari
-			   rspec-mode
-			   ruby-block
-         inf-ruby
-			   ruby-compilation
-			   ruby-electric
-			   ruby-mode
-				 enh-ruby-mode
-			   ruby-test-mode
-				 ruby-tools
-				 robe-mode
-				 highlight-indentation
-				 dash
-				 rubocop
-				 simple-httpd
-				 textmate
-			   yasnippet
-			   switch-window
-			   weibo.emacs
-				 smartparens
-			   eproject
-			   etags-select
-			   ;; etags-extension
-			   slime
-			   ctags
-			   rcodetools
-			   anything
-			   ;; anything-etags
-			   emacschrome
-			   emacs-http-server 
-			   auto-complete
-			   auto-complete-css
-			   auto-complete-emacs-lisp
-			   auto-complete-extension
-			   auto-complete-etags
-			   auto-complete-clang
-			   auto-complete-yasnippet
-			   rails-el 
-			   yari
-			   zencoding-mode
-			   gnuplot-mode
-			   ;; magithub
-			   nav
-			   ;; twittering-mode
-			   rvm
-			   flymake-haml
-			   flymake-sass
-			   flymake-coffee
-			   emacs-w3m
-			   scss-mode
-			   color-theme
+         ;; env
+         exec-path-from-shell
+				 ;; pkg-info ;; s,epl
+         color-theme
 			   powerline
-			   dash-at-point
-				 skewer-mode
-				 web-mode
-         jump-char
+         ;; maxframe
+         
+         ;; document
+			   babel
+
+         ;; edit
+         switch-window         
+
+         ;; services
+         ;; google-maps ;; some problem
+         google-contacts ;; oauth2,use `flet' is an obsolete macro
+         google-translate
+			   weibo.emacs
+			   dash-at-point         
+			   twittering-mode
+
+         ;; facilities
+         emacs-w3m
+				 ;; adaptive-wrap
+
+         ;; code
+         yasnippet
+         flycheck ;; s dash cl-lib f pkg-info
+
+         expand-region         
 				 ace-jump-mode
-				 exec-path-from-shell
-				 adaptive-wrap
-				 wrap-region
-         expand-region
          multiple-cursors
-				 maxframe
-				 multi-term
-				 es-lib
-				 s
-				 project-explorer
+         helm
+         ag
+         
+         enclose
+         smartparens
+         rainbow-delimiters
+         
+         ;; vcs and project ;;
+         magit ;; git-modes,cl-lib
+				 git-commit-mode
+         textmate
+         
          grizzl
-         flx
-				 projectile
-				 pkg-info
-				 recentf-ext
-				 tabbar
-				 rainbow-mode
-				 rainbow-delimiters
-				 highlight-indentation
-				 idle-highlight-mode
-				 findr
-				 enclose
-				 drag-stuff
-				 calfw
-				 ac-js2
-				 ag
-				 popup
-				 multiple-cursors
-         google-maps
-         google-contacts
-         color-theme-solarized
+         ;; flx
+				 projectile ;; dash,s,pkg-info
+         ;; eproject
+         project-explorer;;helm
+         ;; nav
+
+         ;; code 
+         highlight-indentation
+         ;; auto-complete ;; popup, fuzzy
+
+         ;; code language support
+         ;; html
+			   haml-mode
+         zencoding-mode
+         ;; css
+			   scss-mode
+         rainbow-mode
+
+         rspec-mode
+         
+         ;; ruby
+         rvm ;; essetiall if you use rvm to manage ruby
+				 enh-ruby-mode
+				 robe-mode ;; inf-ruby
+         rubocop ;; need rubocop gem installed
+
+         ;; rails
+         rinari
+         ;; js
+         coffee-mode
+         web-mode
+				 ;; skewer-mode ;; js2-mode,simple-httpd
+         ac-js2;;  skewer-mode,js2-mode,auto-complete
+
+         ;; tags
+         
+         
+			   ;; dired+
+			   ;; json
+			   ;; ruby-block
+			   ;; ruby-compilation
+			   ;; ruby-electric
+
+			   ;; ruby-test-mode
+				 ;; ruby-tools
+
+			   ;; etags-select
+			   ;; ;; etags-extension
+			   ;; slime
+			   ;; ctags
+			   ;; rcodetools
+         ;; helm
+			   ;; emacschrome
+			   ;; emacs-http-server 
+			   ;; auto-complete-css
+			   ;; auto-complete-emacs-lisp
+			   ;; auto-complete-extension
+			   ;; auto-complete-etags
+			   ;; auto-complete-clang
+			   ;; auto-complete-yasnippet
+			   ;; rails-el 
+			   ;; yari
+
+			   ;; gnuplot-mode
+			   ;; ;; magithub
+
+			   ;; rvm
+				 ;; multi-term
+				 ;; recentf-ext
+				 ;; tabbar
+				 ;; idle-highlight-mode
+				 ;; findr
+				 ;; drag-stuff
+				 ;; calfw
+				 ;; ag
 			   )
 (mapcar 'el-get-source-name el-get-sources)))
 (el-get-cleanup ripple-packages)

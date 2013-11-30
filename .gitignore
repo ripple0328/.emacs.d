@@ -28,3 +28,4 @@ vendor/
 elpa/
 /flycheck-org-clock-save.el
 .#*
+snippets/

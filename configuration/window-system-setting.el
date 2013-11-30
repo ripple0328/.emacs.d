@@ -1,7 +1,5 @@
+;;------------------------------------------------------------------------------;; window system setting
 ;;------------------------------------------------------------------------------
-;; window system setting
-;;------------------------------------------------------------------------------
-
 (print-log " we are in window system")
 
 (menu-bar-mode t)
@@ -13,7 +11,7 @@
 ;; 只有这个在daemon模式下面可以设置x的字体
 (add-to-list 'default-frame-alist '(font . "Inconsolata for Power-14"))
 
-
-(toggle-frame-fullscreen)
+;; emacsosx don't support this only brew install emacs can open this
+;; (toggle-frame-fullscreen)
 
 (provide 'window-system-setting)

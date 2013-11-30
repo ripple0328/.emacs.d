@@ -1,5 +1,0 @@
-(:name project-explorer
-       :description "google-translate"
-       :type github
-       :pkgname "sabof/project-explorer"
-       :load "project-explorer.el")

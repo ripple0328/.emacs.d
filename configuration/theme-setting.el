@@ -1,10 +1,7 @@
-
+;;------------------------------------------------------------------------------;; theme setting
 ;;------------------------------------------------------------------------------
-;; theme setting
-;;------------------------------------------------------------------------------
-
 (print-log "loading theme setting")
-;;menu-bar的设置
+;; setting of menu-bar
 ;; (defun set-frame-menu-bar-lines (frame)
 ;;   (let ((want-menu (memq(framep frame) '(x w32 ns))))
 ;;     (set-frame-parameter frame 'menu-bar-lines (if want-menu 1 0))))
@@ -21,15 +18,12 @@
 (add-hook 'after-make-frame-functions 'prelude-frame-config)
 
 (if window-system
- 		;; (color-theme-subtle-hacker)
-    (color-theme-solarized-dark)
-	;; (color-theme-dark-green)
-;; (color-theme-lethe)
+ 		(color-theme-subtle-hacker)
+    ;; (color-theme-dark-green)
+    ;; (color-theme-lethe)
 
 	;; (color-theme-lawrence)
 	;; (color-theme-hober)
 	;; (color-theme-arjen)
 )
-
-
 (provide 'theme-setting)
