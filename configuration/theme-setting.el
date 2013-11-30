@@ -17,13 +17,5 @@
     (menu-bar-mode -1)))
 (add-hook 'after-make-frame-functions 'prelude-frame-config)
 
-(if window-system
- 		(color-theme-subtle-hacker)
-    ;; (color-theme-dark-green)
-    ;; (color-theme-lethe)
 
-	;; (color-theme-lawrence)
-	;; (color-theme-hober)
-	;; (color-theme-arjen)
-)
 (provide 'theme-setting)

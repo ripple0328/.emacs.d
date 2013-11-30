@@ -40,22 +40,16 @@ chmod a+x /usr/local/bin/emacs
 msg 'linking commands shipped with emacs to system path'
 ln -sf /opt/homebrew-cask/Caskroom/emacs/24.3/Emacs.app/Contents/MacOS/bin/* /usr/local/bin/
 
-msg 'creating emacsclient command'
-touch /usr/local/bin/e
-echo '#!/bin/bash' >> /usr/local/bin/e
-echo 'emacsclient -t "$@"' >> /usr/local/bin/e
-chmod a+x /usr/local/bin/e
-
 msg 'daemon emacs to launch at login'
-git clone https://github.com/ferlatte/emacs-daemon-osx.git
+git clone https://github.com/ripple0328/emacs-daemon-osx.git
 cd emacs-daemon-osx
 make
 cp org.gnu.emacs.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist
-cp -r emacs-client.app /Applications/
+mv emacs-client.app /Applications/
+mv e /usr/local/bin/
 cd ..
 rm -rf emacs-daemon-osx
-
 
 msg 'installing some emacs package dependencies'
 
@@ -69,7 +63,10 @@ gem install rake
 msg 'installing rubocop pry method_source'
 gem install rubocop pry pry-doc method_source
 
-msg 'installing fontpatcher for powlinbe'
+
+msg 'installing fontpatcher for powline'
+brew install python32
+pip install --user git+git://github.com/Lokaltog/powerline
 brew install --use-gcc fontforge
 
 msg 'installing silver searcher ispell csv gpg and so on'
