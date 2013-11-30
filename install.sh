@@ -2,8 +2,11 @@ function msg {
  echo "###"$1
 }
 
+function checking_command_exists {
+command -v $1 >/dev/null 2>&1    
+}
 msg "installing brew if you do not"
-command -v brew >/dev/null 2>&1 || ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+checking_command_exists brew || ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 
 msg "updating homebrew"
 brew update
