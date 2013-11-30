@@ -1,4 +1,5 @@
-;;------------------------------------------------------------------------------;; window system setting
+;;------------------------------------------------------------------------------
+;; window system setting
 ;;------------------------------------------------------------------------------
 (print-log " we are in window system")
 
@@ -7,9 +8,13 @@
 (set-default-font "Inconsolata for Power-14")
 (set-face-attribute 'default nil :font "Inconsolata for Power") 
 
-;; 字体设置会在emacsclient模式全都失效
-;; 只有这个在daemon模式下面可以设置x的字体
+;; font setting will failed when start emacs with daemon mode
+;; below will setting for daemon mode
 (add-to-list 'default-frame-alist '(font . "Inconsolata for Power-14"))
+(when window-system
+  (set-frame-size (selected-frame) 140 40)
+  (set-frame-position (selected-frame) 300 0)
+  )
 
 ;; emacsosx don't support this only brew install emacs can open this
 ;; (toggle-frame-fullscreen)
