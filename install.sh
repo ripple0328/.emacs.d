@@ -63,11 +63,13 @@ gem install rake
 msg 'installing rubocop pry method_source'
 gem install rubocop pry pry-doc method_source
 
+msg 'installing font for powline theme'
+brew install wget
+wget 'https://github.com/Lokaltog/powerline-fonts/blob/master/Inconsolata/Inconsolata%20for%20Powerline.otf' -O Inconsolata\ for\ Powerline.otf
+mv Inconsolata\ for\ Powerline.otf /Library/Fonts/
 
-msg 'installing fontpatcher for powline'
-brew install python32
-pip install --user git+git://github.com/Lokaltog/powerline
-brew install --use-gcc fontforge
+# if you want to use other font. patch it by yourself use script below
+# brew install --use-gcc fontforge
 
 msg 'installing silver searcher ispell csv gpg and so on'
 brew tap epichub/homebrew-epicbrews 
