@@ -1,5 +1,5 @@
 function msg {
- echo '###'$1
+ echo '###----- '$1
 }
 
 function checking_command_exists {
@@ -32,6 +32,7 @@ brew cask install emacs
 msg 'linking emacs to system path'
 
 msg 'creating emacs command'
+rm /usr/local/bin/emacs
 touch /usr/local/bin/emacs
 echo '#!/bin/bash' >> /usr/local/bin/emacs
 echo '/opt/homebrew-cask/Caskroom/emacs/24.3/Emacs.app/Contents/MacOS/Emacs -nw "$@"' >> /usr/local/bin/emacs
@@ -46,7 +47,7 @@ cd emacs-daemon-osx
 make
 cp org.gnu.emacs.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist
-mv emacs-client.app /Applications/
+mv -r emacs-client.app /Applications/
 mv e /usr/local/bin/
 cd ..
 rm -rf emacs-daemon-osx
@@ -58,7 +59,7 @@ brew install autoconf
 brew link autoconf
 
 msg 'installing rake to execute some rake task in emacs packages'
-gem install rake
+gem install rake bundler
 
 msg 'installing rubocop pry method_source'
 gem install rubocop pry pry-doc method_source

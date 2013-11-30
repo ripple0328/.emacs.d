@@ -11,3 +11,5 @@
            (lambda () (highlight-indentation-current-column-mode)))
  (add-hook 'scss-mode-hook
            (lambda () (highlight-indentation-current-column-mode)))
+ (add-hook 'lisp-mode-hook
+           (lambda () (highlight-indentation-current-column-mode)))
