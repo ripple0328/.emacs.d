@@ -26,6 +26,7 @@ make
 cp org.gnu.emacs.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist
 cp -r emacs-client.app /Applications/
+rm -rf  emacs-daemon-osx
 
 msg "installing some emacs package dependencies"
 msg "installing rubocop pry method_source"
