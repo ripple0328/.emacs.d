@@ -3,8 +3,9 @@ function msg {
 }
 
 function checking_command_exists {
-command -v $1 >/dev/null 2>&1    
+    command -v $1 >/dev/null 2>&1    
 }
+
 msg "installing brew if you do not"
 checking_command_exists brew || ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 
@@ -52,6 +53,7 @@ brew install aspell
 msg "installing tidy needed by web-mode for real time syntax check"
 
 msg "installing csslint a css syntax check"
+brew install nodejs
 npm install -g csslint
 
 msg "installing ctags for symbol jumping"
