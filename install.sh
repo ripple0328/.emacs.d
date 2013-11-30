@@ -57,3 +57,5 @@ brew install ctags
 msg "install grapviz to convert ascii to digram and uml"
 brew install graphviz 
 
+msg "now start emacs to installation packages in emacs"
+emacs
