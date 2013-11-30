@@ -11,6 +11,14 @@ brew install brew-cask
 brew cask alfred link
 brew cask install emacs
 
+msg "daemon emacs to launch at login"
+git clone https://github.com/ferlatte/emacs-daemon-osx.git
+cd emacs-daemon-osx
+make
+cp org.gnu.emacs.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist
+cp -r emacs-client.app /Applications/
+
 msg "installing some emacs package dependencies"
 msg "installing rubocop pry method_source"
 gem install rubocop pry pry-doc method_source
