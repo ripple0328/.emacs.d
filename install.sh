@@ -2,6 +2,9 @@ function msg {
  echo "###"$1
 }
 
+msg "installing brew if you do not"
+command -v brew >/dev/null 2>&1 || ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+
 msg "updating homebrew"
 brew update
 
@@ -9,6 +12,7 @@ msg "installing emacs"
 brew tap phinze/homebrew-cask
 brew install brew-cask
 brew cask alfred link
+rm -rf /Applications/Emacs.app
 brew cask install emacs
 
 msg "daemon emacs to launch at login"

@@ -20,6 +20,14 @@
   most important, el-get is vert  activity by now. and it is the most powerfull
   packge manager as I know.
 * install(osx)
+  
+  you can directly install emacs and all it's dependency by script below
+  #+BEGIN_SRC bash
+  cd ~/.emacsd.d/
+  chmod a+x install.sh
+  ./install.sh
+  #+END_SRC
+  
   emacs that comes with osx is still 22.1.1, even you have upgrade your system
   to 10.9.  it pretty old and hard to use.  why not apple just do not
   pre-bundled such emacs.
