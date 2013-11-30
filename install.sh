@@ -6,7 +6,6 @@ function checking_command_exists {
     command -v $1 >/dev/null 2>&1    
 }
 
-
 msg 'installing brew if you do not'
 checking_command_exists brew || ruby -e '$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)'
 
@@ -27,15 +26,13 @@ msg 'installing emacs'
 brew tap phinze/homebrew-cask
 brew install brew-cask
 brew cask alfred link
-rm -rf /Applications/Emacs.app
+rm -rf /Applications/Emacs.app ~/Applications/Emacs.app
 brew cask install emacs
 msg 'linking emacs to system path'
 
 msg 'creating emacs command'
 rm /usr/local/bin/emacs
-touch /usr/local/bin/emacs
-echo '#!/bin/bash' >> /usr/local/bin/emacs
-echo '/opt/homebrew-cask/Caskroom/emacs/24.3/Emacs.app/Contents/MacOS/Emacs -nw "$@"' >> /usr/local/bin/emacs
+cp emacs-script /usr/local/bin/emacs
 chmod a+x /usr/local/bin/emacs
 
 msg 'linking commands shipped with emacs to system path'
@@ -99,5 +96,4 @@ brew install ctags
 msg 'install grapviz to convert ascii to digram and uml'
 brew install graphviz 
 
-msg 'now start emacs to installation packages in emacs'
-emacs
+msg 'First time you launch emacs, all plugin will install automatically. enjoy!'
