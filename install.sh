@@ -6,11 +6,20 @@ function checking_command_exists {
     command -v $1 >/dev/null 2>&1    
 }
 
+
 msg "installing brew if you do not"
 checking_command_exists brew || ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 
 msg "updating homebrew"
 brew update
+
+msg "clean up environment"
+msg "remove system shipped emacs"
+function cleanup_command {
+    which $1 | xargs sudo rm
+}
+cleanup_command emacs
+cleanup_command emacsclient
 
 msg "installing emacs"
 brew tap phinze/homebrew-cask
