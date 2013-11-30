@@ -91,14 +91,7 @@
 (global-set-key (kbd "s-n") 'move-text-down)
 (global-set-key (kbd "s-p") 'move-text-up)
 
+(setq ispell-local-dictionary "en")
 
-
-;; check english spell
-(require 'flyspell)
-(setq flyspell-issue-message-flg nil)
-(add-hook 'enh-ruby-mode-hook
-          (lambda () (flyspell-prog-mode)))
-
-(add-hook 'web-mode-hook
-          (lambda () (flyspell-prog-mode)))
+(flyspell-mode)
 (provide 'edit-function)

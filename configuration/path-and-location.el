@@ -6,7 +6,8 @@
 ;; set path
 (setenv "PATH"
 			 (concat
-				(getenv "PATH")))
+				(getenv "PATH")
+        ))
 
 ;; daemon下默认路径会是/
 (cd (expand-file-name "~/"))

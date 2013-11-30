@@ -40,6 +40,9 @@
 			 '(
          ;; env
          exec-path-from-shell
+         smex
+         dired+
+         bash-completion
 				 ;; pkg-info ;; s,epl
          color-theme
 			   powerline
@@ -53,6 +56,7 @@
 
          ;; services
          ;; google-maps ;; some problem
+         
          google-contacts ;; oauth2,use `flet' is an obsolete macro
          google-translate
 			   weibo.emacs
@@ -66,7 +70,6 @@
          ;; code
          yasnippet
          flycheck ;; s dash cl-lib f pkg-info
-
          expand-region         
 				 ace-jump-mode
          multiple-cursors
@@ -80,6 +83,7 @@
          ;; vcs and project ;;
          magit ;; git-modes,cl-lib
 				 git-commit-mode
+         gist ;;gh tabulated-list
          textmate
          
          grizzl
@@ -100,17 +104,18 @@
          ;; css
 			   scss-mode
          rainbow-mode
-
-         rspec-mode
+         ;; yaml
+         yaml-mode
          
          ;; ruby
          rvm ;; essetiall if you use rvm to manage ruby
 				 enh-ruby-mode
 				 robe-mode ;; inf-ruby
          rubocop ;; need rubocop gem installed
+         rspec-mode
 
          ;; rails
-         rinari
+         ;; rinari
          ;; js
          coffee-mode
          web-mode
@@ -149,7 +154,6 @@
 			   ;; gnuplot-mode
 			   ;; ;; magithub
 
-			   ;; rvm
 				 ;; multi-term
 				 ;; recentf-ext
 				 ;; tabbar

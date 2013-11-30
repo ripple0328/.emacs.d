@@ -1,1 +1,1 @@
-(global-rinari-mode)
+;; (global-rinari-mode)

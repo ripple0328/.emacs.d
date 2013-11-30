@@ -31,7 +31,7 @@ brew cask install emacs
 msg 'linking emacs to system path'
 
 msg 'creating emacs command'
-rm /usr/local/bin/emacs
+rm -f /usr/local/bin/emacs
 cp emacs-script /usr/local/bin/emacs
 chmod a+x /usr/local/bin/emacs
 
@@ -51,6 +51,8 @@ rm -rf emacs-daemon-osx
 
 msg 'installing some emacs package dependencies'
 
+msg 'installing bash-completion'
+brew install bash-completion
 msg 'installing compile tools'
 brew install autoconf
 brew link autoconf
@@ -69,9 +71,9 @@ mv Inconsolata\ for\ Powerline.otf /Library/Fonts/
 # if you want to use other font. patch it by yourself use script below
 # brew install --use-gcc fontforge
 
-msg 'installing silver searcher ispell csv gpg and so on'
+msg 'installing silver searcher csv gpg and so on'
 brew tap epichub/homebrew-epicbrews 
-brew install the_silver_searcher ispell gpg cvs hg
+brew install the_silver_searcher gpg cvs hg
 brew link cvs --force
 brew link hg --force
 

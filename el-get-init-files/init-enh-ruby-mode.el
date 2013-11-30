@@ -24,4 +24,6 @@
 ;; (getenv "GEM_PATH")
 (add-hook 'enh-ruby-mode-hook     (lambda () (flyspell-prog-mode)))
 (add-hook 'web-mode-hook          (lambda () (flyspell-prog-mode)))
-
+;; check english spell
+(setq flyspell-issue-message-flag nil)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)

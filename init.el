@@ -1,12 +1,13 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;                          Emacs configuration                               ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                          Emacs configuration                               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Filename:               init.el                                            ;;
 ;; Copyright (c) 2012:     qingbo zhang																				;;
 ;; Version:                1.1																								;;
-;; Author:                 qingbo<ripple0328@rubyer.info>											;;
+;; Author:                 qingbo<ripple0328@gmail.com> 											;;
 ;; Created:                July 6 2012																				;;
 ;; Updated:                August 4 2013																			;;
-;; Description:            此文件用于emacs的初始化配置                        ;;
+;; Description:            initialize configuration                           ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; initialize load path
