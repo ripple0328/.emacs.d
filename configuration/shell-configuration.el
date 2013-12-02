@@ -1,6 +1,5 @@
-(setq explicit-shell-file-name "/bin/zsh")
-(setq shell-file-name "zsh")
-(setenv "SHELL" shell-file-name)
+(setq shell-file-name (getenv "SHELL"))
+(setq explicit-shell-file-name (concat "/bin/" (getenv "SHELL")))
 (global-set-key "\C-cs" 'shell)
 
 ;; removing ^M character
