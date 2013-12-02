@@ -113,6 +113,7 @@
 				 robe-mode ;; inf-ruby
          rubocop ;; need rubocop gem installed
          rspec-mode
+         yari
 
          ;; rails
          ;; rinari
@@ -139,7 +140,6 @@
 			   ;; slime
 			   ;; ctags
 			   ;; rcodetools
-         ;; helm
 			   ;; emacschrome
 			   ;; emacs-http-server 
 			   ;; auto-complete-css
@@ -149,7 +149,7 @@
 			   ;; auto-complete-clang
 			   ;; auto-complete-yasnippet
 			   ;; rails-el 
-			   ;; yari
+
 
 			   ;; gnuplot-mode
 			   ;; ;; magithub
@@ -161,7 +161,6 @@
 				 ;; findr
 				 ;; drag-stuff
 				 ;; calfw
-				 ;; ag
 			   )
 (mapcar 'el-get-source-name el-get-sources)))
 (el-get-cleanup ripple-packages)
