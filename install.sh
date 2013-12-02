@@ -13,6 +13,10 @@ function is_brew_installed {
 function check_and_brew_install {
     is_brew_installed $1 || brew install $1 && brew link $1
 }
+
+function gem_install {
+    gem which $1 || gem install $1
+}
 msg 'installing brew if you do not'
 checking_command_exists brew || ruby -e '$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)'
 
@@ -64,10 +68,10 @@ msg 'installing compile tools'
 check_and_brew_install autoconf
 
 msg 'installing rake to execute some rake task in emacs packages'
-gem install rake bundler
+gem_install rake bundler
 
 msg 'installing rubocop pry method_source'
-gem install rubocop pry pry-doc method_source
+gem_install rubocop pry pry-doc method_source
 
 msg 'installing font for powline theme'
 check_and_brew_install wget
