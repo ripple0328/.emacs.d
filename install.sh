@@ -17,6 +17,11 @@ function check_and_brew_install {
 function gem_install {
     gem which $1 || gem install $1
 }
+
+function cleanup_command {
+    which $1 | xargs sudo rm -rf
+}
+
 msg 'installing brew if you do not'
 checking_command_exists brew || ruby -e '$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)'
 
@@ -26,9 +31,7 @@ brew update
 msg 'clean up environment'
 msg 'remove system shipped emacs'
 
-function cleanup_command {
-    which $1 | xargs sudo rm -rf
-}
+
 cleanup_command emacs
 cleanup_command emacsclient
 cleanup_command e

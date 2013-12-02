@@ -3,3 +3,4 @@
 (add-hook 'css-mode-hook 'skewer-css-mode)
 (add-hook 'html-mode-hook 'skewer-html-mode)
 (add-hook 'js2-mode-hook 'flycheck-mode)
+(add-hook 'js2-mode-hook 'ac-js2-mode)
