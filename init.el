@@ -27,7 +27,6 @@
 (require 'package-setting)
 (require 'theme-setting)
 (require 'org-setting)
-(require 'tags-setting)
 (require 'edit-function)
 (require 'shell-configuration)
 (require 'hooks)
