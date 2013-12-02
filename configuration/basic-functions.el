@@ -20,4 +20,4 @@
 	(unless (file-exists-p dir)
 		(make-directory dir)))
 
-(provide 'functions)
+(provide 'basic-functions)

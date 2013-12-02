@@ -6,6 +6,13 @@ function checking_command_exists {
     command -v $1 >/dev/null 2>&1    
 }
 
+function is_brew_installed {
+    brew info $1  > /dev/null 2>&1
+}
+
+function check_and_brew_install {
+    is_brew_installed $1 || brew install $1 && brew link $1
+}
 msg 'installing brew if you do not'
 checking_command_exists brew || ruby -e '$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)'
 
@@ -24,7 +31,7 @@ cleanup_command e
 
 msg 'installing emacs'
 brew tap phinze/homebrew-cask
-brew install brew-cask
+check_and_brew_install brew-cask
 brew cask alfred link
 rm -rf /Applications/Emacs.app ~/Applications/Emacs.app
 brew cask install emacs
@@ -44,7 +51,7 @@ cd emacs-daemon-osx
 make
 cp org.gnu.emacs.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist
-mv -r emacs-client.app /Applications/
+mv  emacs-client.app /Applications/
 mv e /usr/local/bin/
 cd ..
 rm -rf emacs-daemon-osx
@@ -52,10 +59,9 @@ rm -rf emacs-daemon-osx
 msg 'installing some emacs package dependencies'
 
 msg 'installing bash-completion'
-brew install bash-completion
+check_and_brew_install bash-completion
 msg 'installing compile tools'
-brew install autoconf
-brew link autoconf
+check_and_brew_install autoconf
 
 msg 'installing rake to execute some rake task in emacs packages'
 gem install rake bundler
@@ -64,38 +70,39 @@ msg 'installing rubocop pry method_source'
 gem install rubocop pry pry-doc method_source
 
 msg 'installing font for powline theme'
-brew install wget
+check_and_brew_install wget
 wget 'https://github.com/Lokaltog/powerline-fonts/blob/master/Inconsolata/Inconsolata%20for%20Powerline.otf' -O Inconsolata\ for\ Powerline.otf
 mv Inconsolata\ for\ Powerline.otf /Library/Fonts/
 
 # if you want to use other font. patch it by yourself use script below
-# brew install --use-gcc fontforge
+# check_and_brew_install --use-gcc fontforge
 
 msg 'installing silver searcher csv gpg and so on'
 brew tap epichub/homebrew-epicbrews 
-brew install the_silver_searcher gpg cvs hg
+check_and_brew_install the_silver_searcher gpg cvs hg
 brew link cvs --force
 brew link hg --force
 
 msg 'installing javascript synatic check jslint'
-brew install jslint
+check_and_brew_install jslint
 
 msg 'installing w3m a web brower in emacs'
-brew install w3m
+check_and_brew_install w3m
 
 msg 'installing aspell dictonary'
-brew install aspell
+check_and_brew_install aspell
 
 msg 'installing tidy needed by web-mode for real time syntax check'
 
 msg 'installing csslint a css syntax check'
-brew install nodejs
+check_and_brew_install nodejs
 npm install -g csslint
 
 msg 'installing ctags for symbol jumping'
-brew install ctags
+check_and_brew_install ctags
 
 msg 'install grapviz to convert ascii to digram and uml'
-brew install graphviz 
+check_and_brew_install graphviz 
 
 msg 'First time you launch emacs, all plugin will install automatically. enjoy!'
+emacs --debug-init

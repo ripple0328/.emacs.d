@@ -19,22 +19,21 @@
 (add-to-list 'load-path ripple-dir)
 
 ;; load custom setting and package
-(require 'functions)
-(require 'path-and-location)
-(require 'backup-file-setting)
-(require 'personal-info)
-(require 'general-setting)
-(require 'package-setting)
-(require 'theme-setting)
-(require 'org-setting)
-(require 'edit-function)
-(require 'shell-configuration)
-(require 'hooks)
+(require 'basic-functions)
 (when (eq system-type 'darwin)
 	(require 'osx-setting))
-
 (if window-system
 		(require 'window-system-setting)
 		(require 'term-setting))
+(require 'path-and-location)
+(require 'shell-configuration)
+(require 'backup-file-setting)
+(require 'personal-info)
+(require 'general-setting)
+(require 'theme-setting)
+(require 'package-setting)
+(require 'org-setting)
+(require 'edit-function)
+(require 'hooks)
 
 (print-log "Emacs is ready to use")
