@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+pushd `dirname $0` > /dev/null
+
+popd > /dev/null
+
+source ./bin/install-utils
+
+install-brew
+clean-env
+install-emacs
+create-command-line-emacs
+daemon-emacs
+
+source ./bin/install-dependencies
+
+patch-shebang-path $(emacs-path) ruby
+msg 'First time you launch emacs, all plugin will install automatically. enjoy!'
+emacs --debug-init
+

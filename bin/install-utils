@@ -1,15 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function msg {
  echo '0000===---> '$1
 }
+BIN_PATH=/usr/local/bin
 
-function checking_command_exists {
+function checking-command-exists {
     msg 'checking whether command '$1' exist'
     command -v $1 >/dev/null 2>&1    
 }
 
-function check_and_brew_install {
+function check-and-brew-install {
     msg 'checking whether '$1' has been installed'
     brew info $1  > /dev/null 2>&1 &&
     msg $1' already been installed' ||
@@ -17,10 +18,11 @@ function check_and_brew_install {
     msg 'brew installing '$1
     brew install $1
     msg 'linking '$1' to system path'
-    brew link $1 --force)
+
+        brew link $1 --force)
 }
 
-function gem_install {
+function gem-install {
     msg 'checking whether gem '$1' is installed'
     gem which $1  > /dev/null 2>&1 && 
     msg 'gem '$1' already been installed' ||
@@ -29,36 +31,36 @@ function gem_install {
     gem install $1)
 }
 
-function cleanup_command {
+function cleanup-command {
     msg 'looking for command '$1
     which $1 | xargs sudo rm -rf
 }
 
-function install_brew {
+function install-brew {
     msg 'installing brew if you do not'
-    checking_command_exists brew &&
+    checking-command-exists brew &&
     msg 'brew has been installed' ||
     ruby -e '$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)'
     msg 'updating homebrew'
     brew update
 }
 
-function clean_env {
+function clean-env {
     msg 'clean up environment'
     msg 'remove system shipped emacs'
-    cleanup_command emacs
-    cleanup_command emacsclient
-    cleanup_command e
+    cleanup-command emacs
+    cleanup-command emacsclient
+    cleanup-command e
 }
 
 
-function install_emacs {
+function install-emacs {
     msg 'installing emacs'
     brew tap | grep phinze  >/dev/null 2>&1 &&
     msg 'phinze already been tapped' ||
     brew tap phinze/homebrew-cask
     
-    check_and_brew_install brew-cask
+    check-and-brew-install brew-cask
 
     brew cask list | grep emacs  >/dev/null 2>&1 &&
     msg 'emacs already been brew cask installed' ||
@@ -69,18 +71,18 @@ function install_emacs {
     msg 'linking emacs to system path'
 }
 
-function create_command_line_emacs {
+function create-command-line-emacs {
     msg 'creating emacs command'
     rm -f /usr/bin/emacs
-    rm -f /usr/local/bin/emacs
-    cp emacs-script /usr/local/bin/emacs
-    chmod a+x /usr/local/bin/emacs
+    rm -f $BIN_PATH/emacs
+    cp emacs-script $BIN_PATH/emacs
+    chmod a+x $BIN_PATH/emacs
 
     msg 'linking commands shipped with emacs to system path'
-    ln -sf /opt/homebrew-cask/Caskroom/emacs/24.3/Emacs.app/Contents/MacOS/bin/* /usr/local/bin/
+    ln -sf $(cask-packages-path emacs)/Emacs.app/Contents/MacOS/bin/* $BIN_PATH/
 }
 
-function daemon_emacs {
+function daemon-emacs() {
     msg 'daemon emacs to launch at login'
     git clone https://github.com/ripple0328/emacs-daemon-osx.git
     cd emacs-daemon-osx
@@ -89,8 +91,23 @@ function daemon_emacs {
     launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist
     rm -rf /Applications/emacs-client.app
     mv  emacs-client.app /Applications/
-    mv e /usr/local/bin/
-    chmod a+x /usr/local/bin/e
+    mv e $BIN_PATH/
+    chmod a+x $BIN_PATH/e
     cd ..
     rm -rf emacs-daemon-osx
+}
+
+function patch-shebang-path() {
+    sed -i.bak '1 c\
+#\!/usr/bin/env '$2'\
+'  $1
+rm $1.bak
+}
+
+function cask-packages-path(){
+    brew cask info $1 | sed -n 3p | awk '{split($0,a," "); print a[1]}'
+}
+
+function emacs-path() {
+    cask-packages-path emacs | awk '{print $1"/Emacs.app/Contents/MacOS/Emacs"}'
 }
