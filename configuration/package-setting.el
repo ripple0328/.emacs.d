@@ -111,6 +111,7 @@
          rvm ;; essetiall if you use rvm to manage ruby
 				 enh-ruby-mode
 				 robe-mode ;; inf-ruby
+         bundler
          rubocop ;; need rubocop gem installed
          rspec-mode
          yari
