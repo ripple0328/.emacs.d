@@ -66,15 +66,15 @@ function install-emacs {
     msg 'emacs already been brew cask installed' ||
     (msg "emacs not install by cask"
     brew cask alfred link
-    rm -rf /Applications/Emacs.app ~/Applications/Emacs.app
+    sudo rm -rf /Applications/Emacs.app ~/Applications/Emacs.app
     brew cask install emacs)
     msg 'linking emacs to system path'
 }
 
 function create-command-line-emacs {
     msg 'creating emacs command'
-    rm -f /usr/bin/emacs
-    rm -f $BIN_PATH/emacs
+    sudo rm -f /usr/bin/emacs
+    sudo rm -f $BIN_PATH/emacs
     cp emacs-script $BIN_PATH/emacs
     chmod a+x $BIN_PATH/emacs
 
@@ -89,10 +89,10 @@ function daemon-emacs() {
     make
     cp org.gnu.emacs.plist ~/Library/LaunchAgents
     launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist
-    rm -rf /Applications/emacs-client.app
-    mv  emacs-client.app /Applications/
-    mv e $BIN_PATH/
-    chmod a+x $BIN_PATH/e
+    sudo rm -rf /Applications/emacs-client.app
+    sudo mv  emacs-client.app /Applications/
+    sudo mv e $BIN_PATH/
+    sudo chmod a+x $BIN_PATH/e
     cd ..
     rm -rf emacs-daemon-osx
 }
@@ -101,7 +101,7 @@ function patch-shebang-path() {
     sed -i.bak '1 c\
 #\!/usr/bin/env '$2'\
 '  $1
-rm $1.bak
+    sudo rm $1.bak
 }
 
 function cask-packages-path(){
