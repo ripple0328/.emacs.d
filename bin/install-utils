@@ -98,10 +98,9 @@ function daemon-emacs() {
 }
 
 function patch-shebang-path() {
-    sed -i.bak '1 c\
+    sed -i '1 c\
 #\!/usr/bin/env '$2'\
 '  $1
-    sudo rm $1.bak
 }
 
 function cask-packages-path(){
