@@ -46,7 +46,7 @@
 				 ;; pkg-info ;; s,epl
          color-theme
 			   powerline
-         ;; maxframe
+         maxframe
          
          ;; document
 			   babel
