@@ -87,7 +87,7 @@
          textmate
          
          grizzl
-         ;; flx
+         flx
 				 projectile ;; dash,s,pkg-info
          ;; eproject
          project-explorer;;helm
