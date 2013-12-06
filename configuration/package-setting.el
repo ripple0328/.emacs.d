@@ -116,6 +116,7 @@
          bundler
          rubocop ;; need rubocop gem installed
          rspec-mode
+         feature-mode
          yari
 
          ;; rails
