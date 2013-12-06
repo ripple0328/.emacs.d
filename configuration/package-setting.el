@@ -12,7 +12,7 @@
                          ("tromey" . "http://tromey.com/elpa/")
                          ))
 (package-initialize)
-
+
 
 ;;------------------------------------------------------------------------------
 ;; check and install el-get
@@ -29,6 +29,7 @@
 (add-to-list 'el-get-recipe-path  (concat emacs-dir "el-get-recipes/"))
 
 (print-log el-get-user-package-directory)
+
 ;;------------------------------------------------------------------------------
 ;; packages sources
 ;;------------------------------------------------------------------------------
@@ -47,6 +48,7 @@
          color-theme
 			   powerline
          maxframe
+         page-break-lines
          
          ;; document
 			   babel
