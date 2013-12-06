@@ -1,2 +1,2 @@
-#!/bin/bash
+#!/usr/bin/env bash
 /opt/homebrew-cask/Caskroom/emacs/24.3/Emacs.app/Contents/MacOS/Emacs -nw "$@"
