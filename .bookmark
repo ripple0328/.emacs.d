@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("dotfiles"
+(("g"
+ (filename . "~/program/g/")
+ (front-context-string)
+ (rear-context-string . "Dec  5 19:21 ..\n")
+ (position . 177))
+("dotfiles"
  (filename . "~/.homesick/repos/dotfiles/home/")
  (front-context-string . ".bash_profile\n  ")
  (rear-context-string . "17 Dec  1 01:50 ")
