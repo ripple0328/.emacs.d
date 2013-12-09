@@ -98,6 +98,8 @@
 
 (setq search-highlight t)
 (transient-mark-mode t)
- 
+
+
+(global-page-break-lines-mode t)
 (provide 'general-setting)
 

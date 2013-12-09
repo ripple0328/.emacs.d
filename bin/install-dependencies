@@ -53,5 +53,20 @@ npm install -g csslint
 msg 'installing ctags for symbol jumping'
 check-and-brew-install ctags
 
-msg 'install grapviz to convert ascii to digram and uml'
+msg 'installing grapviz to convert ascii to digram and uml'
 check-and-brew-install graphviz 
+
+msg 'installing depedencies required by mu4e a mail client'
+check-and-brew-install glib
+check-and-brew-install gmime
+check-and-brew-install xapian
+check-and-brew-install offlineimap
+check-and-brew-install html2text
+check-and-brew-install gettext
+check-and-brew-install mu
+
+mkdir -p Maildir
+# after proper configuration you can run command below to start using mu4e
+# configure offlineimap, see github ripple0328/dotfiles
+# > offlineimap
+# > mu index --maildir=~/.emacs.d/Maildir

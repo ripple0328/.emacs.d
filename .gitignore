@@ -24,3 +24,4 @@ elpa/
 .#*
 /.smex-items
 var/
+Maildir/

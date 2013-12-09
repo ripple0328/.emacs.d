@@ -67,6 +67,8 @@
 
          ;; facilities
          emacs-w3m
+         mu4e
+
 				 ;; adaptive-wrap
 
          ;; code
