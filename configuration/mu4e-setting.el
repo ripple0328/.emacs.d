@@ -31,10 +31,10 @@
      ;; (better only use that for the last field.
      ;; These are the defaults:
      (setq mu4e-headers-fields
-         '( (:date          .  25)
-            (:flags         .   6)
-            (:from          .  22)
-            (:subject       .  nil)))
+           '( (:date          .  10)
+              (:flags         .   4)
+              (:from          .  18)
+              (:subject       .  nil)))
      
      ;; program to get mail; alternatives are 'fetchmail', 'getmail'
      ;; isync or your own shellscript. called when 'U' is pressed in
