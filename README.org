@@ -20,121 +20,125 @@
   most important, el-get is vert  activity by now. and it is the most powerfull
   packge manager as I know.
 * install(osx)
-  
-  you can directly install emacs and all it's dependency by script below
-  #+BEGIN_SRC bash
-  cd ~/.emacsd.d/
-  chmod a+x install.sh
-  ./install.sh
-  #+END_SRC
-  
-  emacs that comes with osx is still 22.1.1, even you have upgrade your system
-  to 10.9.  it pretty old and hard to use.  why not apple just do not
-  pre-bundled such emacs.
+** instruction
+   a simple way, you can directly install emacs and all it's dependency by script
+   below
+   #+BEGIN_SRC bash
+   git clone https://github.com/ripple0328/.emacs.d.git
+   cd ~/.emacsd.d/
+   chmod a+x install
+   ./install
+   #+END_SRC
 
-  for mac users those who don't want to have heavy configuration, my suggestion
-  is [[http://emacsformacosx.com/][emacs for osx]], its have advantage against others in such field:
-	 1. newer
-	 2. cocoa not X11
-	 3. retina 
-     
-  another way to install emacsosx for brew user
-  #+BEGIN_SRC bash
-  brew tap phinze/homebrew-cask && brew install brew-cask
-  brew cask install emacs
-  brew cask alfred link # let alfred to know apps install by cask
-  #+END_SRC
+   all configuration described by section below will be execute by script above automatically.
+** versions
+   emacs that comes with osx is still 22.1.1, even you have upgrade your
+   operation system 10.9.  it pretty old and difficult to use.  why not apple
+   just do not pre-bundled such emacs.
 
-   for mac user those want to toss of emacs, just brew install it by source
-   code. you can control many things through pass different compile flags.
-	 #+BEGIN_SRC bash
-	 brew install emacs --cocoa
    
-   brew linkapps  #make symbolic to /Applications/
-   # let some command like emacsclient also available at /Applications/Emacs.app/ location
-   ln -s /usr/local/Cellar/emacs/HEAD/bin/ /Applications/Emacs.app/Contents/MacOS/bin
-	 #+END_SRC
+   for mac users those who don't want to have heavy configuration, my suggestion
+   is [[http://emacsformacosx.com/][emacs for osx]], its have advantage against others in such field:
+	  1. newer
+	  2. cocoa not X11
+	  3. retina 
+      
+   another way to install emacsosx for brew user
+   #+BEGIN_SRC bash
+   brew tap phinze/homebrew-cask && brew install brew-cask
+   brew cask install emacs
+   brew cask alfred link # let alfred to know apps install by cask
+   #+END_SRC
+   emacsforosx have different color behaviour. so the color theme may not the
+   same as you saw them in a screen snapshot.
 
-   for Alfred to index Emacs app
-   add /usr/local/Cellar/ into Alfred's search scope to find Emacs
-
-* configuration
-** command line launch
-   if you want to lanuch emacs from command line, add such command alias to your
-   .bash_profile or .zshrc
-	 #+BEGIN_SRC bash
-	 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-	 #+END_SRC
-   or add a script file */usr/bin/emacs* this is better I think, cas many third
-	 party package would assume the emacs path to be '/usr/bin/'， for example
-	 magit. so only terminal know how to find executable emacs but not emacs
-	 itself if you only add a alias.
-   	 #+BEGIN_SRC bash
-	 #!/bin/bash
-   /Applications/Emacs.app/Contents/MacOS/Emacs -nw
-	 #+END_SRC
-** daemon
-*** emacsosx
-    for those using emacsosxna
-    #+BEGIN_SRC bash
-    git clone https://github.com/ferlatte/emacs-daemon-osx.git
-    cd emacs-daemon-osx
-    cp org.gnu.emacs.plist ~/Library/LaunchAgents
-    launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist
-    make
-    rm -r /Applications/emacs-client.app
-    cp -r emacs-client.app /Applications
+    for mac user those want to toss of emacs, just brew install it by source
+    code. you can control many things through pass different compile flags.
+	  #+BEGIN_SRC bash
+	  brew install emacs --cocoa
     
-    #+END_SRC
-*** source
-    1. create a plist file in /~/Library/LaunchAgents/, for exapmle /org.gnu.emacs.daemon.plist/
+    brew linkapps  #make symbolic to /Applications/
+    # let some command like emacsclient also available at /Applications/Emacs.app/ location
+    ln -s /usr/local/Cellar/emacs/HEAD/bin/ /Applications/Emacs.app/Contents/MacOS/bin
+	  #+END_SRC
 
-    #+BEGIN_SRC xml
-     <?xml version="1.0" encoding="UTF-8"?>
-       <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-       <plist version="1.0">
-         <dict>
-           <key>Label</key>
-           <string>gnu.emacs.daemon</string>
-           <key>ProgramArguments</key>
-           <array>
-             <string>/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs</string>
-             <string>--daemon</string>
-           </array>
-           <key>RunAtLoad</key>
-           <true/>
-           <key>ServiceDescription</key>
-           <string>Gnu Emacs Daemon</string>
-           <key>UserName</key>
-           <string>qingbo</string>
-         </dict>
-       </plist>
-    #+END_SRC
+    for Alfred to index Emacs app
+    add /usr/local/Cellar/ into Alfred's search scope to find Emacs
 
-    next time you login, os will automatic launch program descript in LaunchAgents.
+** configuration
+*** command line launch
+    if you want to lanuch emacs from command line, add such command alias to your
+    .bash_profile or .zshrc
+	  #+BEGIN_SRC bash
+	  alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+	  #+END_SRC
+    or add a script file */usr/bin/emacs* this is better I think, cas many third
+	  party package would assume the emacs path to be '/usr/bin/'， for example
+	  magit. so only terminal know how to find executable emacs but not emacs
+	  itself if you only add a alias.
+   	  #+BEGIN_SRC bash
+	  #!/bin/bash
+    /Applications/Emacs.app/Contents/MacOS/Emacs -nw
+	  #+END_SRC
+*** daemon
+**** emacsosx
+     for those using emacsosxna
+     #+BEGIN_SRC bash
+     git clone https://github.com/ferlatte/emacs-daemon-osx.git
+     cd emacs-daemon-osx
+     cp org.gnu.emacs.plist ~/Library/LaunchAgents
+     launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist
+     make
+     rm -r /Applications/emacs-client.app
+     cp -r emacs-client.app /Applications
+     
+     #+END_SRC
+**** source
+     1. create a plist file in /~/Library/LaunchAgents/, for exapmle /org.gnu.emacs.daemon.plist/
 
-    making a shortcut in you .bash_profile
-    #+BEGIN_SRC bash
-    alias e='emacsclient -t' 
-    #+END_SRC
+     #+BEGIN_SRC xml
+      <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+        <plist version="1.0">
+          <dict>
+            <key>Label</key>
+            <string>gnu.emacs.daemon</string>
+            <key>ProgramArguments</key>
+            <array>
+              <string>/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs</string>
+              <string>--daemon</string>
+            </array>
+            <key>RunAtLoad</key>
+            <true/>
+            <key>ServiceDescription</key>
+            <string>Gnu Emacs Daemon</string>
+            <key>UserName</key>
+            <string>qingbo</string>
+          </dict>
+        </plist>
+     #+END_SRC
 
-    another method:
-    2. create a applescript. paste below
-    #+BEGIN_SRC bash
-    tell application "Terminal"
-     do shell script "/Applications/Emacs.app/Contents/MacOS/Emacs --daemon"
-    endtell
-    #+END_SRC
-    
-    add this to users login tem
+     next time you login, os will automatic launch program descript in LaunchAgents.
 
-    
-** key binding
-   advice for mac users:
-   System preferences-> keyboard -> keyboard tab -> modifier keys(right buttom corner)
+     making a shortcut in you .bash_profile
+     #+BEGIN_SRC bash
+     alias e='emacsclient -t' 
+     #+END_SRC
 
-   change Caps Lock Key ----> ^Control
+     another method:
+     2. create a applescript. paste below
+     #+BEGIN_SRC bash
+     tell application "Terminal"
+      do shell script "/Applications/Emacs.app/Contents/MacOS/Emacs --daemon"
+     endtell
+     #+END_SRC
+     
+     add this to users login tem
 
+*** key binding
+    advice for mac users:
+    System preferences-> keyboard -> keyboard tab -> modifier keys(right buttom corner)
+    change Caps Lock Key ----> ^Control
 * basic keybinding
   naming and custom keybingding without conflicts must be the hardest thing in
   programming.
