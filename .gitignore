@@ -25,3 +25,4 @@ elpa/
 /.smex-items
 var/
 Maildir/
+/flycheck_org-clock-save.el

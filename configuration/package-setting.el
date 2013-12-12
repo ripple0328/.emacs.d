@@ -48,7 +48,6 @@
          color-theme
 			   powerline
          maxframe
-         page-break-lines
          
          ;; document
 			   babel
@@ -66,8 +65,8 @@
 			   twittering-mode
 
          ;; facilities
-         emacs-w3m
-         mu4e
+         emacs-w3m ;; browser
+         mu4e ;; email client
 
 				 ;; adaptive-wrap
 
