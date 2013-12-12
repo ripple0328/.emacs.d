@@ -101,5 +101,9 @@
 
 
 (global-page-break-lines-mode t)
+
+;; turn off ring bell and flash a black square block
+(setq visible-bell t)
+
 (provide 'general-setting)
 
