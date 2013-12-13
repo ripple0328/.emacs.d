@@ -61,7 +61,6 @@ function cleanup-command {
 }
 
 function install-brew {
-    msg 'Installing brew if you do not' $BPURPLE
     checking-command-exists brew &&
     msg 'Command brew has been installed' $BYELLOW ||
     ruby -e '$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)'
