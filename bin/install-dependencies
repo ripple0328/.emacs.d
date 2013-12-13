@@ -25,11 +25,11 @@ function install-font {
 install-font
 
 # if you want to use other font. patch it by yourself use script below
-# check-and-brew-install --use-gcc fontforge
-# msg 'Installing silver searcher csv gpg and so on' $BPURPLE
+# check-and-brew-install  fontforge --use-gcc
 
-brew tap | grep epicbrews >/dev/null 2>&1 &&
-# msg 'Repo epicbrews already been tapped' $BYELLOW ||
+# msg 'Installing silver searcher csv gpg and so on' $BPURPLE
+brew tap | grep epicbrews >/dev/null 2>&- &&
+msg 'Repo epicbrews already been tapped' $BYELLOW ||
 brew tap epichub/homebrew-epicbrews 
 
 check-and-brew-install the_silver_searcher
@@ -38,8 +38,6 @@ check-and-brew-install gpg
 check-and-brew-install cvs
 check-and-brew-install hg
 
-# msg 'Installing javascript synatic checkor' $BPURPLE
-check-and-brew-install jslint
 
 # msg 'Installing web brower in emacs' $BPURPLE
 check-and-brew-install w3m
@@ -49,7 +47,10 @@ check-and-brew-install aspell --with-lang=en
 
 # msg 'Installing css syntax check' $BPURPLE
 check-and-brew-install nodejs
-npm install -g csslint
+check-and-npm-install csslint
+
+# msg 'Installing javascript synatic checkor' $BPURPLE
+check-and-npm-install jslint
 
 # msg 'Installing ctags for symbol jumping' $BPURPLE
 check-and-brew-install ctags
