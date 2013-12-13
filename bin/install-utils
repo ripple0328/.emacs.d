@@ -124,7 +124,7 @@ function daemon-emacs() {
 }
 
 function patch-shebang-path() {
-    sed -ibak '1 c\
+    sed -i.bak '1 c\
 #\!/usr/bin/env '$2'\
 '  $1
 rm $1.bak    
