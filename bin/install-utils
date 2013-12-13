@@ -23,7 +23,7 @@ colors () {
 
 colors
 function msg {
-    printf "$BGREEN 0000===---> $RESET $2 $1 $RESET\n"
+    printf "$BGREEN\0000===--->$RESET $2 $1 $RESET\n"
 }
 
 BIN_PATH=/usr/local/bin
@@ -36,20 +36,20 @@ function checking-command-exists {
 
 function check-and-brew-install {
     msg 'checking whether '$1' has been installed' $BLUE
-    brew info $1  > /dev/null 2>&1 &&
-    msg $1' already been installed' $BBLUE ||
+    brew info $1  > /dev/null 2>&- &&
+    
+    msg $1' already been installed' $BPURPLE ||
     ( msg $1' not installed' $YELLOW
     msg 'brew installing '$1 $CYAN
     brew install $1 $2
     msg 'linking '$1' to system path' $CYAN
     brew link $1 --force)
-    brew upgrade $1
 }
 
 function gem-install {
     msg 'checking whether gem '$1' is installed' $BLUE
-    gem which $1  > /dev/null 2>&1 && 
-    msg 'gem '$1' already been installed' $BBLUE ||
+    gem which $1  > /dev/null 2>&- && 
+    msg 'gem '$1' already been installed' $BPURPLE ||
     ( msg 'not been installed' $YELLOW
     msg 'now installing gem '$1' for you' $CYAN
     gem install $1)
@@ -89,7 +89,7 @@ function install-emacs {
     
     check-and-brew-install brew-cask
     brew cask list | grep emacs  >/dev/null 2>&1 &&
-    msg 'emacs already been brew cask installed' $BBLUE ||
+    msg 'emacs already been brew cask installed' $BPURPLE ||
     (msg "emacs not install by cask" $YELLOW
     brew cask alfred link
     sudo rm -rf /Applications/Emacs.app ~/Applications/Emacs.app
