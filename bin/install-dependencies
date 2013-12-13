@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 
-msg 'installing some emacs package dependencies' $WHITE
+msg 'installing some emacs package dependencies' $BPURPLE
 
 check-and-brew-install bash-completion
 
-msg 'installing compile tools' $WHITE
+msg 'installing compile tools' $BPURPLE
 check-and-brew-install autoconf
 
-msg 'installing build tools' $WHITE
+msg 'installing build tools' $BPURPLE
 gem-install rake bundler
 
-msg 'installing syntax check and doc tools' $WHITE
+msg 'installing syntax check and doc tools' $BPURPLE
 gem-install rubocop
 gem-install pry
 gem-install pry-doc
 gem-install method_source
 
 function install-font {
-    msg 'installing patched font for powline theme' $CYAN
+    msg 'installing patched font for powline theme' $BPURPLE
      check-and-brew-install wget
     wget -q 'https://github.com/Lokaltog/powerline-fonts/blob/master/Inconsolata/Inconsolata%20for%20Powerline.otf' -O Inconsolata\ for\ Powerline.otf
     mv Inconsolata\ for\ Powerline.otf /Library/Fonts/
@@ -26,10 +26,10 @@ install-font
 
 # if you want to use other font. patch it by yourself use script below
 # check-and-brew-install --use-gcc fontforge
-msg 'installing silver searcher csv gpg and so on' $WHITE
+msg 'installing silver searcher csv gpg and so on' $BPURPLE
 
 brew tap | grep epicbrews >/dev/null 2>&1 &&
-msg 'epicbrews already been tapped' $BBLUE ||
+msg 'epicbrews already been tapped' $BYELLOW ||
 brew tap epichub/homebrew-epicbrews 
 
 check-and-brew-install the_silver_searcher
@@ -38,23 +38,23 @@ check-and-brew-install gpg
 check-and-brew-install cvs
 check-and-brew-install hg
 
-msg 'installing javascript synatic checkor' $WHITE
+msg 'installing javascript synatic checkor' $BPURPLE
 check-and-brew-install jslint
 
-msg 'installing web brower in emacs' $WHITE
+msg 'installing web brower in emacs' $BPURPLE
 check-and-brew-install w3m
 
-msg 'installing  dictonary tools' $WHITE
+msg 'installing  dictonary TOOLS' $BPURPLE
 check-and-brew-install aspell --with-lang=en
 
-msg 'installing css syntax check' $WHITE
+msg 'installing css syntax check' $BPURPLE
 check-and-brew-install nodejs
 npm install -g csslint
 
-msg 'installing ctags for symbol jumping' $WHITE
+msg 'installing ctags for symbol jumping' $BPURPLE
 check-and-brew-install ctags
 
-msg 'installing grapviz to convert ascii to digram and uml' $WHITE
+msg 'installing grapviz to convert ascii to digram and uml' $BPURPLE
 check-and-brew-install graphviz 
 
 msg 'installing depedencies required by mu4e a mail client' $WHITE

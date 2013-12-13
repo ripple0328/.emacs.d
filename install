@@ -16,6 +16,6 @@ daemon-emacs
 source ./bin/install-dependencies
 
 patch-shebang-path $(emacs-path) ruby
-msg 'First time you launch emacs, all plugin will install automatically. enjoy!'
+msg 'First time you launch emacs, all plugin will install automatically. enjoy!' $BRED
 emacs --debug-init
 
