@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-cd $HOME
-curl -L https://raw.github.com/ripple0328/.emacs.d/master/bin/install-utils | sh
-
 # get permisson at beginning
 sudo ls > /dev/null 2>&-
+
+cd $HOME
+curl -L https://raw.github.com/ripple0328/.emacs.d/master/bin/install-utils | sh
 
 # add dependencies
 install-brew

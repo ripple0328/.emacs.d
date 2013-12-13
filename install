@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
+# get permisson at beginning
+sudo ls > /dev/null 2>&-
+
 pushd `dirname $0` > /dev/null
 
 popd > /dev/null
 
 source ./bin/install-utils
-
-# get permisson at beginning
-sudo ls > /dev/null 2>&-
 
 install-brew
 git pull
