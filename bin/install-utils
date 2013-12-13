@@ -1,53 +1,78 @@
 #!/usr/bin/env bash
+colors () {
+    # Reset
+    RESET='\e[0m'
+    RED='\e[0;31m'          # Red
+    GREEN='\e[0;32m'        # Green
+    YELLOW='\e[0;33m'       # Yellow
+    BLUE='\e[0;34m'         # Blue
+    PURPLE='\e[0;35m'       # Purple
+    CYAN='\e[0;36m'         # Cyan
+    WHITE='\e[0;37m'        # White
+
+    # Bold
+    BRED='\e[1;31m'         # Red
+    BGREEN='\e[1;32m'       # Green
+    BYELLOW='\e[1;33m'      # Yellow
+    BBLUE='\e[1;34m'        # Blue
+    BPURPLE='\e[1;35m'      # Purple
+    BCYAN='\e[1;36m'        # Cyan
+    BWHITE='\e[1;37m'       # White
+}
+
 
 function msg {
- echo '0000===---> '$1
+    printf "$BGREEN 0000===--->$2$1"
 }
 BIN_PATH=/usr/local/bin
 
 function checking-command-exists {
-    msg 'checking whether command '$1' exist'
-    command -v $1 >/dev/null 2>&1    
+    msg 'checking whether command '$1' exist' $BLUE
+    # command -v $1 >/dev/null 2>&1
+    hash $1 2>&-
 }
 
 function check-and-brew-install {
-    msg 'checking whether '$1' has been installed'
+    msg 'checking whether '$1' has been installed' $BLUE
     brew info $1  > /dev/null 2>&1 &&
-    msg $1' already been installed' ||
-    ( msg $1' not installed'
-    msg 'brew installing '$1
-    brew install $1
-    msg 'linking '$1' to system path'
+    msg $1' already been installed' $BBLUE ||
+    ( msg $1' not installed' $YELLOW
+    msg 'brew installing '$1 $CYAN
+    brew install $1 $2
+    msg 'linking '$1' to system path' $CYAN
     brew link $1 --force)
     brew upgrade $1
 }
 
 function gem-install {
-    msg 'checking whether gem '$1' is installed'
+    msg 'checking whether gem '$1' is installed' $BLUE
     gem which $1  > /dev/null 2>&1 && 
-    msg 'gem '$1' already been installed' ||
-    ( msg 'not been installed'
-    msg 'now installing gem '$1' for you'
+    msg 'gem '$1' already been installed' $BBLUE ||
+    ( msg 'not been installed' $YELLOW
+    msg 'now installing gem '$1' for you' $CYAN
     gem install $1)
 }
 
 function cleanup-command {
-    msg 'looking for command '$1
+    msg 'looking for command '$1 $BLUE
     which $1 | xargs sudo rm -rf
 }
 
 function install-brew {
-    msg 'installing brew if you do not'
+    msg 'installing brew if you do not' $$CYAN
     checking-command-exists brew &&
-    msg 'brew has been installed' ||
+    msg 'brew has been installed' $PURPLE ||
     ruby -e '$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)'
-    msg 'updating homebrew'
+    msg 'updating homebrew' $CYAN
     brew update
 }
 
+function check-and-install-git {
+    check-and-brew-install git
+}
 function clean-env {
-    msg 'clean up environment'
-    msg 'remove system shipped emacs'
+    msg 'clean up environment' $BYELLOW
+    msg 'remove system shipped emacs' $BRED
     cleanup-command emacs
     cleanup-command emacsclient
     cleanup-command e
@@ -55,34 +80,34 @@ function clean-env {
 
 
 function install-emacs {
-    msg 'installing emacs'
+    msg 'installing emacs' $CYAN
     brew tap | grep phinze  >/dev/null 2>&1 &&
-    msg 'phinze already been tapped' ||
+    msg 'phinze already been tapped' $BBLUE ||
     brew tap phinze/homebrew-cask
     
     check-and-brew-install brew-cask
     brew cask list | grep emacs  >/dev/null 2>&1 &&
-    msg 'emacs already been brew cask installed' ||
-    (msg "emacs not install by cask"
+    msg 'emacs already been brew cask installed' $BBLUE ||
+    (msg "emacs not install by cask" $YELLOW
     brew cask alfred link
     sudo rm -rf /Applications/Emacs.app ~/Applications/Emacs.app
     brew cask install emacs)
-    msg 'linking emacs to system path'
+    msg 'linking emacs to system path' $CYAN
 }
 
 function create-command-line-emacs {
-    msg 'creating emacs command'
+    msg 'creating emacs command' $CYAN
     sudo rm -f /usr/bin/emacs
     sudo rm -f $BIN_PATH/emacs
     cp emacs-script $BIN_PATH/emacs
     chmod a+x $BIN_PATH/emacs
 
-    msg 'linking commands shipped with emacs to system path'
+    msg 'linking commands shipped with emacs to system path' $CYAN
     ln -sf $(cask-packages-path emacs)/Emacs.app/Contents/MacOS/bin/* $BIN_PATH/
 }
 
 function daemon-emacs() {
-    msg 'daemon emacs to launch at login'
+    msg 'daemon emacs to launch at login' $CYAN
     git clone https://github.com/ripple0328/emacs-daemon-osx.git
     cd emacs-daemon-osx
     make
@@ -110,3 +135,4 @@ function cask-packages-path(){
 function emacs-path() {
     cask-packages-path emacs | awk '{print $1"/Emacs.app/Contents/MacOS/Emacs"}'
 }
+
