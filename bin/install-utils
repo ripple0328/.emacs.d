@@ -18,8 +18,8 @@ function check-and-brew-install {
     msg 'brew installing '$1
     brew install $1
     msg 'linking '$1' to system path'
-
-        brew link $1 --force)
+    brew link $1 --force)
+    brew upgrade $1
 }
 
 function gem-install {
@@ -61,7 +61,6 @@ function install-emacs {
     brew tap phinze/homebrew-cask
     
     check-and-brew-install brew-cask
-
     brew cask list | grep emacs  >/dev/null 2>&1 &&
     msg 'emacs already been brew cask installed' ||
     (msg "emacs not install by cask"
