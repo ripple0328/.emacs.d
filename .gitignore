@@ -26,3 +26,4 @@ elpa/
 var/
 Maildir/
 /flycheck_org-clock-save.el
+/.mc-lists.el

@@ -10,7 +10,7 @@ popd > /dev/null
 source ./bin/install-utils
 
 install-brew
-git pull
+# git pull
 clean-env
 install-emacs
 create-command-line-emacs

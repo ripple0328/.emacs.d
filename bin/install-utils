@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-colors () {
+function colors () {
     # Reset
     RESET='\e[0m'
     RED='\e[0;31m'          # Red
@@ -20,8 +20,8 @@ colors () {
     BCYAN='\e[1;36m'        # Cyan
     BWHITE='\e[1;37m'       # White
 }
-
 colors
+
 function msg {
     printf "$BGREEN 0000===--->$RESET $2 $1 $RESET\n"
 }
@@ -41,18 +41,18 @@ function check-and-brew-install {
     msg 'Package '$1' already been installed' $BYELLOW ||
     ( msg 'Package '$1' not installed' $BRED
     msg 'Installing '$1' by brew' $BPURPLE
-    brew install $1 $2
+    brew install $1 $2 > /dev/null 2>&- 
     msg 'Linking '$1' to system path' $BPURPLE
-    brew link $1 --force)
+    brew link $1 --force > /dev/null 2>&-)
 }
 
 function check-and-npm-install {
     msg 'Checking whether '$1' has been installed' $BCYAN    
-    npm list -g --parseable| grep $1 > /dev/null 2>&- &&
+    npm list -g --parseable > /dev/null 2>&- | grep $1 > /dev/null 2>&- &&
     msg 'Package '$1' already been installed' $BYELLOW ||
     ( msg 'Package '$1' not installed' $BRED
     msg 'Installing '$1' by npm' $BPURPLE
-    npm install -g $1
+    npm install -g $1 > /dev/null 2>&-  
     )
 }
 
@@ -62,7 +62,7 @@ function gem-install {
     msg 'Gem '$1' already been installed' $BYELLOW ||
     ( msg 'Gem '$1' not been installed' $BRED
     msg 'Installing gem '$1' for you' $BPURPLE
-    gem install $1)
+    gem install $1 > /dev/null 2>&-  )
 }
 
 function cleanup-command {
@@ -74,8 +74,8 @@ function install-brew {
     checking-command-exists brew &&
     msg 'Command brew has been installed' $BYELLOW ||
     ruby -e '$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)'
-    msg 'Updating homebrew' $BPURPLE
-    brew update
+    msg 'Updating homebrew...' $BPURPLE
+    brew update > /dev/null 2>&- 
 }
 
 function check-and-install-git {
@@ -94,13 +94,13 @@ function install-emacs {
     msg 'Installing emacs' $BPURPLE
     brew tap | grep phinze  >/dev/null 2>&- &&
     msg 'Repo phinze already been tapped' $BYELLOW ||
-    brew tap phinze/homebrew-cask
+    brew tap phinze/homebrew-cask >/dev/null 2>&-
     
     check-and-brew-install brew-cask
     brew cask list | grep emacs  >/dev/null 2>&- &&
     msg 'Software emacs already installed' $BYELLOW ||
     (msg "Software emacs not install by cask" $BRED
-    brew cask alfred link
+    brew cask alfred link >/dev/null 2>&-
     sudo rm -rf /Applications/Emacs.app ~/Applications/Emacs.app
     brew cask install emacs)
     msg 'Linking emacs to system path' $BPURPLE
@@ -119,11 +119,11 @@ function create-command-line-emacs {
 
 function daemon-emacs() {
     msg 'Setting daemon emacs to launch at login' $BPURPLE
-    git clone https://github.com/ripple0328/emacs-daemon-osx.git
+    git clone https://github.com/ripple0328/emacs-daemon-osx.git >/dev/null 2>&-
     cd emacs-daemon-osx
-    make
+    make > /dev/null 2>&-
     cp org.gnu.emacs.plist ~/Library/LaunchAgents
-    launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist
+    launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist > /dev/null 2>&-
     sudo rm -rf /Applications/emacs-client.app
     sudo mv  emacs-client.app /Applications/
     sudo mv e $BIN_PATH/
