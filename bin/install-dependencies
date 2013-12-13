@@ -33,6 +33,7 @@ msg 'epicbrews already been tapped' ||
 brew tap epichub/homebrew-epicbrews 
 
 check-and-brew-install the_silver_searcher
+check-and-brew-install ack
 check-and-brew-install gpg
 check-and-brew-install cvs
 check-and-brew-install hg
