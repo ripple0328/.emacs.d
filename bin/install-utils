@@ -29,52 +29,52 @@ function msg {
 BIN_PATH=/usr/local/bin
 
 function checking-command-exists {
-    msg 'Checking whether command '$1' exist' $BCYAN
+    msg 'CHECKING\t\t command -'$1'- existences' $BCYAN
     # command -v $1 >/dev/null 2>&1
     hash $1 2>&-
 }
 
 function check-and-brew-install {
-    msg 'Checking whether '$1' has been installed' $BCYAN
+    msg 'CHECKING\t\t whether -'$1'- has been installed' $BCYAN
     brew info $1  > /dev/null 2>&- &&
     
-    msg 'Package '$1' already been installed' $BYELLOW ||
-    ( msg 'Package '$1' not installed' $BRED
-    msg 'Installing '$1' by brew' $BPURPLE
+    msg 'PACKAGE\t\t -'$1'- already been installed' $BYELLOW ||
+    ( msg 'PACKAGE\t\t -'$1'- not installed' $BRED
+    msg 'INSTALL\t\t -'$1'- by brew' $BPURPLE
     brew install $1 $2 > /dev/null 2>&- 
-    msg 'Linking '$1' to system path' $BPURPLE
+    msg 'LINKING\t\t -'$1'- to system path' $BPURPLE
     brew link $1 --force > /dev/null 2>&-)
 }
 
 function check-and-npm-install {
-    msg 'Checking whether '$1' has been installed' $BCYAN    
-    npm list -g --parseable > /dev/null 2>&- | grep $1 > /dev/null 2>&- &&
-    msg 'Package '$1' already been installed' $BYELLOW ||
-    ( msg 'Package '$1' not installed' $BRED
-    msg 'Installing '$1' by npm' $BPURPLE
+    msg 'CHECKING\t\t whether -'$1'- has been installed' $BCYAN    
+    npm list -g --parseable | grep $1 > /dev/null 2>&-  &&
+    msg 'PACKAGE\t\t -'$1'- already been installed' $BYELLOW ||
+    (msg 'PACKAGE\t\t -'$1'- not installed' $BRED
+    msg 'INSTALL\t\t -'$1'- by npm' $BPURPLE
     npm install -g $1 > /dev/null 2>&-  
     )
 }
 
 function gem-install {
-    msg 'Checking whether gem '$1' is installed' $BCYAN
+    msg 'CHECKING\t\t whether gem -'$1'- is installed' $BCYAN
     gem which $1  > /dev/null 2>&- && 
-    msg 'Gem '$1' already been installed' $BYELLOW ||
-    ( msg 'Gem '$1' not been installed' $BRED
-    msg 'Installing gem '$1' for you' $BPURPLE
+    msg 'GEM\t\t -'$1'- already been installed' $BYELLOW ||
+    ( msg 'GEM\t\t -'$1'- not been installed' $BRED
+    msg 'INSTALL\t\t gem -'$1'- for you' $BPURPLE
     gem install $1 > /dev/null 2>&-  )
 }
 
 function cleanup-command {
-    msg 'Checking for command '$1 $BCYAN
+    msg 'CHECKING\t\t for command -'$1'-'  $BCYAN
     which $1 | xargs sudo rm -rf
 }
 
 function install-brew {
     checking-command-exists brew &&
-    msg 'Command brew has been installed' $BYELLOW ||
+    msg 'COMMAND\t\t brew has been installed' $BYELLOW ||
     ruby -e '$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)'
-    msg 'Updating homebrew...' $BPURPLE
+    msg 'UPDATING\t\t homebrew...' $BPURPLE
     brew update > /dev/null 2>&- 
 }
 
@@ -82,8 +82,8 @@ function check-and-install-git {
     check-and-brew-install git
 }
 function clean-env {
-    msg 'Cleaning up environment' $BPURPLE
-    msg 'Removing system shipped emacs' $BPURPLE
+    msg 'CLEANING\t\t up environment' $BPURPLE
+    msg 'REMOVING\t\t system shipped -emacs-' $BPURPLE
     cleanup-command emacs
     cleanup-command emacsclient
     cleanup-command e
@@ -91,34 +91,34 @@ function clean-env {
 
 
 function install-emacs {
-    msg 'Installing emacs' $BPURPLE
+    msg 'INSTALL\t\t -emacs- ...' $BPURPLE
     brew tap | grep phinze  >/dev/null 2>&- &&
-    msg 'Repo phinze already been tapped' $BYELLOW ||
+    msg 'REPO\t\t -phinze- already been tapped' $BYELLOW ||
     brew tap phinze/homebrew-cask >/dev/null 2>&-
     
     check-and-brew-install brew-cask
     brew cask list | grep emacs  >/dev/null 2>&- &&
-    msg 'Software emacs already installed' $BYELLOW ||
-    (msg "Software emacs not install by cask" $BRED
+    msg 'SOFTWARE\t\t -emacs- already installed' $BYELLOW ||
+    (msg "SOFTWARE\t\t -emacs- not install by cask" $BRED
     brew cask alfred link >/dev/null 2>&-
     sudo rm -rf /Applications/Emacs.app ~/Applications/Emacs.app
     brew cask install emacs)
-    msg 'Linking emacs to system path' $BPURPLE
+    msg 'LINKING\t\t -emacs- to system path' $BPURPLE
 }
 
 function create-command-line-emacs {
-    msg 'Creating emacs command' $BPURPLE
+    msg 'CREATING\t\t -emacs- command' $BPURPLE
     sudo rm -f /usr/bin/emacs
     sudo rm -f $BIN_PATH/emacs
     cp emacs-script $BIN_PATH/emacs
     chmod a+x $BIN_PATH/emacs
 
-    msg 'Linking commands shipped with emacs to system path' $BPURPLE
+    msg 'LINKING\t\t commands shipped with emacs to system path' $BPURPLE
     ln -sf $(cask-packages-path emacs)/Emacs.app/Contents/MacOS/bin/* $BIN_PATH/
 }
 
 function daemon-emacs() {
-    msg 'Setting daemon emacs to launch at login' $BPURPLE
+    msg 'SETTING\t\t -emacs- to launch at login...' $BPURPLE
     git clone https://github.com/ripple0328/emacs-daemon-osx.git >/dev/null 2>&-
     cd emacs-daemon-osx
     make > /dev/null 2>&-

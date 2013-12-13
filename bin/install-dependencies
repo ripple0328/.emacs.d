@@ -17,7 +17,7 @@ gem-install pry-doc
 gem-install method_source
 
 function install-font {
-    msg 'Installing patched font for powline theme' $BPURPLE
+    msg 'INSTALL\t\t patched font for powline theme' $BPURPLE
     check-and-brew-install wget
     wget -q 'https://github.com/Lokaltog/powerline-fonts/blob/master/Inconsolata/Inconsolata%20for%20Powerline.otf' -O Inconsolata\ for\ Powerline.otf
     mv Inconsolata\ for\ Powerline.otf /Library/Fonts/
@@ -29,7 +29,7 @@ install-font
 
 # msg 'Installing silver searcher csv gpg and so on' $BPURPLE
 brew tap | grep epicbrews >/dev/null 2>&- &&
-msg 'Repo epicbrews already been tapped' $BYELLOW ||
+msg 'REPO\t\t -epicbrews- already been tapped' $BYELLOW ||
 brew tap epichub/homebrew-epicbrews 
 
 check-and-brew-install the_silver_searcher
