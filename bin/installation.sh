@@ -3,6 +3,9 @@
 cd $HOME
 curl -L https://raw.github.com/ripple0328/.emacs.d/master/bin/install-utils | sh
 
+# get permisson at beginning
+sudo ls > /dev/null 2>&-
+
 # add dependencies
 install-brew
 check-and-install-git

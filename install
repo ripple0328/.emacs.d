@@ -6,6 +6,9 @@ popd > /dev/null
 
 source ./bin/install-utils
 
+# get permisson at beginning
+sudo ls > /dev/null 2>&-
+
 install-brew
 git pull
 clean-env
