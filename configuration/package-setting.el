@@ -78,6 +78,7 @@
          multiple-cursors
          helm
          ag
+         ack-and-a-half
          
          enclose
          smartparens
