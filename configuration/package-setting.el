@@ -114,6 +114,7 @@
          ;; ruby
          rvm ;; essetiall if you use rvm to manage ruby
 				 enh-ruby-mode
+			   ruby-compilation
 				 robe-mode ;; inf-ruby
          bundler
          rubocop ;; need rubocop gem installed
@@ -135,7 +136,6 @@
 			   ;; dired+
 			   ;; json
 			   ;; ruby-block
-			   ;; ruby-compilation
 			   ;; ruby-electric
 
 			   ;; ruby-test-mode
