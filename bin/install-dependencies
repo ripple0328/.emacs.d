@@ -66,6 +66,7 @@ check-and-brew-install offlineimap
 check-and-brew-install html2text
 check-and-brew-install gettext
 check-and-brew-install mu
+check-and-brew-install gnutls
 
 mkdir -p Maildir
 # after proper configuration you can run command below to start using mu4e
