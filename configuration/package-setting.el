@@ -57,7 +57,8 @@
 
          ;; services
          ;; google-maps ;; some problem
-         
+         bbdb
+         bbdb-vcard
          google-contacts ;; oauth2,use `flet' is an obsolete macro
          google-translate
 			   weibo.emacs
