@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+clean-env
+install-emacs
+create-command-line-emacs
+daemon-emacs
