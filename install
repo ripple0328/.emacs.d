@@ -1,24 +1,15 @@
 #!/usr/bin/env bash
 
-# get permisson at beginning
-sudo ls > /dev/null 2>&-
-
 pushd `dirname $0` > /dev/null
-
 popd > /dev/null
 
-source ./bin/install-utils
 
-install-brew
-# git pull
-clean-env
-install-emacs
-create-command-line-emacs
-daemon-emacs
+function exec-local {
+    source ./bin/$1
+}
 
-source ./bin/install-dependencies
-
-patch-shebang-path $(emacs-path) ruby
-msg 'First time you launch emacs, all plugin will install automatically. enjoy!' $BRED
-emacs --debug-init
+exec-local install-utils
+exec-local env-prepare
+exec-local install-process
+exec-local install-dependencies
 
