@@ -117,10 +117,17 @@
 ;;------------------------------------------------------------------------------
 ;;  agenda
 ;;------------------------------------------------------------------------------
+
 (org-agenda-files (concat emacs-dir "agenda"))
 (global-set-key (kbd "C-c a") 'org-agenda)
+
+;; support for ical
+(add-to-list 'org-modules 'org-mac-iCal)
 (setq org-agenda-include-diary t)
 
+;; support for mac link from other app
+(add-hook 'org-mode-hook (lambda () 
+  (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)))
 
 ;; capture
 
@@ -144,6 +151,9 @@
 (setq org-insert-mode-line-in-empty-file t)
 
 (add-hook 'org-mode-hook 'turn-on-font-lock)
+
+(add-hook 'org-mode-hook (lambda () 
+  (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)))
 
 
 ; add structure editing keybindings not set by default
