@@ -7,15 +7,16 @@ function exec-remote {
 }
 
 exec-remote install-utils
-exec-remote env-prepare
+exec-remote basic-environment-installation
 
 # back up old configuration and clone new one
 mv .emacs.d .emacs.d.bak
+alias git=hub
 hub clone ripple0328/.emacs.d
 
-exec-remote install-process
+exec-remote emacs-install-process
 
-# install dependencies
+# install emacs dependencies
 exec-remote install-dependencies
 
 

@@ -26,9 +26,8 @@ function msg {
     printf "$BGREEN 0000===--->$RESET $2 $1 $RESET\n"
 }
 
-BIN_PATH=/usr/local/bin
 
-function checking-command-exists {
+function check-command-existence {
     msg 'CHECKING\t\t command -'$1'- existences' $BCYAN
     # command -v $1 >/dev/null 2>&1
     hash $1 2>&-
@@ -56,7 +55,28 @@ function check-and-npm-install {
     )
 }
 
-function gem-install {
+function check-and-install-brew-repo {
+    msg 'CHECKING\t\t whether repo -'$1/$2'- has been taped' $BCYAN       
+    brew tap | grep $1/$2  >/dev/null 2>&- &&
+    msg 'REPO\t\t -- already been tapped' $BYELLOW ||
+    msg 'TAPPING\t\t -'$1/$2'- to brew'
+    brew tap $1/homebrew-$2 >/dev/null 2>&-
+}
+
+function check-and-cask-install {
+    msg 'CHECKING\t\t whether package -'$1'- is installed' $BCYAN    
+    brew cask list | grep $1  >/dev/null 2>&- &&
+    msg 'SOFTWARE\t\t -'$1'- already installed' $BYELLOW ||
+    (msg 'SOFTWARE\t\t -'$1'- not install by cask' $BRED
+    export HOMEBREW_CASK_OPTS="--appdir=/Applications"    
+    brew cask install $1)
+}
+
+function cask-packages-path(){
+    brew cask info $1 | sed -n 3p | awk '{split($0,a," "); print a[1]}'
+}
+
+function check-and-gem-install {
     msg 'CHECKING\t\t whether gem -'$1'- is installed' $BCYAN
     gem which $1  > /dev/null 2>&- && 
     msg 'GEM\t\t -'$1'- already been installed' $BYELLOW ||
@@ -78,61 +98,25 @@ function install-brew {
     brew update > /dev/null 2>&- 
 }
 
-function check-and-install-git {
-    check-and-brew-install git
-}
-function clean-env {
-    msg 'CLEANING\t\t up environment' $BPURPLE
-    msg 'REMOVING\t\t system shipped -emacs-' $BPURPLE
-    cleanup-command emacs
-    cleanup-command emacsclient
-    cleanup-command e
+function install-rvm {
+    checking-command-exists rvm &&
+    msg 'COMMAND\t\t -rvm- has been installed' $BYELLOW ||
+    \curl -sSL https://get.rvm.io | bash    
+    msg 'UPDATING\t\t -rvm-...' $BPURPLE
+    rvm get stable > /dev/null 2>&-     
 }
 
-
-function install-emacs {
-    msg 'INSTALL\t\t -emacs- ...' $BPURPLE
-    brew tap | grep phinze  >/dev/null 2>&- &&
-    msg 'REPO\t\t -phinze- already been tapped' $BYELLOW ||
-    brew tap phinze/homebrew-cask >/dev/null 2>&-
-    
+function install-brew-cask {
+    check-and-install-brew-repo phinze cask
     check-and-brew-install brew-cask
-    brew cask list | grep emacs  >/dev/null 2>&- &&
-    msg 'SOFTWARE\t\t -emacs- already installed' $BYELLOW ||
-    (msg "SOFTWARE\t\t -emacs- not install by cask" $BRED
-    brew cask alfred link >/dev/null 2>&-
-    sudo rm -rf /Applications/Emacs.app ~/Applications/Emacs.app
-    export HOMEBREW_CASK_OPTS="--appdir=/Applications"    
-    brew cask install emacs)
-    msg 'LINKING\t\t -emacs- to system path' $BPURPLE
+    brew cask alfred link
 }
 
-function create-command-line-emacs {
-    msg 'CREATING\t\t -emacs- command' $BPURPLE
-    sudo rm -f /usr/bin/emacs
-    sudo rm -f $BIN_PATH/emacs
-    cp emacs-script $BIN_PATH/emacs
-    chmod a+x $BIN_PATH/emacs
-
-    msg 'LINKING\t\t commands shipped with emacs to system path' $BPURPLE
-    ln -sf $(cask-packages-path emacs)/Emacs.app/Contents/MacOS/bin/* $BIN_PATH/
+function install-git {
+    check-and-brew-install git
+    check-and-brew-install hub
+    alias git=hub
 }
-
-function daemon-emacs() {
-    msg 'SETTING\t\t -emacs- to launch at login...' $BPURPLE
-    git clone https://github.com/ripple0328/emacs-daemon-osx.git >/dev/null 2>&-
-    cd emacs-daemon-osx
-    make > /dev/null 2>&-
-    cp org.gnu.emacs.plist ~/Library/LaunchAgents
-    launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist > /dev/null 2>&-
-    sudo rm -rf /Applications/emacs-client.app
-    sudo mv  emacs-client.app /Applications/
-    sudo mv e $BIN_PATH/
-    sudo chmod a+x $BIN_PATH/e
-    cd ..
-    rm -rf emacs-daemon-osx
-}
-
 function patch-shebang-path() {
     sed -i.bak '1 c\
 #\!/usr/bin/env '$2'\
@@ -140,11 +124,9 @@ function patch-shebang-path() {
 rm $1.bak    
 }
 
-function cask-packages-path(){
-    brew cask info $1 | sed -n 3p | awk '{split($0,a," "); print a[1]}'
+function install-font {
+    msg 'INSTALL\t\t patched font for powline theme' $BPURPLE
+    check-and-brew-install wget
+    wget -q 'https://github.com/Lokaltog/powerline-fonts/blob/master/Inconsolata/Inconsolata%20for%20Powerline.otf' -O Inconsolata\ for\ Powerline.otf
+    mv Inconsolata\ for\ Powerline.otf /Library/Fonts/
 }
-
-function emacs-path() {
-    cask-packages-path emacs | awk '{print $1"/Emacs.app/Contents/MacOS/Emacs"}'
-}
-

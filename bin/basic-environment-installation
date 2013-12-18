@@ -4,6 +4,9 @@
 sudo ls > /dev/null 2>&-
 
 # add dependencies
+
 install-brew
-check-and-install-git
-check-and-brew-install hub
+install-git
+install-brew-cask
+install-font
+

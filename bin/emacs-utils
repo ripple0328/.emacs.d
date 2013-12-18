@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+BIN_PATH=/usr/local/bin
+
+function clean-emacs {
+    msg 'CLEANING\t\t up environment' $BPURPLE
+    msg 'REMOVING\t\t system shipped -emacs-' $BPURPLE
+    sudo rm -rf /Applications/Emacs.app ~/Applications/Emacs.app
+    cleanup-command emacs
+    cleanup-command emacsclient
+    cleanup-command e
+}
+
+function create-command-line-emacs {
+    msg 'CREATING\t\t -emacs- command' $BPURPLE
+    sudo rm -f /usr/bin/emacs
+    sudo rm -f $BIN_PATH/emacs
+    cp emacs-script $BIN_PATH/emacs
+    chmod a+x $BIN_PATH/emacs
+
+    msg 'LINKING\t\t commands shipped with emacs to system path' $BPURPLE
+    ln -sf $(cask-packages-path emacs)/Emacs.app/Contents/MacOS/bin/* $BIN_PATH/
+}
+
+function daemon-emacs() {
+    msg 'SETTING\t\t -emacs- to launch at login...' $BPURPLE
+    git clone https://github.com/ripple0328/emacs-daemon-osx.git >/dev/null 2>&-
+    cd emacs-daemon-osx
+    make > /dev/null 2>&-
+    cp org.gnu.emacs.plist ~/Library/LaunchAgents
+    launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist > /dev/null 2>&-
+    sudo rm -rf /Applications/emacs-client.app
+    sudo mv  emacs-client.app /Applications/
+    sudo mv e $BIN_PATH/
+    sudo chmod a+x $BIN_PATH/e
+    cd ..
+    rm -rf emacs-daemon-osx
+}
+
+
+function emacs-path() {
+    cask-packages-path emacs | awk '{print $1"/Emacs.app/Contents/MacOS/Emacs"}'
+}
+

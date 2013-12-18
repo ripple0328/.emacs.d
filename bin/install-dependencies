@@ -8,29 +8,17 @@ check-and-brew-install bash-completion
 check-and-brew-install autoconf
 
 # msg 'Installing build tools' $BPURPLE
-gem-install rake bundler
+check-and-gem-install rake bundler
 
 # msg 'Installing syntax check and doc tools' $BPURPLE
-gem-install rubocop
-gem-install pry
-gem-install pry-doc
-gem-install method_source
+check-and-gem-install rubocop
+check-and-gem-install pry
+check-and-gem-install pry-doc
+check-and-gem-install method_source
 
-function install-font {
-    msg 'INSTALL\t\t patched font for powline theme' $BPURPLE
-    check-and-brew-install wget
-    wget -q 'https://github.com/Lokaltog/powerline-fonts/blob/master/Inconsolata/Inconsolata%20for%20Powerline.otf' -O Inconsolata\ for\ Powerline.otf
-    mv Inconsolata\ for\ Powerline.otf /Library/Fonts/
-}
-install-font
-
-# if you want to use other font. patch it by yourself use script below
-# check-and-brew-install  fontforge --use-gcc
 
 # msg 'Installing silver searcher csv gpg and so on' $BPURPLE
-brew tap | grep epicbrews >/dev/null 2>&- &&
-msg 'REPO\t\t -epicbrews- already been tapped' $BYELLOW ||
-brew tap epichub/homebrew-epicbrews 
+check-and-install-brew-repo epichub epicbrews
 
 check-and-brew-install the_silver_searcher
 check-and-brew-install ack
