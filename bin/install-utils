@@ -102,6 +102,7 @@ function install-emacs {
     (msg "SOFTWARE\t\t -emacs- not install by cask" $BRED
     brew cask alfred link >/dev/null 2>&-
     sudo rm -rf /Applications/Emacs.app ~/Applications/Emacs.app
+    export HOMEBREW_CASK_OPTS="--appdir=/Applications"    
     brew cask install emacs)
     msg 'LINKING\t\t -emacs- to system path' $BPURPLE
 }
