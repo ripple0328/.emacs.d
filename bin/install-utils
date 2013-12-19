@@ -132,3 +132,7 @@ function install-font {
     wget -q 'https://github.com/Lokaltog/powerline-fonts/blob/master/Inconsolata/Inconsolata%20for%20Powerline.otf' -O Inconsolata\ for\ Powerline.otf
     mv Inconsolata\ for\ Powerline.otf /Library/Fonts/
 }
+
+function get-root-permisson {
+   sudo ls > /dev/null 2>&-
+}

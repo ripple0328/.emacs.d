@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # get permisson at beginning
-sudo ls > /dev/null 2>&-
+get-root-permisson
 
 # add dependencies
 
