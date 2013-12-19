@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 clean-emacs
-install-emacs
+check-and-cask-install emacs
 create-command-line-emacs
 daemon-emacs
