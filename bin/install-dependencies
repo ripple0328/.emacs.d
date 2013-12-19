@@ -62,6 +62,6 @@ mkdir -p Maildir
 # > offlineimap
 # > mu index --maildir=~/.emacs.d/Maildir
 
-patch-shebang-path $(emacs-path) ruby
+patch-shebang-path $(cask-packages-path emacs) ruby
 msg 'First time you launch emacs, all plugin will install automatically. enjoy!' 
 emacs --debug-init
