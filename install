@@ -10,6 +10,7 @@ function exec-local {
 
 exec-local install-utils
 exec-local basic-environment-installation
+exec-local emacs-utils
 exec-local emacs-install-process
 exec-local install-dependencies
 
