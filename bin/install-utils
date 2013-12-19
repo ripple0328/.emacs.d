@@ -91,7 +91,7 @@ function cleanup-command {
 }
 
 function install-brew {
-    checking-command-exists brew &&
+    check-command-exists brew &&
     msg 'COMMAND\t\t -brew- has been installed' $BYELLOW ||
     ruby -e '$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)'
     msg 'UPDATING\t\t -homebrew-...' $BPURPLE
@@ -99,7 +99,7 @@ function install-brew {
 }
 
 function install-rvm {
-    checking-command-exists rvm &&
+    check-command-exists rvm &&
     msg 'COMMAND\t\t -rvm- has been installed' $BYELLOW ||
     \curl -sSL https://get.rvm.io | bash    
     msg 'UPDATING\t\t -rvm-...' $BPURPLE
