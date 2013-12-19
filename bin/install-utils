@@ -70,6 +70,7 @@ function check-and-cask-install {
     (msg 'SOFTWARE\t\t -'$1'- not install by cask' $BRED
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"    
     brew cask install $1)
+    brew upgrade $1
 }
 
 function cask-packages-path(){
@@ -96,7 +97,6 @@ function install-brew {
     ruby -e '$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)'
     msg 'UPDATING\t\t -homebrew-...' $BPURPLE
     brew update > /dev/null 2>&-
-    brew upgrade > /dev/null 2>&-
 }
 
 function install-rvm {
