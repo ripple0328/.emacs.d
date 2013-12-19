@@ -43,6 +43,8 @@ function check-and-brew-install {
     brew install $1 $2 > /dev/null 2>&- 
     msg 'LINKING\t\t -'$1'- to system path' $BPURPLE
     brew link $1 --force > /dev/null 2>&-)
+    msg 'Upgrade\t\t -'$1'-' $BPURPLE
+    brew upgrade $1 > /dev/null 2>&-
 }
 
 function check-and-npm-install {
@@ -70,7 +72,6 @@ function check-and-cask-install {
     (msg 'SOFTWARE\t\t -'$1'- not install by cask' $BRED
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"    
     brew cask install $1)
-    brew upgrade $1
 }
 
 function cask-packages-path(){
