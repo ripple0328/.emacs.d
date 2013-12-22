@@ -10,6 +10,13 @@
    #+END_SRC
    all configuration described by section below will be execute by script above
    automatically.
+* update
+  if you have already install this emacs, you can always update the configuration by
+  #+BEGIN_SRC bash
+  cd ~/.emacs.d/
+  git pull
+  ./bin/install-local.sh
+  #+END_SRC
 * usage
 ** basic key binding notes
 | shortcut | conresponding key |
