@@ -1,6 +1,11 @@
 * general
   This is my emacs configuration files, the most different with previous version
   is now I use el-get as package manager. 
+* prerequisite
+  Many packages are installing from source. so you need to install xcode and its
+  command line tools first to compile some source code.
+
+  [[http://railsapps.github.io/xcode-command-line-tools.html][xcode-comand-line-tools-installation]]
 
 * install(osx)
    a simple way, you can directly install emacs and all it's dependency by script
@@ -139,6 +144,7 @@
  | C-c , r    |         | re-run the last verification process                          |
  | C-c , d    |         | toggle the pendingness of the example at the point            |
  | C-c , a    |         | run all specifications for project                            |
+
 *** rubocop
 | keybording  | Command                          | Description                                                     |
 |-------------+----------------------------------+-----------------------------------------------------------------|
