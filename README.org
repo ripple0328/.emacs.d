@@ -21,9 +21,10 @@
 | SPC      | space             |
 ** key binding setting
     advice for mac users, switch caplock and left control:
-    
-    System preferences-> keyboard -> keyboard tab -> modifier keys(right buttom corner)
-    change Caps Lock Key ----> ^Control
+    #+BEGIN_QUOTE
+    System preferences-> keyboard -> keyboard tab -> modifier keys(right buttom corner)->
+    change Caps Lock Key -> ^Control
+    #+END_QUOTE
 ** edit
    naming and custom keybingding without conflicts must be the hardest thing in
    emacs configuration
