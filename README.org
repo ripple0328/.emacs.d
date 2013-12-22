@@ -1,7 +1,103 @@
 * general
   This is my emacs configuration files, the most different with previous version
   is now I use el-get as package manager. 
-  
+
+* install(osx)
+   a simple way, you can directly install emacs and all it's dependency by script
+   below
+   #+BEGIN_SRC bash
+   \curl -sSL https://raw.github.com/ripple0328/.emacs.d/master/bin/install.sh | bash
+   #+END_SRC
+   all configuration described by section below will be execute by script above
+   automatically.
+* usage
+** basic key binding notes
+| shortcut | conresponding key |
+|----------+-------------------|
+| C        | Control           |
+| M        | option(alt)       |
+| S        | shift             |
+| s        | Command           |
+| SPC      | space             |
+** key binding setting
+    advice for mac users, switch caplock and left control:
+    
+    System preferences-> keyboard -> keyboard tab -> modifier keys(right buttom corner)
+    change Caps Lock Key ----> ^Control
+** edit
+   naming and custom keybingding without conflicts must be the hardest thing in
+   emacs configuration
+
+   here only descript custom or package provide function keybinding. for emacs
+   buildin editing please read the tutorial by C-h t.
+
+   usually edit keybinding are global.
+
+*** custom function   
+| keybinding | command-name   |
+|------------+----------------|
+| C-c  w     | copy-work      |
+| C-c  j     | copy-line      |
+| C-c  o     | copy-paragraph |
+| C-c  u     | copy-string    |
+| s-n        | move-text-down |
+| s-p        | move-text-up   |
+
+*** ace-jump
+| keybinding      | command            | description                                                                   |
+|-----------------+--------------------+-------------------------------------------------------------------------------|
+| C-c SPC         | ace-jump-word-mode | enter first character of a word, select the highlighted key to move to it.    |
+| C-u C-c SPC     | ace-jump-char-mode | enter a character for query, select the highlighted key to move to it.        |
+| C-u C-u C-c SPC | ace-jump-line-mode | each non-empty line will be marked, select the highlighted key to move to it. |
+*** multiple-cusor
+| keybinding  | command                    | description |
+|-------------+----------------------------+-------------|
+| C-S-c C-S-c | mc/edit-lines              |             |
+| C->         | mc/mark-next-like-this     |             |
+| C-<         | mc/mark-previous-like-this |             |
+| C-c C-<     | mc/mark-all-like-this      |             |
+*** expand-region
+| keybinding | command          | description |
+|------------+------------------+-------------|
+| C-=        | er/expand-region | increase selected region by unit |
+    
+** program
+*** project(projectile)   
+| key binding | description                                                                                             |
+|-------------+---------------------------------------------------------------------------------------------------------|
+| C-c p f,    | Display a list of all files in the project. With a prefix argument it will clear the cache first.       |
+| C-c p d,    | Display a list of all directories in the project. With a prefix argument it will clear the cache first. |
+| C-c p T,    | Display a list of all test files(specs, features, etc) in the project.                                  |
+| C-c p l,    | Display a list of all files in a directory (that's not necessarily a project)                           |
+| C-c p g,    | Run grep on the files in the project.                                                                   |
+| C-c p b,    | Display a list of all project buffers currently open.                                                   |
+| C-c p o,    | Runs multi-occur on all project buffers currently open.                                                 |
+| C-c p r,    | Runs interactive query-replace on all files in the projects.                                            |
+| C-c p i,    | Invalidates the project cache (if existing).                                                            |
+| C-c p R,    | Regenerates the projects TAGS file.                                                                     |
+| C-c p k,    | Kills all project buffers.                                                                              |
+| C-c p D,    | Opens the root of the project in dired.                                                                 |
+| C-c p e,    | Shows a list of recently visited project files.                                                         |
+| C-c p a,    | Runs ack on the project. Requires the presence of ack-and-a-half.                                       |
+| C-c p A,    | Runs ag on the project. Requires the presence of ag.el.                                                 |
+| C-c p c,    | Runs a standard compilation command for your type of project.                                           |
+| C-c p p,    | Runs a standard test command for your type of project.                                                  |
+| C-c p z,    | Adds the currently visited to the cache.                                                                |
+| C-c p s,    | Display a list of known projects you can switch to.                                                     |
+
+** version control (magit)
+
+** rails   
+*** rspec test
+| keybinding | command | description                                                   |
+|------------+---------+---------------------------------------------------------------|
+| C-c , t    |         | toggle back and forth between a spec and its target           |
+| C-c , v    |         | verify the spec file associated with the current buffer       |
+| C-c , s    |         | verify the example defined at the point of the current buffer |
+| C-c , r    |         | re-run the last verification process                          |
+| C-c , d    |         | toggle the pendingness of the example at the point            |
+| C-c , a    |         | run all specifications for project                            |
+   
 * package manage
   Since emacs version 24, emacs has buildin *elpa* as it's default package
   system. But official repo can not contain every package either every new
@@ -19,37 +115,21 @@
 
   most important, el-get is vert  activity by now. and it is the most powerfull
   packge manager as I know.
-* install(osx)
-** instruction
-   a simple way, you can directly install emacs and all it's dependency by script
-   below
-   #+BEGIN_SRC bash
-   git clone https://github.com/ripple0328/.emacs.d.git
-   cd ~/.emacsd.d/
-   chmod a+x install
-   ./install
-   #+END_SRC
 
-   all configuration described by section below will be execute by script above automatically.
 ** versions
    emacs that comes with osx is still 22.1.1, even you have upgrade your
    operation system 10.9.  it pretty old and difficult to use.  why not apple
    just do not pre-bundled such emacs.
-
    
    for mac users those who don't want to have heavy configuration, my suggestion
    is [[http://emacsformacosx.com/][emacs for osx]], its have advantage against others in such field:
 	  1. newer
 	  2. cocoa not X11
 	  3. retina 
-      
-   another way to install emacsosx for brew user
-   #+BEGIN_SRC bash
-   brew tap phinze/homebrew-cask && brew install brew-cask
-   brew cask install emacs
-   brew cask alfred link # let alfred to know apps install by cask
-   #+END_SRC
-   emacsforosx have different color behaviour. so the color theme may not the
+
+    that is the default version installed by install section.
+
+    emacsforosx have different color behaviour. so the color theme may not the
    same as you saw them in a screen snapshot.
 
     for mac user those want to toss of emacs, just brew install it by source
@@ -135,21 +215,6 @@
      
      add this to users login tem
 
-*** key binding
-    advice for mac users:
-    System preferences-> keyboard -> keyboard tab -> modifier keys(right buttom corner)
-    change Caps Lock Key ----> ^Control
-* basic keybinding
-  naming and custom keybingding without conflicts must be the hardest thing in
-  programming.
-
-  1. C-c w copy-work
-  2. C-c j copy-line ( this is definte not good, but God all meaning full keybinding is been occupied)
-  3. C-c o copy-paragraph
-  4. C-c u copy-string
-  5. s-n move-text-down
-  6. s-p move-text-up
-  
 * packages
   packages I use frequenctly. I will eventually add a description to the usage
   of every packge if have time.
@@ -175,16 +240,6 @@
    - rinari
    - [[https://github.com/pezra/rspec-mode][rspec-mode]]
      
-    - toggle back and forth between a spec and its target (bound to `\C-c ,t`)
-    - verify the spec file associated with the current buffer (bound to `\C-c ,v`)
-    - verify the spec defined in the current buffer if it is a spec file (bound to `\C-c ,v`)
-    - verify the example defined at the point of the current buffer (bound to `\C-c ,s`)
-    - re-run the last verification process (bound to `\C-c ,r`)
-    - toggle the pendingness of the example at the point (bound to `\C-c ,d`)
-    - disable the example at the point by making it pending
-    - reenable the disabled example at the point
-    - run all specifications for project (bound to `\C-c ,a`)
-           
    - ruby-block
    - [[https://github.com/nonsequitur/inf-ruby][inf-ruby]]
      
@@ -335,16 +390,6 @@
      
      [[http://emacsrocks.com/e10.html][video]]
      
-     
-           "C-c SPC" ==> ace-jump-word-mode
-           
-           enter first character of a word, select the highlighted key to move to it.
-           "C-u C-c SPC" ==> ace-jump-char-mode
-           
-           enter a character for query, select the highlighted key to move to it.
-           "C-u C-u C-c SPC" ==> ace-jump-line-mode
-           
-           each non-empty line will be marked, select the highlighted key to move to it.
             
      
    - exec-path-from-shell
@@ -396,27 +441,6 @@
       
       complete keybinding
       
-| key binding | description                                                                                             |
-|-------------+---------------------------------------------------------------------------------------------------------|
-| C-c p f,    | Display a list of all files in the project. With a prefix argument it will clear the cache first.       |
-| C-c p d,    | Display a list of all directories in the project. With a prefix argument it will clear the cache first. |
-| C-c p T,    | Display a list of all test files(specs, features, etc) in the project.                                  |
-| C-c p l,    | Display a list of all files in a directory (that's not necessarily a project)                           |
-| C-c p g,    | Run grep on the files in the project.                                                                   |
-| C-c p b,    | Display a list of all project buffers currently open.                                                   |
-| C-c p o,    | Runs multi-occur on all project buffers currently open.                                                 |
-| C-c p r,    | Runs interactive query-replace on all files in the projects.                                            |
-| C-c p i,    | Invalidates the project cache (if existing).                                                            |
-| C-c p R,    | Regenerates the projects TAGS file.                                                                     |
-| C-c p k,    | Kills all project buffers.                                                                              |
-| C-c p D,    | Opens the root of the project in dired.                                                                 |
-| C-c p e,    | Shows a list of recently visited project files.                                                         |
-| C-c p a,    | Runs ack on the project. Requires the presence of ack-and-a-half.                                       |
-| C-c p A,    | Runs ag on the project. Requires the presence of ag.el.                                                 |
-| C-c p c,    | Runs a standard compilation command for your type of project.                                           |
-| C-c p p,    | Runs a standard test command for your type of project.                                                  |
-| C-c p z,    | Adds the currently visited to the cache.                                                                |
-| C-c p s,    | Display a list of known projects you can switch to.                                                     |
 
       
    - pkg-info

@@ -76,7 +76,7 @@
          yasnippet
          flycheck ;; s dash cl-lib f pkg-info
          expand-region         
-	 ace-jump-mode
+         ace-jump-mode
          multiple-cursors
          helm
          ag
