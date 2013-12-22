@@ -128,395 +128,394 @@
 
 ---------------------------------------- 
  /using emacs you only need to known above/
+ 
+* package manage
+  Since emacs version 24, emacs has buildin *elpa* as it's default package
+  system. But official repo can not contain every package either every new
+  versions of a package. Not every author like to contribute his package to the
+  official repo. most of them just put it on github or even his own blog.
 
- * package manage
-   Since emacs version 24, emacs has buildin *elpa* as it's default package
-   system. But official repo can not contain every package either every new
-   versions of a package. Not every author like to contribute his package to the
-   official repo. most of them just put it on github or even his own blog.
+  *el-get* support almost every kind a package source, including elpa, wiki,
+  github, ftp and so on.  So el-get has more abundant package resouces.
 
-   *el-get* support almost every kind a package source, including elpa, wiki,
-   github, ftp and so on.  So el-get has more abundant package resouces.
+  now you only need to configure and manage your package recipe instead of whole
+  package. there is already most recipe in hand contributed by others. based on
+  package recipes, maintainance and update became more easier.
 
-   now you only need to configure and manage your package recipe instead of whole
-   package. there is already most recipe in hand contributed by others. based on
-   package recipes, maintainance and update became more easier.
+  el-get also support customized initial script.
 
-   el-get also support customized initial script.
+  most important, el-get is vert  activity by now. and it is the most powerfull
+  packge manager as I know.
 
-   most important, el-get is vert  activity by now. and it is the most powerfull
-   packge manager as I know.
+** versions
+   emacs that comes with osx is still 22.1.1, even you have upgrade your
+   operation system 10.9.  it pretty old and difficult to use.  why not apple
+   just do not pre-bundled such emacs.
 
- ** versions
-    emacs that comes with osx is still 22.1.1, even you have upgrade your
-    operation system 10.9.  it pretty old and difficult to use.  why not apple
-    just do not pre-bundled such emacs.
+   for mac users those who don't want to have heavy configuration, my suggestion
+   is [[http://emacsformacosx.com/][emacs for osx]], its have advantage against others in such field:
+    1. newer
+    2. cocoa not X11
+    3. retina 
 
-    for mac users those who don't want to have heavy configuration, my suggestion
-    is [[http://emacsformacosx.com/][emacs for osx]], its have advantage against others in such field:
-     1. newer
-     2. cocoa not X11
-     3. retina 
+    that is the default version installed by install section.
 
-     that is the default version installed by install section.
+    emacsforosx have different color behaviour. so the color theme may not the
+   same as you saw them in a screen snapshot.
 
-     emacsforosx have different color behaviour. so the color theme may not the
-    same as you saw them in a screen snapshot.
+    for mac user those want to toss of emacs, just brew install it by source
+    code. you can control many things through pass different compile flags.
+    #+BEGIN_SRC bash
+    brew install emacs --cocoa
 
-     for mac user those want to toss of emacs, just brew install it by source
-     code. you can control many things through pass different compile flags.
+    brew linkapps  #make symbolic to /Applications/
+    # let some command like emacsclient also available at /Applications/Emacs.app/ location
+    ln -s /usr/local/Cellar/emacs/HEAD/bin/ /Applications/Emacs.app/Contents/MacOS/bin
+    #+END_SRC
+
+    for Alfred to index Emacs app
+    add /usr/local/Cellar/ into Alfred's search scope to find Emacs
+
+** configuration
+*** command line launch
+    if you want to lanuch emacs from command line, add such command alias to your
+    .bash_profile or .zshrc
+    #+BEGIN_SRC bash
+    alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+    #+END_SRC
+    or add a script file */usr/bin/emacs* this is better I think, cas many third
+    party package would assume the emacs path to be '/usr/bin/'， for example
+    magit. so only terminal know how to find executable emacs but not emacs
+    itself if you only add a alias.
+      #+BEGIN_SRC bash
+    #!/bin/bash
+    /Applications/Emacs.app/Contents/MacOS/Emacs -nw
+    #+END_SRC
+*** daemon
+**** emacsosx
+     for those using emacsosxna
      #+BEGIN_SRC bash
-     brew install emacs --cocoa
+     git clone https://github.com/ferlatte/emacs-daemon-osx.git
+     cd emacs-daemon-osx
+     cp org.gnu.emacs.plist ~/Library/LaunchAgents
+     launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist
+     make
+     rm -r /Applications/emacs-client.app
+     cp -r emacs-client.app /Applications
 
-     brew linkapps  #make symbolic to /Applications/
-     # let some command like emacsclient also available at /Applications/Emacs.app/ location
-     ln -s /usr/local/Cellar/emacs/HEAD/bin/ /Applications/Emacs.app/Contents/MacOS/bin
+     #+END_SRC
+**** source
+     1. create a plist file in /~/Library/LaunchAgents/, for exapmle /org.gnu.emacs.daemon.plist/
+
+     #+BEGIN_SRC xml
+      <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+        <plist version="1.0">
+          <dict>
+            <key>Label</key>
+            <string>gnu.emacs.daemon</string>
+            <key>ProgramArguments</key>
+            <array>
+              <string>/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs</string>
+              <string>--daemon</string>
+            </array>
+            <key>RunAtLoad</key>
+            <true/>
+            <key>ServiceDescription</key>
+            <string>Gnu Emacs Daemon</string>
+            <key>UserName</key>
+            <string>qingbo</string>
+          </dict>
+        </plist>
      #+END_SRC
 
-     for Alfred to index Emacs app
-     add /usr/local/Cellar/ into Alfred's search scope to find Emacs
+     next time you login, os will automatic launch program descript in LaunchAgents.
 
- ** configuration
- *** command line launch
-     if you want to lanuch emacs from command line, add such command alias to your
-     .bash_profile or .zshrc
+     making a shortcut in you .bash_profile
      #+BEGIN_SRC bash
-     alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+     alias e='emacsclient -t' 
      #+END_SRC
-     or add a script file */usr/bin/emacs* this is better I think, cas many third
-     party package would assume the emacs path to be '/usr/bin/'， for example
-     magit. so only terminal know how to find executable emacs but not emacs
-     itself if you only add a alias.
-       #+BEGIN_SRC bash
-     #!/bin/bash
-     /Applications/Emacs.app/Contents/MacOS/Emacs -nw
+
+     another method:
+     2. create a applescript. paste below
+     #+BEGIN_SRC bash
+     tell application "Terminal"
+      do shell script "/Applications/Emacs.app/Contents/MacOS/Emacs --daemon"
+     endtell
      #+END_SRC
- *** daemon
- **** emacsosx
-      for those using emacsosxna
-      #+BEGIN_SRC bash
-      git clone https://github.com/ferlatte/emacs-daemon-osx.git
-      cd emacs-daemon-osx
-      cp org.gnu.emacs.plist ~/Library/LaunchAgents
-      launchctl load ~/Library/LaunchAgents/org.gnu.emacs.plist
-      make
-      rm -r /Applications/emacs-client.app
-      cp -r emacs-client.app /Applications
-
-      #+END_SRC
- **** source
-      1. create a plist file in /~/Library/LaunchAgents/, for exapmle /org.gnu.emacs.daemon.plist/
-
-      #+BEGIN_SRC xml
-       <?xml version="1.0" encoding="UTF-8"?>
-         <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-         <plist version="1.0">
-           <dict>
-             <key>Label</key>
-             <string>gnu.emacs.daemon</string>
-             <key>ProgramArguments</key>
-             <array>
-               <string>/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs</string>
-               <string>--daemon</string>
-             </array>
-             <key>RunAtLoad</key>
-             <true/>
-             <key>ServiceDescription</key>
-             <string>Gnu Emacs Daemon</string>
-             <key>UserName</key>
-             <string>qingbo</string>
-           </dict>
-         </plist>
-      #+END_SRC
-
-      next time you login, os will automatic launch program descript in LaunchAgents.
-
-      making a shortcut in you .bash_profile
-      #+BEGIN_SRC bash
-      alias e='emacsclient -t' 
-      #+END_SRC
-
-      another method:
-      2. create a applescript. paste below
-      #+BEGIN_SRC bash
-      tell application "Terminal"
-       do shell script "/Applications/Emacs.app/Contents/MacOS/Emacs --daemon"
-      endtell
-      #+END_SRC
-
-      add this to users login tem
-
- * packages
-   packages I use frequenctly. I will eventually add a description to the usage
-   of every packge if have time.
-
-   with * prefix is package not used currently
-
-    - babel
-    - coffee-mode
-    - dired+
-    - haml-mode
-    - flymake
-
-    - [[http://flycheck.github.io/][flycheck]]
-
-      Modern on-the-fly syntax checking
-
-
-    - js2-mode
-    - json
-    - magit
-    - git-commit-mode
-    - package
-    - rinari
-    - [[https://github.com/pezra/rspec-mode][rspec-mode]]
-
-    - ruby-block
-    - [[https://github.com/nonsequitur/inf-ruby][inf-ruby]]
-
-      inf-ruby provides a REPL buffer connected to a Ruby subprocess.
-
-    - ruby-compilation
-    - ruby-electric
-    - ruby-mode
-    - enh-ruby-mode
-    - ruby-test-mode
-    - ruby-tools
-    - robe-mode
-    - highlight-indentation
-
-      Did you use sublime before, this package provide the same thing like sublime guideline indentation
-
-      * highlight-indentation-mode displays guidelines indentation (space indentation only).
-      * highlight-indentation-current-column-mode displays guidelines for the current-point indentation (space indentation only).
-
-      color configuration 
-
-      * (set-face-background 'highlight-indentation-face "#e3e3d3")
-      * (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
-
-    - dash
-
-      A modern list api for Emacs. No 'cl required
-    - [[https://github.com/bbatsov/rubocop-emacs][rubocop]]
-
-      A simple Emacs interface for [[https://github.com/bbatsov/rubocop][RuboCop]] which is a Ruby static code analyzer.
-
- | Command                              | Description                                                     | RuboCop mode binding |
- |--------------------------------------+-----------------------------------------------------------------+----------------------|
- | M-x rubocop-check-project            | Runs RuboCop on the entire project                              | C-c  C-r  p          |
- | M-x rubocop-check-directory          | Prompts from a directory on which to run  RuboCop               | C-c  C-r  d          |
- | M-x rubocop-check-current-file       | Runs    RuboCop      on  the         currently   visited  file  | C-c  C-r  f          |
- | M-x rubocop-autocorrect-project      | Runs    auto-correct on  the         entire      project        | C-c  C-r  P          |
- | M-x rubocop-autocorrect-directory    | Prompts for a directory on which to run auto-correct            | C-c  C-r  D          |
- | M-x rubocop-autocorrect-current-file | Runs    auto-correct on  the         currently   visited  file. | C-c  C-r  F          |
-    - simple-httpd
-    - [[https://github.com/defunkt/textmate.el][textma]]te
-
-      This minor mode exists to mimick TextMate's awesome
-
- | ⌘T   | Go       to           File                                                            |
- | ⇧⌘T  | Go       to           Symbol                                                          |
- | ⌘L   | Go       to           Line                                                            |
- | ⇧⌘L  | Select   Line         (or         expand             Selection     to  select  lines) |
- | ⌘/   | Comment  Line         (or         Selection/Region)                                   |
- | ⌘]   | Shift    Right        (currently  indents            region)                          |
- | ⌘[   | Shift    Left         (not        yet                implemented)                     |
- | ⌥⌘]  | Align    Assignments                                                                  |
- | ⌥⌘[  | Indent   Line                                                                         |
- | ⌥↑   | Column   Up                                                                           |
- | ⌥↓   | Column   Down                                                                         |
- | ⌘RET | Insert   Newline      at          Line's             End                              |
- | ⌥⌘T  | Reset    File         Cache       (for               Go            to  File)          |
-
-
-    - yasnippet
-    - switch-window
-    - weibo.emacs
-    - smartparens
-    - eproject
-    - etags-select
-    - ;; etags-extension
-    - slime
-    - ctags
-    - rcodetools
-    - anything
-    - ;; anything-etags
-    - emacschrome
-    - emacs-http-server 
-    - auto-complete
-    - auto-complete-css
-    - auto-complete-emacs-lisp
-    - auto-complete-extension
-    - auto-complete-etags
-    - auto-complete-clang
-    - auto-complete-yasnippet
-    - rails-el 
-    - yari
-    - [[https://github.com/rooney/zencoding][zencoding-mode]]
-
-      letting you write HTML based on CSS selectors.
-
-      C-j: place point in a zencoding snippet and press C-j to expand it 
-      C-c C-j: you'll transform your snippet into the appropriate tag structure.
-
-    - gnuplot-mode
-    - ;; magithub
-    - nav
-    - ;; twittering-mode
-    - rvm
-    - flymake-haml
-    - flymake-sass
-    - flymake-coffee
-    - emacs-w3m
-    - scss-mode
-    - color-theme
-    - powerline
-
-      powerline theme for emacs modeline
 
-    - dash-at-point
-
-      dash integrate for emacs to query program language api
-      keybinding - C-c d
-
-    - [[https://github.com/skeeto/skewer-mode][skewer-mode]] 
-
-      live web development with Emacs
-      * start
-        - M-x run-skewer to attach a browser to Emacs
-        - From a js2-mode buffer with skewer-mode minor mode enabled, send forms to the browser to evaluate
-
-      * js evaluating expressions
-        - C-x C-e: Evaluate the form before the point and display the result in
-          the minibuffer. If given a prefix argument, insert the result into the
-          current buffer.
-        - C-M-x: Evaluate the top-level form around the point.
-        - C-c C-k: Load the current buffer.
-        - C-c C-z: Select the REPL buffer.
-      * css 
-        - C-x C-e: Load the declaration at the point.
-        - C-M-x: Load the entire rule around the point.
-        - C-c C-k: Load the current buffer as a stylesheet.
-      * html
-        - C-M-x: Load the HTML tag immediately around the point.
-
-    - web-mode
-
-    - [[https://github.com/lewang/jump-char][jump-char]]
-
-      Navigate by char
-
-     M-m jump-char-farword
-      <char>	move to the next match in the current direction.
-     ;	next match forward (towards end of buffer)
-     ,	next match backward (towards beginning of buffer)
-     C-c C-c	invoke `ace-jump-mode’ if available
-
-    - [[https://github.com/winterTTr/ace-jump-mode][ace-jump-mode]]
-
-      help you to move the cursor within Emacs,ou can move your cursor to ANY
-      position ( across window and frame ) in emacs by using only 3 times key
-      press.
-
-      [[http://emacsrocks.com/e10.html][video]]
-
-
-
-    - exec-path-from-shell
-    - adaptive-wrap
-    - [[https://github.com/rejeep/wrap-region][wrap-region]]
-
-      Wrap Region is a minor mode for Emacs that wraps a region with
-      punctuations.. For "tagged" markup modes, such as HTML and XML, it wraps
-      with tags.
-    - [[https://github.com/magnars/expand-region.el][expand-region]]
-
-      Expand region increases the selected region by semantic units. 
-      (global-set-key (kbd "C-=") 'er/expand-region)
-
-      (pending-delete-mode t)
-
-    - [[https://github.com/magnars/multiple-cursors.el][multiple-cursors]]
-
-      [[http://emacsrocks.com/e13.html][video]]
-
-      (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-      (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-      (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-      (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-      To get out of multiple-cursors-mode, press <return> or C-g. 
-
-    - * maxframe
-
-      instead of buildin toogle-frame-fullscreen
-    - multi-term
-    - es-lib
-    - grizzl
-    - s
-    - project-explorer
-
-    - flx
-
-      Fuzzy matching for Emacs ... a la Sublime Text.
-
-    - projectile 
-
-      Projectile is a project interaction library for Emacs. Its goal
-      is to provide a nice set of features operating on a project level without
-      introducing external dependencies
-
-       C-c p f (command-p) projectile-find-file 
-       C-c p s (command-b) projectile-switch-project
-
-       complete keybinding
-
-
-
-    - pkg-info
-    - recentf-ext
-    - tabbar
-    - rainbow-mode
-      Colorize color names in buffers
-
-    - rainbow-delimitewrs
-
-       highlights parentheses, brackets, and braces according to their
-      depth. Each successive level is highlighted in a different color.
-    - highlight-indentation
-    - idle-highlight-mode
-
-      buildin highlight symbol C-x w . , M-s h .
-      idle-highlight-mode sets an idle timer that highlights
-      all occurences in the buffer of the word under the point.
-    - findr
-    - enclose
-    - drag-stuff
-    - calfw
-    - [[https://github.com/ScottyB/ac-js2a][ac-js2]] 
-
-      context sensitive auto-completion for Javascript in Emacs using js2-mode's parser and Skewer-mode
-
-      navigation: placing the cursor on foo, bar or baz and executing
-      ac-js2-jump-to-definition or M-. will take you straight to their
-      respective definitions. Executing M-, will jump you back to where you
-      were.
-
-      ac-js2-expand-function that will expand a function's parameters bound to
-      C-c C-c. Expansion will only work if the cursor is after the function.
-
-    - ag
-    - popup
-    - multiple-cursors
-    - google-maps
-    - google-contacts
-    - color-theme-solarized
-
- * org
-   I mainly use org as a note tools, so have many specticular configuration to
-   org, such as customize tags, default templates...
+     add this to users login tem
+
+* packages
+  packages I use frequenctly. I will eventually add a description to the usage
+  of every packge if have time.
+
+  with * prefix is package not used currently
+
+   - babel
+   - coffee-mode
+   - dired+
+   - haml-mode
+   - flymake
+
+   - [[http://flycheck.github.io/][flycheck]]
+
+     Modern on-the-fly syntax checking
+
+
+   - js2-mode
+   - json
+   - magit
+   - git-commit-mode
+   - package
+   - rinari
+   - [[https://github.com/pezra/rspec-mode][rspec-mode]]
+
+   - ruby-block
+   - [[https://github.com/nonsequitur/inf-ruby][inf-ruby]]
+
+     inf-ruby provides a REPL buffer connected to a Ruby subprocess.
+
+   - ruby-compilation
+   - ruby-electric
+   - ruby-mode
+   - enh-ruby-mode
+   - ruby-test-mode
+   - ruby-tools
+   - robe-mode
+   - highlight-indentation
+
+     Did you use sublime before, this package provide the same thing like sublime guideline indentation
+
+     * highlight-indentation-mode displays guidelines indentation (space indentation only).
+     * highlight-indentation-current-column-mode displays guidelines for the current-point indentation (space indentation only).
+
+     color configuration 
+
+     * (set-face-background 'highlight-indentation-face "#e3e3d3")
+     * (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+
+   - dash
+
+     A modern list api for Emacs. No 'cl required
+   - [[https://github.com/bbatsov/rubocop-emacs][rubocop]]
+
+     A simple Emacs interface for [[https://github.com/bbatsov/rubocop][RuboCop]] which is a Ruby static code analyzer.
+
+| Command                              | Description                                                     | RuboCop mode binding |
+|--------------------------------------+-----------------------------------------------------------------+----------------------|
+| M-x rubocop-check-project            | Runs RuboCop on the entire project                              | C-c  C-r  p          |
+| M-x rubocop-check-directory          | Prompts from a directory on which to run  RuboCop               | C-c  C-r  d          |
+| M-x rubocop-check-current-file       | Runs    RuboCop      on  the         currently   visited  file  | C-c  C-r  f          |
+| M-x rubocop-autocorrect-project      | Runs    auto-correct on  the         entire      project        | C-c  C-r  P          |
+| M-x rubocop-autocorrect-directory    | Prompts for a directory on which to run auto-correct            | C-c  C-r  D          |
+| M-x rubocop-autocorrect-current-file | Runs    auto-correct on  the         currently   visited  file. | C-c  C-r  F          |
+   - simple-httpd
+   - [[https://github.com/defunkt/textmate.el][textma]]te
+
+     This minor mode exists to mimick TextMate's awesome
+
+| ⌘T   | Go       to           File                                                            |
+| ⇧⌘T  | Go       to           Symbol                                                          |
+| ⌘L   | Go       to           Line                                                            |
+| ⇧⌘L  | Select   Line         (or         expand             Selection     to  select  lines) |
+| ⌘/   | Comment  Line         (or         Selection/Region)                                   |
+| ⌘]   | Shift    Right        (currently  indents            region)                          |
+| ⌘[   | Shift    Left         (not        yet                implemented)                     |
+| ⌥⌘]  | Align    Assignments                                                                  |
+| ⌥⌘[  | Indent   Line                                                                         |
+| ⌥↑   | Column   Up                                                                           |
+| ⌥↓   | Column   Down                                                                         |
+| ⌘RET | Insert   Newline      at          Line's             End                              |
+| ⌥⌘T  | Reset    File         Cache       (for               Go            to  File)          |
+
+
+   - yasnippet
+   - switch-window
+   - weibo.emacs
+   - smartparens
+   - eproject
+   - etags-select
+   - ;; etags-extension
+   - slime
+   - ctags
+   - rcodetools
+   - anything
+   - ;; anything-etags
+   - emacschrome
+   - emacs-http-server 
+   - auto-complete
+   - auto-complete-css
+   - auto-complete-emacs-lisp
+   - auto-complete-extension
+   - auto-complete-etags
+   - auto-complete-clang
+   - auto-complete-yasnippet
+   - rails-el 
+   - yari
+   - [[https://github.com/rooney/zencoding][zencoding-mode]]
 
+     letting you write HTML based on CSS selectors.
+
+     C-j: place point in a zencoding snippet and press C-j to expand it 
+     C-c C-j: you'll transform your snippet into the appropriate tag structure.
+
+   - gnuplot-mode
+   - ;; magithub
+   - nav
+   - ;; twittering-mode
+   - rvm
+   - flymake-haml
+   - flymake-sass
+   - flymake-coffee
+   - emacs-w3m
+   - scss-mode
+   - color-theme
+   - powerline
+
+     powerline theme for emacs modeline
+
+   - dash-at-point
+
+     dash integrate for emacs to query program language api
+     keybinding - C-c d
+
+   - [[https://github.com/skeeto/skewer-mode][skewer-mode]] 
+
+     live web development with Emacs
+     * start
+       - M-x run-skewer to attach a browser to Emacs
+       - From a js2-mode buffer with skewer-mode minor mode enabled, send forms to the browser to evaluate
+
+     * js evaluating expressions
+       - C-x C-e: Evaluate the form before the point and display the result in
+         the minibuffer. If given a prefix argument, insert the result into the
+         current buffer.
+       - C-M-x: Evaluate the top-level form around the point.
+       - C-c C-k: Load the current buffer.
+       - C-c C-z: Select the REPL buffer.
+     * css 
+       - C-x C-e: Load the declaration at the point.
+       - C-M-x: Load the entire rule around the point.
+       - C-c C-k: Load the current buffer as a stylesheet.
+     * html
+       - C-M-x: Load the HTML tag immediately around the point.
+
+   - web-mode
+
+   - [[https://github.com/lewang/jump-char][jump-char]]
+
+     Navigate by char
+
+    M-m jump-char-farword
+     <char>	move to the next match in the current direction.
+    ;	next match forward (towards end of buffer)
+    ,	next match backward (towards beginning of buffer)
+    C-c C-c	invoke `ace-jump-mode’ if available
+
+   - [[https://github.com/winterTTr/ace-jump-mode][ace-jump-mode]]
+
+     help you to move the cursor within Emacs,ou can move your cursor to ANY
+     position ( across window and frame ) in emacs by using only 3 times key
+     press.
+
+     [[http://emacsrocks.com/e10.html][video]]
+
+
+
+   - exec-path-from-shell
+   - adaptive-wrap
+   - [[https://github.com/rejeep/wrap-region][wrap-region]]
+
+     Wrap Region is a minor mode for Emacs that wraps a region with
+     punctuations.. For "tagged" markup modes, such as HTML and XML, it wraps
+     with tags.
+   - [[https://github.com/magnars/expand-region.el][expand-region]]
+
+     Expand region increases the selected region by semantic units. 
+     (global-set-key (kbd "C-=") 'er/expand-region)
+
+     (pending-delete-mode t)
+
+   - [[https://github.com/magnars/multiple-cursors.el][multiple-cursors]]
+
+     [[http://emacsrocks.com/e13.html][video]]
+
+     (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+     (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+     (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+     (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+     To get out of multiple-cursors-mode, press <return> or C-g. 
+
+   - * maxframe
+
+     instead of buildin toogle-frame-fullscreen
+   - multi-term
+   - es-lib
+   - grizzl
+   - s
+   - project-explorer
+
+   - flx
+
+     Fuzzy matching for Emacs ... a la Sublime Text.
+
+   - projectile 
+
+     Projectile is a project interaction library for Emacs. Its goal
+     is to provide a nice set of features operating on a project level without
+     introducing external dependencies
+
+      C-c p f (command-p) projectile-find-file 
+      C-c p s (command-b) projectile-switch-project
+
+      complete keybinding
+
+
+
+   - pkg-info
+   - recentf-ext
+   - tabbar
+   - rainbow-mode
+     Colorize color names in buffers
+
+   - rainbow-delimitewrs
+
+      highlights parentheses, brackets, and braces according to their
+     depth. Each successive level is highlighted in a different color.
+   - highlight-indentation
+   - idle-highlight-mode
+
+     buildin highlight symbol C-x w . , M-s h .
+     idle-highlight-mode sets an idle timer that highlights
+     all occurences in the buffer of the word under the point.
+   - findr
+   - enclose
+   - drag-stuff
+   - calfw
+   - [[https://github.com/ScottyB/ac-js2a][ac-js2]] 
+
+     context sensitive auto-completion for Javascript in Emacs using js2-mode's parser and Skewer-mode
+
+     navigation: placing the cursor on foo, bar or baz and executing
+     ac-js2-jump-to-definition or M-. will take you straight to their
+     respective definitions. Executing M-, will jump you back to where you
+     were.
+
+     ac-js2-expand-function that will expand a function's parameters bound to
+     C-c C-c. Expansion will only work if the cursor is after the function.
+
+   - ag
+   - popup
+   - multiple-cursors
+   - google-maps
+   - google-contacts
+   - color-theme-solarized
+
+* org
+  I mainly use org as a note tools, so have many specticular configuration to
+  org, such as customize tags, default templates...
 
 
 
