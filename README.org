@@ -97,7 +97,11 @@
 | C-c , r    |         | re-run the last verification process                          |
 | C-c , d    |         | toggle the pendingness of the example at the point            |
 | C-c , a    |         | run all specifications for project                            |
-   
+
+
+
+/using emacs you only need to known above/
+
 * package manage
   Since emacs version 24, emacs has buildin *elpa* as it's default package
   system. But official repo can not contain every package either every new
