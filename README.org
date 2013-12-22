@@ -24,7 +24,7 @@
 | C        | Control           |
 | M        | option(alt)       |
 | S        | shift             |
-| s        | Command           |
+| ⌘        | Command           |
 | SPC      | space             |
 | TAB      | table             |
 ** key binding setting
@@ -49,8 +49,8 @@
 | C-c  j     | copy-line      |
 | C-c  o     | copy-paragraph |
 | C-c  u     | copy-string    |
-| s-n        | move-text-down |
-| s-p        | move-text-up   |
+| ⌘-n         | move-text-down |
+| ⌘-p         | move-text-up   |
 
 *** ace-jump
 | keybinding      | command            | description                                                                   |
@@ -94,6 +94,23 @@
 | C-c p z,    | Adds the currently visited to the cache.                                                                |
 | C-c p s,    | Display a list of known projects you can switch to.                                                     |
 
+** textmate
+| keybinding | description                                                                           |
+|------------+---------------------------------------------------------------------------------------|
+| ⌘-t        | Go       to           File                                                            |
+| ⇧⌘-t       | Go       to           Symbol                                                          |
+| ⌘-t        | Go       to           Line                                                            |
+| ⇧⌘-l       | Select   Line         (or         expand             Selection     to  select  lines) |
+| ⌘-/        | Comment  Line         (or         Selection/Region)                                   |
+| ⌘-]        | Shift    Right        (currently  indents            region)                          |
+| ⌘-[        | Shift    Left         (not        yet                implemented)                     |
+| ⌥⌘-]       | Align    Assignments                                                                  |
+| ⌥⌘-[       | Indent   Line                                                                         |
+| ⌥↑         | Column   Up                                                                           |
+| ⌥↓         | Column   Down                                                                         |
+| ⌘-RET      | Insert   Newline      at          Line's             End                              |
+| ⌥⌘-T       | Reset    File         Cache       (for               Go            to  File)          |
+   
 ** version control (magit)
 | keybinding  | command                         | description                                                       |
 |-------------+---------------------------------+-------------------------------------------------------------------|
@@ -122,7 +139,15 @@
  | C-c , r    |         | re-run the last verification process                          |
  | C-c , d    |         | toggle the pendingness of the example at the point            |
  | C-c , a    |         | run all specifications for project                            |
-
+*** rubocop
+| keybording  | Command                          | Description                                                     |
+|-------------+----------------------------------+-----------------------------------------------------------------|
+| C-c  C-r  p | rubocop-check-project            | Runs RuboCop on the entire project                              |
+| C-c  C-r  d | rubocop-check-directory          | Prompts from a directory on which to run  RuboCop               |
+| C-c  C-r  f | rubocop-check-current-file       | Runs    RuboCop      on  the         currently   visited  file  |
+| C-c  C-r  P | rubocop-autocorrect-project      | Runs    auto-correct on  the         entire      project        |
+| C-c  C-r  D | rubocop-autocorrect-directory    | Prompts for a directory on which to run auto-correct            |
+| C-c  C-r  F | rubocop-autocorrect-current-file | Runs    auto-correct on  the         currently   visited  file. |
 
 
 
@@ -302,32 +327,10 @@
 
      A simple Emacs interface for [[https://github.com/bbatsov/rubocop][RuboCop]] which is a Ruby static code analyzer.
 
-| Command                              | Description                                                     | RuboCop mode binding |
-|--------------------------------------+-----------------------------------------------------------------+----------------------|
-| M-x rubocop-check-project            | Runs RuboCop on the entire project                              | C-c  C-r  p          |
-| M-x rubocop-check-directory          | Prompts from a directory on which to run  RuboCop               | C-c  C-r  d          |
-| M-x rubocop-check-current-file       | Runs    RuboCop      on  the         currently   visited  file  | C-c  C-r  f          |
-| M-x rubocop-autocorrect-project      | Runs    auto-correct on  the         entire      project        | C-c  C-r  P          |
-| M-x rubocop-autocorrect-directory    | Prompts for a directory on which to run auto-correct            | C-c  C-r  D          |
-| M-x rubocop-autocorrect-current-file | Runs    auto-correct on  the         currently   visited  file. | C-c  C-r  F          |
    - simple-httpd
    - [[https://github.com/defunkt/textmate.el][textma]]te
 
      This minor mode exists to mimick TextMate's awesome
-
-| ⌘T   | Go       to           File                                                            |
-| ⇧⌘T  | Go       to           Symbol                                                          |
-| ⌘L   | Go       to           Line                                                            |
-| ⇧⌘L  | Select   Line         (or         expand             Selection     to  select  lines) |
-| ⌘/   | Comment  Line         (or         Selection/Region)                                   |
-| ⌘]   | Shift    Right        (currently  indents            region)                          |
-| ⌘[   | Shift    Left         (not        yet                implemented)                     |
-| ⌥⌘]  | Align    Assignments                                                                  |
-| ⌥⌘[  | Indent   Line                                                                         |
-| ⌥↑   | Column   Up                                                                           |
-| ⌥↓   | Column   Down                                                                         |
-| ⌘RET | Insert   Newline      at          Line's             End                              |
-| ⌥⌘T  | Reset    File         Cache       (for               Go            to  File)          |
 
 
    - yasnippet
