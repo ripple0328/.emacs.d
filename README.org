@@ -43,7 +43,7 @@
    emacs configuration
 
    here only descript custom or package provide function keybinding. for emacs
-   buildin editing please read the tutorial by C-h t.
+   buildin editing please read the tutorial by C-h t. or[[https://github.com/ripple0328/emacs][  here]]
 
    usually edit keybinding are global.
 
