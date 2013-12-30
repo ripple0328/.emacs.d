@@ -36,5 +36,6 @@
 (require 'org-setting)
 (require 'mu4e-setting)
 (require 'hooks)
+(require 'edit-server-conf)
 
 (print-log "Emacs is ready to use")

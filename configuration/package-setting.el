@@ -33,7 +33,7 @@
 ;;------------------------------------------------------------------------------
 ;; packages sources
 ;;------------------------------------------------------------------------------
-					;rcodetools recipe has problem, temporary fixed it
+                                        ;rcodetools recipe has problem, temporary fixed it
 ;; (require 'rcodetools)
 
 (setq ripple-packages
@@ -44,13 +44,13 @@
          smex
          dired+
          bash-completion
-	 ;; pkg-info ;; s,epl
+         ;; pkg-info ;; s,epl
          color-theme
-	 powerline
+         powerline
          maxframe
          
          ;; document
-	 babel
+         babel
          org-mode
 
          ;; edit
@@ -62,15 +62,15 @@
          
          google-contacts ;; oauth2,use `flet' is an obsolete macro
          google-translate
-	 weibo.emacs
-	 dash-at-point         
-	 twittering-mode
+         weibo.emacs
+         dash-at-point         
+         twittering-mode
 
          ;; facilities
          emacs-w3m ;; browser
          mu4e ;; email client
 
-	 ;; adaptive-wrap
+         ;; adaptive-wrap
 
          ;; code
          yasnippet
@@ -88,13 +88,13 @@
          
          ;; vcs and project ;;
          magit ;; git-modes,cl-lib
-	 git-commit-mode
+         git-commit-mode
          gist ;;gh tabulated-list
          textmate
          
          grizzl
          flx
-	 projectile ;; dash,s,pkg-info
+         projectile ;; dash,s,pkg-info
          ;; eproject
          project-explorer;;helm
          ;; nav
@@ -105,71 +105,71 @@
 
          ;; code language support
          ;; html
-	 haml-mode
+         haml-mode
          zencoding-mode
          ;; css
-	 scss-mode
+         scss-mode
          rainbow-mode
          ;; yaml
          yaml-mode
          
          ;; ruby
          rvm ;; essetiall if you use rvm to manage ruby
-	 enh-ruby-mode
-	 ruby-compilation
-	 robe-mode ;; inf-ruby
+         enh-ruby-mode
+         ruby-compilation
+         robe-mode ;; inf-ruby
          bundler
          rubocop ;; need rubocop gem installed
          rspec-mode
          feature-mode
          yari
-
+         rinari
+         ;; projectile-rails
          ;; rails
-         ;; rinari
          ;; js
          coffee-mode
          web-mode
-	 ;; skewer-mode ;; js2-mode,simple-httpd
+         ;; skewer-mode ;; js2-mode,simple-httpd
          ac-js2;;  skewer-mode,js2-mode,auto-complete
 
          ;; tags
          
          
-	 ;; dired+
-	 ;; json
-	 ;; ruby-block
-	 ;; ruby-electric
+         ;; dired+
+         ;; json
+         ;; ruby-block
+         ;; ruby-electric
 
-	 ;; ruby-test-mode
-	 ;; ruby-tools
+         ;; ruby-test-mode
+         ;; ruby-tools
 
-	 ;; etags-select
-	 ;; ;; etags-extension
-	 ;; slime
-	 ;; ctags
-	 ;; rcodetools
-	 ;; emacschrome
-	 ;; emacs-http-server 
-	 ;; auto-complete-css
-	 ;; auto-complete-emacs-lisp
-	 ;; auto-complete-extension
-	 ;; auto-complete-etags
-	 ;; auto-complete-clang
-	 ;; auto-complete-yasnippet
-	 ;; rails-el 
+         ;; etags-select
+         ;; ;; etags-extension
+         ;; slime
+         ;; ctags
+         ;; rcodetools
+         ;; emacschrome
+         ;; emacs-http-server 
+         ;; auto-complete-css
+         ;; auto-complete-emacs-lisp
+         ;; auto-complete-extension
+         ;; auto-complete-etags
+         ;; auto-complete-clang
+         ;; auto-complete-yasnippet
+         ;; rails-el 
 
 
-	 ;; gnuplot-mode
-	 ;; ;; magithub
+         ;; gnuplot-mode
+         ;; ;; magithub
 
-	 ;; multi-term
-	 ;; recentf-ext
-	 ;; tabbar
-	 ;; idle-highlight-mode
-	 ;; findr
-	 ;; drag-stuff
-	 ;; calfw
-	 )
+         ;; multi-term
+         ;; recentf-ext
+         ;; tabbar
+         ;; idle-highlight-mode
+         ;; findr
+         ;; drag-stuff
+         ;; calfw
+         )
        (mapcar 'el-get-source-name el-get-sources)))
 (el-get-cleanup ripple-packages)
 (el-get 'sync ripple-packages)
