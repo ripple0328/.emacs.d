@@ -2,12 +2,7 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("kic"
- (filename . "~/program/kic-lab/")
- (front-context-string . ".git\n  -rw-r--r-")
- (rear-context-string . "42 Dec 28 01:04 ")
- (position . 294))
-("g"
+(("g"
  (filename . "~/program/g/")
  (front-context-string)
  (rear-context-string . "Dec  5 19:21 ..\n")
