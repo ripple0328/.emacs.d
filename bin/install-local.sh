@@ -7,7 +7,7 @@ popd > /dev/null
 \curl -sSL https://raw.github.com/ripple0328/mac-install-utils/master/install-utils.sh | bash
 
 function exec-local {
-    source ./bin/$1
+    source ./$1
 }
 
 exec-local emacs-utils
