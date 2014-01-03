@@ -10,7 +10,11 @@ function exec-remote {
 
 
 # back up old configuration and clone new one
-mv .emacs.d .emacs.d.bak
+if [ -f .emacs.d ];
+then
+    mv .emacs.d .emacs.d.bak
+fi
+
 hub clone ripple0328/.emacs.d
 
 exec-remote emacs-utils
