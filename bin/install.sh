@@ -15,7 +15,7 @@ then
     mv .emacs.d .emacs.d.bak
 fi
 
-hub clone ripple0328/.emacs.d
+git clone https://github.com/ripple0328/.emacs.d.git
 
 exec-remote emacs-utils
 exec-remote emacs-install-process
