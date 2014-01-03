@@ -15,7 +15,7 @@ if [ -f .emacs.d ]; then
 fi
 
 if [ ! -f .emacs.d ]; then
-    git clone https://github.com/ripple0328/.emacs.d.git
+    git clone https://github.com/ripple0328/.emacs.d.git > /dev/null 2>&-
     cd .emacs.d
 fi
 
