@@ -15,7 +15,7 @@ function create-command-line-emacs {
     msg 'CREATING\t\t -emacs- command' $BPURPLE
     sudo rm -f /usr/bin/emacs
     sudo rm -f $BIN_PATH/emacs
-    cp emacs-script $BIN_PATH/emacs
+    cp ./emacs-script $BIN_PATH/emacs
     chmod a+x $BIN_PATH/emacs
 
     msg 'LINKING\t\t commands shipped with emacs to system path' $BPURPLE
