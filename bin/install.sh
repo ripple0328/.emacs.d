@@ -2,10 +2,10 @@
 
 cd $HOME
 
-\curl -sSL https://raw.github.com/ripple0328/mac-install-utils/master/install-utils.sh | bash
+source /dev/stdin  <<< curl -sSL https://raw.github.com/ripple0328/mac-install-utils/master/install-utils.sh
 
 function exec-remote {
-    curl -L https://raw.github.com/ripple0328/.emacs.d/master/bin/$1 | sh
+  source /dev/stdin <<< curl -L https://raw.github.com/ripple0328/.emacs.d/master/bin/$1
 }
 
 
