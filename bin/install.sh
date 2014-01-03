@@ -10,12 +10,13 @@ function exec-remote {
 
 
 # back up old configuration and clone new one
-if [ -f .emacs.d ];
-then
+if [ -f .emacs.d ]; then
     mv .emacs.d .emacs.d.bak
 fi
 
-git clone https://github.com/ripple0328/.emacs.d.git
+if [ ! -f .emacs.d ]; then
+    git clone https://github.com/ripple0328/.emacs.d.git
+fi
 
 exec-remote emacs-utils
 exec-remote emacs-install-process
