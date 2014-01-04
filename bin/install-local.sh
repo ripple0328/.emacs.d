@@ -4,7 +4,7 @@ pushd `dirname $0` > /dev/null
 popd > /dev/null
 
 
-\curl -sSL https://raw.github.com/ripple0328/mac-install-utils/master/install-utils.sh | bash
+source /dev/stdin  <<< "$(curl -s https://raw.github.com/ripple0328/mac-install-utils/master/basic-environment-installation.sh)"
 
 function exec-local {
     source ./$1
