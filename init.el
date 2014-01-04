@@ -36,5 +36,6 @@
 (require 'org-setting)
 (require 'mu4e-setting)
 (require 'hooks)
+(require 'key-binding-setting)
 
 (print-log "Emacs is ready to use")
