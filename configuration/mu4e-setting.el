@@ -1,6 +1,7 @@
 ;;; mu4e --- emacs email client
 ;;; Commentary:
 ;;; Code:
+
 (setq
  ;; common setting
  mu4e-maildir (concat emacs-dir "Maildir")
@@ -9,12 +10,12 @@
  message-send-mail-function 'smtpmail-send-it
  message-kill-buffer-on-exit t
  mu4e-view-prefer-html t
- mu4e-view-show-images t
+ mu4e-show-images t
  mu4e-view-image-max-width 800
  4e-update-interval 300
  mu4e-use-fancy-chars t
  mu4e-attachment-dir "~/Downloads"
- mu4e-html2text-command "html2text -utf8 -width 72"
+ mu4e-html2text-command "html2text -utf8 -width 80"
  mail-user-agent 'mu4e-user-agent
  smtpmail-queue-mail  nil
  smtpmail-queue-dir  (concat emacs-dir "Maildir/queue/cur")
@@ -53,5 +54,26 @@
  (when (fboundp 'imagemagick-register-types)
    (imagemagick-register-types))
 
+;;; message view action
+    (defun mu4e-msgv-action-view-in-browser (msg)
+      "View the body of the message in a web browser."
+      (interactive)
+      (let ((html (mu4e-msg-field (mu4e-message-at-point t) :body-html))
+            (tmpfile (format "%s/%d.html" temporary-file-directory (random))))
+        (unless html (error "No html part for this message"))
+        (with-temp-file tmpfile
+          (insert
+           "<html>"
+           "<head><meta http-equiv=\"content-type\""
+           "content=\"text/html;charset=UTF-8\">"
+           html))
+        (browse-url (concat "file://" tmpfile))))
+ 
+    (add-to-list 'mu4e-view-actions
+                 '("View in browser" . mu4e-msgv-action-view-in-browser) t)
+ 
+    ;; convert org mode to HTML automatically
+(setq org-mu4e-convert-to-html t)
+ 
 (provide 'mu4e-setting)
 ;;; mu4e-setting.el ends here
