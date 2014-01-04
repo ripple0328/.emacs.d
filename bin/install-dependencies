@@ -58,7 +58,7 @@ check-and-brew-install libtool
 check-and-brew-install mu
 check-and-brew-install gnutls
 
-mkdir -p Maildir
+mkdir -p ~/.emacs.d/Maildir
 # after proper configuration you can run command below to start using mu4e
 # configure offlineimap, see github ripple0328/dotfiles
 # > offlineimap
