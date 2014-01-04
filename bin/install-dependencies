@@ -34,7 +34,7 @@ check-and-brew-install w3m
 check-and-brew-install aspell --with-lang=en
 
 # msg 'Installing css syntax check' $BPURPLE
-check-and-brew-install nodejs
+check-and-brew-install node
 check-and-npm-install csslint
 
 # msg 'Installing javascript synatic checkor' $BPURPLE
