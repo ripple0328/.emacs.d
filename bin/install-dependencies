@@ -53,6 +53,8 @@ check-and-brew-install xapian
 check-and-brew-install offlineimap
 check-and-brew-install html2text
 check-and-brew-install gettext
+check-and-brew-install texinfo
+check-and-brew-install libtool
 check-and-brew-install mu
 check-and-brew-install gnutls
 
