@@ -10,9 +10,6 @@ function exec-remote {
 
 
 # back up old configuration and clone new one
-if [ -f .emacs.d ]; then
-    mv .emacs.d .emacs.d.bak
-fi
 
 if [ ! -f .emacs.d ]; then
     git clone https://github.com/ripple0328/.emacs.d.git > /dev/null 2>&-
