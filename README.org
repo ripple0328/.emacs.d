@@ -2,11 +2,23 @@
   This is my emacs configuration files, the most different with previous version
   is now I use el-get as package manager. 
 * prerequisite
-  Many packages are installing from source. so you need to install xcode and its
-  command line tools first to compile some source code.
+  Many packages are installing from source. so you need to install xcode command line tools first to compile some source code.
 
-  [[http://railsapps.github.io/xcode-command-line-tools.html][xcode-comand-line-tools-installation]]
+  just type command below and fllow the instructions.
+  
+  #+BEGIN_SRC bash
+  $gcc
+  #+END_SRC
 
+  and then click install button.
+
+  verify your install by
+
+  #+BEGIN_SRC bash
+  $ xcode-select -p
+  /Library/Developer/CommandLineTools
+  #+END_SRC
+  
 * install(osx)
    a simple way, you can directly install emacs and all it's dependency by script
    below
