@@ -66,4 +66,3 @@ mkdir -p Maildir
 
 patch-shebang-path $(cask-packages-path emacs)/Emacs.app/Contents/MacOS/Emacs ruby
 msg 'First time you launch emacs, all plugin will install automatically. enjoy!' 
-emacs --debug-init
