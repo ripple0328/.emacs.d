@@ -69,8 +69,8 @@
            html))
         (browse-url (concat "file://" tmpfile))))
  
-    (add-to-list 'mu4e-view-actions
-                 '("View in browser" . mu4e-msgv-action-view-in-browser) t)
+(add-to-list 'mu4e-view-actions
+             '("View in browser" . mu4e-msgv-action-view-in-browser) t)
  
     ;; convert org mode to HTML automatically
 (setq org-mu4e-convert-to-html t)
