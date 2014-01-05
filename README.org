@@ -58,7 +58,19 @@
    buildin editing please read the tutorial by C-h t. or[[https://github.com/ripple0328/emacs][  here]]
 
    usually edit keybinding are global.
+*** basic
+| keybinding | command-name           |
+|------------+------------------------|
+| M-%        | query-replace          |
+|            | replace-string         |
+|            | repeat-complex-command |
 
+*** interface
+| keybinding | command-name        |
+|------------+---------------------|
+| s-_        | text-scale-decrease |
+| s-+        | text-scale-increase |
+    
 *** custom function   
 | keybinding | command-name   |
 |------------+----------------|
