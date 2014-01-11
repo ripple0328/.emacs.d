@@ -1,3 +1,7 @@
+;;; mu4e --- emacs email client
+;;; Commentary:
+;;; Code:
+
 (print-log "setting personal infomation")
 
 ;;------------------------------------------------------------------------------

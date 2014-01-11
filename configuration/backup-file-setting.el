@@ -1,5 +1,8 @@
-;; Save all tempfiles in $TMPDIR/emacs$UID/
+;;; backup-file-setting --- Summary
+;;; Commentary:
+;;; Code:
 
+;; Save all tempfiles in $TMPDIR/emacs$UID/
 (defconst emacs-tmp-dir (format "%s/%s%s/" user-tmp "emacs" (user-uid)))
 (setq backup-directory-alist
 			`((".*" . ,emacs-tmp-dir)))
@@ -8,3 +11,4 @@
 (setq auto-save-list-file-prefix
 			emacs-tmp-dir)
 (provide 'backup-file-setting)
+;;; backup-file-setting.el ends here

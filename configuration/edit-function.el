@@ -1,4 +1,6 @@
-
+;;; edit-function  --- basic edit function
+;;; Commentary:
+;;; Code:
 ;; copy words or line or paragrage
 
 (defun copy-word (&optional arg)

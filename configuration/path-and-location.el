@@ -1,13 +1,18 @@
+;;; Package --- package list
+;;; Commentary:
+;;; Code:
+
+
 ;; 设定一些文件的存储位置和路径
 (print-log "setting data file location")
 
 ;; path setting
 
 ;; set path
-(setenv "PATH"
-			 (concat
-				(getenv "PATH")
-        ))
+;; (setenv "PATH"
+;; 			 (concat
+;; 				(getenv "PATH")
+;;         ))
 
 ;; daemon下默认路径会是/
 (cd (expand-file-name "~/"))
@@ -42,6 +47,7 @@
 (setq mail-personal-alias-file (concat emacs-dir ".mailrc"))
 (setq recentf-save-file  (concat emacs-dir ".recentf"))
 (setq diary-file  (concat emacs-dir "diary"))
+
 
 ;; org
 (setq org-default-notes-file (concat emacs-dir "notes.org"))

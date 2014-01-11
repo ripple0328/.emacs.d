@@ -1,3 +1,6 @@
+;;; mu4e --- emacs email client
+;;; Commentary:
+;;; Code:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                         mac osx system setting                             ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -23,15 +26,15 @@
 ;;  set path from shell path variable
 ;;------------------------------------------------------------------------------
 
-(defun set-exec-path-from-shell-path ()
-  (let ((path-from-shell 
-      (replace-regexp-in-string "[[:space:]\n]*$" "" 
-        (shell-command-to-string "$SHELL -l -c 'echo $PATH'"))))
-    (setenv "PATH" path-from-shell)
-    (setq exec-path (split-string path-from-shell path-separator))))
+;; (defun set-exec-path-from-shell-path ()
+;;   (let ((path-from-shell 
+;;       (replace-regexp-in-string "[[:space:]\n]*$" "" 
+;;         (shell-command-to-string "$SHELL -l -c 'echo $PATH'"))))
+;;     (setenv "PATH" path-from-shell)
+;;     (setq exec-path (split-string path-from-shell path-separator))))
 
 
-(set-exec-path-from-shell-path)
+;; (set-exec-path-from-shell-path)
 
 ;;------------------------------------------------------------------------------
 ;;  modify modifier key

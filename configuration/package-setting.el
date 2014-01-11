@@ -1,4 +1,6 @@
-;;; Package --- package list
+;;; mu4e --- emacs email client
+;;; Commentary:
+;;; Code:
 ;; change a repository for elpa
 ;;------------------------------------------------------------------------------
 (print-log "loading packages setting")

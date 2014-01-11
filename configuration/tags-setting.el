@@ -1,4 +1,8 @@
-;reference
+;;; mu4e --- emacs email client
+;;; Commentary:
+;;; Code:
+
+                                        ;reference
 ; http://mattbriggs.net/blog/2012/03/18/awesome-emacs-plugins-ctags/
 
 ;; eproject-root could replaced by rinari-root
