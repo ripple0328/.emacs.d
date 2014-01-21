@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("rails-ecosystem"
+(("kic"
+ (filename . "~/program/kic-lab/")
+ (front-context-string . ".bundle\n  drwxr-")
+ (rear-context-string . "36 Dec 27 21:03 ")
+ (position . 236))
+("rails-ecosystem"
  (filename . "~/program/rails-ecosystem/")
  (front-context-string . ".git\n  -rw-r--r-")
  (rear-context-string . "76 Jan  5 15:39 ")
