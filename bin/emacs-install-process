@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 
 clean-emacs
-check-and-cask-install emacs
-create-command-line-emacs
-daemon-emacs
+
+# cask emacs installation
+
+# check-and-brew-install emacs
+# cask-emacs-daemon-emacs
+# cask-emacs-create-command-line-emacs
+
+# brew emacs installtion
+brew-install-head-emacs
+cask-emacs-daemon-emacs

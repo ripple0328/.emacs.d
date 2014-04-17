@@ -12,6 +12,9 @@
 
 ;; initialize load path
 ;; TODO not compatible
+
+;;; Code:
+
 (defvar emacs-dir "~/.emacs.d/"
 	"The root dir of emacs configuration")
 (defvar ripple-dir (concat emacs-dir "configuration/")
@@ -38,3 +41,4 @@
 (require 'key-binding-setting)
 
 (print-log "Emacs is ready to use")
+;;; init.el ends here

@@ -56,7 +56,7 @@
          org-mode
 
          ;; edit
-         switch-window         
+         switch-window
 
          ;; services
          ;; google-maps ;; some problem
@@ -65,7 +65,7 @@
          google-contacts ;; oauth2,use `flet' is an obsolete macro
          google-translate
 	 weibo.emacs
-	 dash-at-point         
+	 dash-at-point
 	 twittering-mode
 
          ;; facilities

@@ -11,18 +11,22 @@ function clean-emacs {
     cleanup-command e
 }
 
-function create-command-line-emacs {
+function brew-install-head-emacs {
+    brew install emacs --HEAD --use-git-head --cocoa --with-gnutls --srgb
+    brew linkapps
+    brew link --overwrite emacs
+}
+
+function cask-emacs-create-command-line-emacs {
     msg 'CREATING\t\t -emacs- command' $BPURPLE
-    sudo rm -f /usr/bin/emacs
-    sudo rm -f $BIN_PATH/emacs
     cp ./emacs-script $BIN_PATH/emacs
     chmod a+x $BIN_PATH/emacs
 
     msg 'LINKING\t\t commands shipped with emacs to system path' $BPURPLE
-    ln -sf $(cask-packages-path emacs)/Emacs.app/Contents/MacOS/bin/* $BIN_PATH/
+    ln -sf $(cask-emacs-path)/Emacs.app/Contents/MacOS/bin/* $BIN_PATH/
 }
 
-function daemon-emacs() {
+function cask-emacs-daemon-emacs() {
     msg 'SETTING\t\t -emacs- to launch at login...' $BPURPLE
     git clone https://github.com/ripple0328/emacs-daemon-osx.git >/dev/null 2>&-
     cd emacs-daemon-osx
@@ -38,7 +42,7 @@ function daemon-emacs() {
 }
 
 
-function emacs-path() {
+function cask-emacs-path() {
     cask-packages-path emacs | awk '{print $1"/Emacs.app/Contents/MacOS/Emacs"}'
 }
 
