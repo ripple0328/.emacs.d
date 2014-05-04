@@ -17,7 +17,7 @@ function brew-install-head-emacs {
     brew link --overwrite emacs > /dev/null 2>&1
 }
 
-function cask-emacs-create-command-line-emacs {
+function cask-emacs-create-command-line {
     msg 'CREATING\t\t -emacs- command' $BPURPLE
     cp ./emacs-script $BIN_PATH/emacs
     chmod a+x $BIN_PATH/emacs
@@ -26,7 +26,15 @@ function cask-emacs-create-command-line-emacs {
     ln -sf $(cask-emacs-path)/Emacs.app/Contents/MacOS/bin/* $BIN_PATH/
 }
 
-function cask-emacs-daemon-emacs() {
+function brew-emacs-create-command-line {
+    msg 'CREATING\t\t -emacs- command' $BPURPLE
+    chmod a+x $BIN_PATH/emacs
+
+    msg 'LINKING\t\t commands shipped with emacs to system path' $BPURPLE
+    ln -sf $(brew --prefix)/Cellar/emacs/HEAD/bin/* $BIN_PATH/
+}
+
+function daemon-emacs() {
     msg 'SETTING\t\t -emacs- to launch at login...' $BPURPLE
     git clone https://github.com/ripple0328/emacs-daemon-osx.git >/dev/null 2>&-
     cd emacs-daemon-osx

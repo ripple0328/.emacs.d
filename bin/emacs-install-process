@@ -5,9 +5,10 @@ clean-emacs
 # cask emacs installation
 
 # check-and-brew-install emacs
-# cask-emacs-daemon-emacs
-# cask-emacs-create-command-line-emacs
+# daemon-emacs
+# cask-emacs-create-command-line
 
 # brew emacs installtion
 brew-install-head-emacs
-cask-emacs-daemon-emacs
+daemon-emacs
+brew-emacs-create-command-line
