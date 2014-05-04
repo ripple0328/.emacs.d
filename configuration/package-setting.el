@@ -14,6 +14,8 @@
                          ("tromey" . "http://tromey.com/elpa/")
                          ))
 (package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
 
 ;;------------------------------------------------------------------------------
@@ -96,7 +98,7 @@
          flx
 	 projectile ;; dash,s,pkg-info
          ;; eproject
-         project-explorer;;helm
+         ;; project-explorer;;helm
          ;; nav
 
          ;; code 
