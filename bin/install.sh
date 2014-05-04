@@ -2,8 +2,7 @@
 
 cd $HOME
 
-source /dev/stdin  <<< "$(curl -s https://raw.githubusercontent
-.com/ripple0328/mac-install-utils/master/basic-environment-installation.sh)"
+source /dev/stdin  <<< "$(curl -s https://raw.githubusercontent.com/ripple0328/mac-install-utils/master/basic-environment-installation.sh)"
 
 function exec-remote {
   source /dev/stdin <<< "$(curl -sSL https://raw.githubusercontent.com/ripple0328/.emacs.d/master/bin/$1)"
