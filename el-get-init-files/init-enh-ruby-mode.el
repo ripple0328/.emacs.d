@@ -32,5 +32,3 @@
 (setq flyspell-issue-message-flag nil)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
-(global-set-key (kbd "C-c r a") 'rvm-activate-corresponding-ruby)
-(global-set-key (kbd "C-c r r") 'inf-ruby)
