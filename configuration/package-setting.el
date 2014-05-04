@@ -49,7 +49,6 @@
 	 ;; pkg-info ;; s,epl
          color-theme
 	 powerline
-         maxframe
          
          ;; document
 	 babel
@@ -60,7 +59,6 @@
 
          ;; services
          ;; google-maps ;; some problem
-         bbdb
          
          google-contacts ;; oauth2,use `flet' is an obsolete macro
          google-translate
