@@ -25,7 +25,12 @@
 (add-hook 'enh-ruby-mode-hook     (lambda () (flyspell-prog-mode)))
 (add-hook 'web-mode-hook          (lambda () (flyspell-prog-mode)))
 (add-hook 'enh-ruby-mode-hook     (lambda () (rvm-activate-corresponding-ruby)))
+(add-hook 'enh-ruby-mode-hook     (lambda () (robe-mode)))
+
 
 ;; check english spell
 (setq flyspell-issue-message-flag nil)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
+(global-set-key (kbd "C-c r a") 'rvm-activate-corresponding-ruby)
+(global-set-key (kbd "C-c r r") 'inf-ruby)
