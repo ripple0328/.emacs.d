@@ -27,6 +27,7 @@
 (add-hook 'enh-ruby-mode-hook     (lambda () (rvm-activate-corresponding-ruby)))
 (add-hook 'enh-ruby-mode-hook     (lambda () (robe-mode)))
 
+(define-key enh-ruby-mode-map (kbd "C-c g") 'ruby-compilation-this-buffer)
 
 ;; check english spell
 (setq flyspell-issue-message-flag nil)
