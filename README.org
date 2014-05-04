@@ -23,7 +23,7 @@
    a simple way, you can directly install emacs and all it's dependency by script
    below
    #+BEGIN_SRC bash
-   \curl -sSL https://raw.github.com/ripple0328/.emacs.d/master/bin/install.sh | bash
+   \curl -sSL https://raw.githubusercontent.com/ripple0328/.emacs.d/master/bin/install.sh | bash
    #+END_SRC
    all configuration described by section below will be execute by script above
    automatically.
