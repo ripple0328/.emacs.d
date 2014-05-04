@@ -12,9 +12,9 @@ function clean-emacs {
 }
 
 function brew-install-head-emacs {
-    brew install emacs --HEAD --use-git-head --cocoa --with-gnutls --srgb
-    brew linkapps
-    brew link --overwrite emacs
+    brew install emacs --HEAD --use-git-head --cocoa --with-gnutls --srgb > /dev/null 2>&1
+    brew linkapps > /dev/null 2>&1
+    brew link --overwrite emacs > /dev/null 2>&1
 }
 
 function cask-emacs-create-command-line-emacs {
