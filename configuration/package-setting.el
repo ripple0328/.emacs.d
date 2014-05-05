@@ -133,7 +133,8 @@
          web-mode
          ;; skewer-mode ;; js2-mode,simple-httpd
          ac-js2;;  skewer-mode,js2-mode,auto-complete
-
+         json-mode;; json-reformat
+         
          ;; tags
          
          
