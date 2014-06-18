@@ -42,3 +42,4 @@
 
 (print-log "Emacs is ready to use")
 ;;; init.el ends here
+(put 'narrow-to-region 'disabled nil)

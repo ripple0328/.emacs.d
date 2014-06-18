@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("kic"
+(("ingestion"
+ (filename . "~/Dropbox/org/investor-api-data-ingestion.org")
+ (front-context-string . "ement\n\n* data so")
+ (rear-context-string . "     \n*** requir")
+ (position . 772))
+("kic"
  (filename . "~/program/kic-lab/")
  (front-context-string . ".bundle\n  drwxr-")
  (rear-context-string . "36 Dec 27 21:03 ")

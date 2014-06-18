@@ -83,7 +83,7 @@
          helm
          ag
          ack-and-a-half
-         
+         undo-tree
          enclose
          smartparens
          rainbow-delimiters
