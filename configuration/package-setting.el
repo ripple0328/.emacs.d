@@ -58,7 +58,7 @@
          org-mode
 
          ;; edit
-         switch-window
+         ;; switch-window
 
          ;; services
          ;; google-maps ;; some problem
