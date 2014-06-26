@@ -1,0 +1,6 @@
+(require 'smart-mode-line)
+;; (sml/setup)
+;; (sml/apply-theme 'automatic)
+;; (setq sml/shorten-modes t)
+;; (setq sml/shorten-directory t)
+;; (add-to-list 'sml/replacer-regexp-list '("^~/Dropbox/" ":DB:") t)

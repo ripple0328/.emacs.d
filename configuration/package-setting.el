@@ -12,7 +12,7 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")
                          ("tromey" . "http://tromey.com/elpa/")
-                         ))
+                        ))
 (package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents))
@@ -37,7 +37,7 @@
 ;;------------------------------------------------------------------------------
 ;; packages sources
 ;;------------------------------------------------------------------------------
-                                        ;rcodetools recipe has problem, temporary fixed it
+;;rcodetools recipe has problem, temporary fixed it
 ;; (require 'rcodetools)
 
 (setq ripple-packages
@@ -48,6 +48,7 @@
          smex
          dired+
          bash-completion
+         smart-mode-line
          ;; pkg-info ;; s,epl
          color-theme
          powerline
@@ -98,7 +99,8 @@
          flx
          projectile-rails ;; dash,s,pkg-info
          ;; eproject
-         ;; project-explorer;;helm
+         es-windows
+         project-explorer;;helm
          ;; nav
 
          ;; code 
