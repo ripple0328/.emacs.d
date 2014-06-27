@@ -48,13 +48,12 @@
          smex
          dired+
          bash-completion
-         smart-mode-line
          ;; pkg-info ;; s,epl
          color-theme
-         ;; powerline
-         smart-mode-line
+         powerline
+         ;; smart-mode-line
          fancy-narrow
-         
+         smooth-scrolling         
          ;; document
          babel
          org-mode
@@ -91,7 +90,8 @@
          enclose
          smartparens
          rainbow-delimiters
-         
+         quickrun
+         ;; shell-pop
          ;; vcs and project ;;
          magit ;; git-modes,cl-lib
          git-commit-mode
@@ -116,6 +116,7 @@
          zencoding-mode
          ;; css
          scss-mode
+         ;; helm-css-scss
          rainbow-mode
          ;; yaml
          yaml-mode
