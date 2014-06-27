@@ -108,5 +108,8 @@
 ;; turn off ring bell and flash a black square block
 (setq visible-bell t)
 
+
+;; toggle-debug-on-error
+(setq debug-on-error t)
 (provide 'general-setting)
 
