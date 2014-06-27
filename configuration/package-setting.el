@@ -51,7 +51,9 @@
          smart-mode-line
          ;; pkg-info ;; s,epl
          color-theme
-         powerline
+         ;; powerline
+         smart-mode-line
+         fancy-narrow
          
          ;; document
          babel

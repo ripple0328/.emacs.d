@@ -1,7 +1,3 @@
-;;; mu4e --- emacs email client
-;;; Commentary:
-;;; Code:
-
 (setq shell-file-name (car (last (split-string (getenv "SHELL") "/"))))
 (setq explicit-shell-file-name (getenv "SHELL"))
 (setenv "TERM" "xterm-256color")
