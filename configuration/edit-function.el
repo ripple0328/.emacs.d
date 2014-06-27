@@ -21,6 +21,8 @@
    (let ((beg (line-beginning-position)) 
  	(end (line-end-position arg)))
      (copy-region-as-kill beg end))
+   (yank)
+   (next-line)
  )
   (global-set-key (kbd "C-c j")         (quote copy-line))
 
