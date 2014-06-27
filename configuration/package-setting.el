@@ -59,6 +59,7 @@
 
          ;; edit
          ;; switch-window
+         workgroups2
 
          ;; services
          ;; google-maps ;; some problem
@@ -138,7 +139,7 @@
          json-mode;; json-reformat
          
          ;; tags
-         
+         ;; ripper-tags
          
          ;; dired+
          ;; json
@@ -152,6 +153,7 @@
          ;; ;; etags-extension
          ;; slime
          ;; ctags
+
          ;; rcodetools
          ;; emacschrome
          ;; emacs-http-server 
