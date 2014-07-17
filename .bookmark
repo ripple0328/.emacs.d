@@ -32,11 +32,6 @@
  (front-context-string . ".git\n  -rw-r--r-")
  (rear-context-string . "08 Jan  2 20:36 ")
  (position . 234))
-("media-deploy"
- (filename . "~/Rea/media-deploy/")
- (front-context-string . ".git\n  -rw-r--r-")
- (rear-context-string . "08 Jan  2 20:36 ")
- (position . 234))
 ("g"
  (filename . "~/program/g/")
  (front-context-string)

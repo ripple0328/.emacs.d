@@ -53,13 +53,13 @@
          powerline
          ;; smart-mode-line
          fancy-narrow
-         smooth-scrolling         
+         smooth-scrolling
          ;; document
          babel
          org-mode
 
          ;; edit
-         ;; switch-window
+         switch-window
          workgroups2
 
          ;; services
@@ -106,7 +106,7 @@
          project-explorer;;helm
          ;; nav
 
-         ;; code 
+         ;; code
          highlight-indentation
          ;; auto-complete ;; popup, fuzzy
 
