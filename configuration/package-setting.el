@@ -48,6 +48,7 @@
          smex
          dired+
          bash-completion
+         discover
          ;; pkg-info ;; s,epl
          color-theme
          powerline
