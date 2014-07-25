@@ -95,6 +95,7 @@
          ;; shell-pop
          ;; vcs and project ;;
          magit ;; git-modes,cl-lib
+         git-timemachine
          git-commit-mode
          gist ;;gh tabulated-list
          textmate
