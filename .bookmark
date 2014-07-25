@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("ingestion"
+(("postgre"
+ (filename . "~/Dropbox/org/program/sql/postgresql.org")
+ (front-context-string)
+ (rear-context-string . "es\n   #+END_SRC\n")
+ (position . 443))
+("ingestion"
  (filename . "~/Dropbox/org/investor-api-data-ingestion.org")
  (front-context-string . "ement\n\n* data so")
  (rear-context-string . "     \n*** requir")
