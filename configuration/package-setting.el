@@ -58,10 +58,12 @@
          ;; document
          babel
          org-mode
+         markdown-mode
 
          ;; edit
          switch-window
          workgroups2
+         rebox2
 
          ;; services
          ;; google-maps ;; some problem
