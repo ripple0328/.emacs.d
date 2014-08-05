@@ -65,6 +65,7 @@
          workgroups2
          rebox2
          nyan-mode
+         golden-ratio
 
          ;; services
          ;; google-maps ;; some problem
