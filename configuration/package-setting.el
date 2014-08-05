@@ -64,6 +64,7 @@
          switch-window
          workgroups2
          rebox2
+         nyan-mode
 
          ;; services
          ;; google-maps ;; some problem
