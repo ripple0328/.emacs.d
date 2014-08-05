@@ -99,6 +99,7 @@
          magit ;; git-modes,cl-lib
          git-timemachine
          git-commit-mode
+         ibuffer-vc
          gist ;;gh tabulated-list
          textmate
          
