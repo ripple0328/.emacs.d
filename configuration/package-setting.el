@@ -100,6 +100,7 @@
          git-timemachine
          git-commit-mode
          ibuffer-vc
+         diff-hl
          gist ;;gh tabulated-list
          textmate
          
