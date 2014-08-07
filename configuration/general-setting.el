@@ -108,6 +108,8 @@
 ;; turn off ring bell and flash a black square block
 (setq visible-bell t)
 
+;; use srgb color
+(setq ns-use-srgb-colorspace t)
 
 ;; toggle-debug-on-error
 (setq debug-on-error t)
