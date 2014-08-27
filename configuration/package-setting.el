@@ -58,6 +58,7 @@
          ;; document
          babel
          org-mode
+         org-jira
          markdown-mode
 
          ;; edit
