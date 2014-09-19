@@ -150,6 +150,8 @@
          ac-js2;;  skewer-mode,js2-mode,auto-complete
          json-mode;; json-reformat
          
+         ;; ios
+         motion-mode
          ;; tags
          ;; ripper-tags
          
