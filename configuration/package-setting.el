@@ -140,6 +140,7 @@
          rspec-mode
          feature-mode
          yari
+         motion-mode
 
          ;; rails
          ;; rinari
