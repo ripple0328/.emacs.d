@@ -23,6 +23,6 @@
   )
 
 ;; emacsosx don't support this only brew install emacs can open this
-(toggle-frame-fullscreen)
+;; (toggle-frame-fullscreen)
 
 (provide 'window-system-setting)
