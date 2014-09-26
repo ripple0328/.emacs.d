@@ -117,7 +117,7 @@
 
          ;; code
          highlight-indentation
-         ;; auto-complete ;; popup, fuzzy
+         auto-complete ;; popup, fuzzy
 
          ;; code language support
          ;; html
