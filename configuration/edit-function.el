@@ -92,6 +92,16 @@
   (interactive "*p")
   (move-text-internal (- arg)))
 
+(defun clip-file ()
+  "Put the current file name on the clipboard"
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      (file-name-directory default-directory)
+                    (buffer-file-name))))
+    (when filename
+      (x-select-text filename))))
+
+
 (global-set-key (kbd "s-n") 'move-text-down)
 (global-set-key (kbd "s-p") 'move-text-up)
 
