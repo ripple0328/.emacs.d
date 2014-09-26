@@ -67,6 +67,7 @@
          rebox2
          nyan-mode
          golden-ratio
+         volatile-highlights
 
          ;; services
          ;; google-maps ;; some problem
@@ -86,6 +87,7 @@
          ;; code
          yasnippet
          flycheck ;; s dash cl-lib f pkg-info
+	 flycheck-color-mode-line
          expand-region
          ace-jump-mode
          multiple-cursors
@@ -110,6 +112,7 @@
          
          grizzl
          flx
+         projectile
          projectile-rails ;; dash,s,pkg-info
          ;; eproject
          es-windows
