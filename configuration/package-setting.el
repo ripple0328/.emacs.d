@@ -97,6 +97,7 @@
          smartparens
          rainbow-delimiters
          quickrun
+         ggtags 
          ;; shell-pop
          ;; vcs and project ;;
          magit ;; git-modes,cl-lib
@@ -151,6 +152,8 @@
          ac-js2;;  skewer-mode,js2-mode,auto-complete
          json-mode;; json-reformat
          
+         ;;  perl
+         cperl-mode
          ;; ios
          motion-mode
          ;; tags

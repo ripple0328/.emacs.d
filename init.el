@@ -36,6 +36,7 @@
 (require 'edit-function)
 (require 'theme-setting)
 (require 'shell-configuration)
+(require 'program-setting)
 (require 'org-setting)
 (require 'mu4e-setting)
 (require 'key-binding-setting)
