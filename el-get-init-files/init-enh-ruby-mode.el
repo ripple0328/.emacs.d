@@ -33,3 +33,5 @@
 (setq flyspell-issue-message-flag nil)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
+(defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
+  (rvm-activate-corresponding-ruby))
