@@ -113,5 +113,9 @@
 
 ;; toggle-debug-on-error
 (setq debug-on-error t)
+
+;; enable narrow-to-region
+(put 'narrow-to-region 'disabled nil)
+
 (provide 'general-setting)
 
