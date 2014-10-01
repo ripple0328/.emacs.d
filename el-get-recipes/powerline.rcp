@@ -1,4 +1,0 @@
-(:name powerline
-       :type github
-       :pkgname "jonathanchu/emacs-powerline")
-

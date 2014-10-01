@@ -1,4 +1,0 @@
-(:name es-windows
-       :type elpa
-       :description "user-access to internal Emacs windows")
-
