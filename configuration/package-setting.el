@@ -49,6 +49,7 @@
          dired+
          bash-completion
          discover
+         mac-print-mode
          ;; pkg-info ;; s,epl
          color-theme
          powerline
