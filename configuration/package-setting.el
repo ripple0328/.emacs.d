@@ -37,8 +37,6 @@
 ;;------------------------------------------------------------------------------
 ;; packages sources
 ;;------------------------------------------------------------------------------
-;;rcodetools recipe has problem, temporary fixed it
-;; (require 'rcodetools)
 
 (setq ripple-packages
       (append
