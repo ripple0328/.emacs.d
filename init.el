@@ -34,7 +34,6 @@
 (require 'package-setting)
 (require 'general-setting)
 (require 'edit-function)
-(require 'theme-setting)
 (require 'shell-configuration)
 (require 'program-setting)
 (require 'org-setting)
