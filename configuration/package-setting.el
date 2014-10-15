@@ -50,7 +50,7 @@
          mac-print-mode
          ;; pkg-info ;; s,epl
          color-theme
-         powerline
+         emacs-powerline
          ;; smart-mode-line
          fancy-narrow
          smooth-scrolling
@@ -86,7 +86,7 @@
          ;; code
          yasnippet
          flycheck ;; s dash cl-lib f pkg-info
-	 flycheck-color-mode-line
+         flycheck-color-mode-line
          expand-region
          ace-jump-mode
          multiple-cursors
