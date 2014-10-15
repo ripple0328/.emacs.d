@@ -10,12 +10,12 @@
 (menu-bar-mode t)
 
 ;; font setting
-(set-default-font "Inconsolata-dz for Power-14")
+(set-default-font "Inconsolata-dz for Powerline-16")
 
 ;; font setting will failed when start emacs with daemon mode
 ;; below will setting for daemon mode
-(add-to-list 'default-frame-alist '(font . "Inconsolata-dz for Power-16"))
-(set-face-attribute 'default t :font "Inconsolata-dz for Power-16") 
+(add-to-list 'default-frame-alist '(font . "Inconsolata-dz for Powerline-16"))
+(set-face-attribute 'default t :font "Inconsolata-dz for Powerline-16") 
 
 (when window-system
   (set-frame-size (selected-frame) 160 40)
