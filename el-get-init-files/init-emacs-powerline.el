@@ -1,6 +1,3 @@
-(require 'powerline)
-(powerline-default-theme)
-
 ;; (require 'powerline)
 ;; (setq powerline-arrow-shape 'arrow)   ;; the default
 ;; (setq powerline-arrow-shape 'curve)   ;; give your mode-line curves
