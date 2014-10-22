@@ -27,3 +27,6 @@ var/
 Maildir/
 /flycheck_org-clock-save.el
 /.mc-lists.el
+.edbi-ds-history
+.bookmark
+eww-bookmarks
