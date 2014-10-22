@@ -72,7 +72,7 @@
 
          ;; services
          ;; google-maps ;; some problem
-         
+         google-this
          google-contacts ;; oauth2,use `flet' is an obsolete macro
          google-translate
          weibo.emacs
