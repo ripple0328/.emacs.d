@@ -107,6 +107,5 @@
 
 (setq ispell-local-dictionary "en")
 
-(flyspell-mode)
-(subword-mode)
+
 (provide 'edit-function)
