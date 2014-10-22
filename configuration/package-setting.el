@@ -48,6 +48,7 @@
          bash-completion
          makey
          discover
+         smartscan
          ido-vertical-mode
          ;; print on mac
          mac-print-mode

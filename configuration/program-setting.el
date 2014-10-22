@@ -4,6 +4,7 @@
               (ggtags-mode))))
 (subword-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(add-hook 'prog-mode-hook 'smartscan-mode)
 
 
 ;; database
