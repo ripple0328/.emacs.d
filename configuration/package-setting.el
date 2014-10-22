@@ -67,7 +67,6 @@
          babel
          org-mode
          org-jira
-         o-blog
          markdown-mode
 
          ;; edit
