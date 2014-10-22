@@ -2,7 +2,62 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("postgre"
+(("librea"
+ (filename . "~/Rea/developer/extractor/librea/")
+ (front-context-string . ".cvsignore\n  drw")
+ (rear-context-string . "34 Sep 25 15:39 ")
+ (position . 249))
+("reaxml"
+ (filename . "~/Rea/developer/extractor/reaxml/")
+ (front-context-string . ".git\n  -rw-r--r-")
+ (rear-context-string . "44 Oct 15 16:00 ")
+ (position . 243))
+("va"
+ (filename . "~/Rea/vagrant/")
+ (front-context-string . "Arch\n  drwxr-xr-")
+ (rear-context-string . "36 Sep 25 12:37 ")
+ (position . 231))
+("motion"
+ (filename . "~/program/promotion/")
+ (front-context-string . ".DS_Store\n  -rw-")
+ (rear-context-string . "48 Sep 24 21:52 ")
+ (position . 238))
+("migration"
+ (filename . "~/Rea/developer/pseekerdb-migrations/")
+ (front-context-string . ".git\n  -rw-r--r-")
+ (rear-context-string . "10 Sep 19 14:08 ")
+ (position . 265))
+("consumer"
+ (filename . "~/Rea/developer/rex-consumer/")
+ (front-context-string . ".bundle\n  drwxr-")
+ (rear-context-string . "02 Sep 17 19:02 ")
+ (position . 247))
+("domain"
+ (filename . "~/Rea/developer/cp-domain/")
+ (front-context-string . ".dockerignore\n  ")
+ (rear-context-string . " 5 Sep 17 19:27 ")
+ (position . 245))
+("aa"
+ (filename . "~/Rea/developer/cp-agentadmin/")
+ (front-context-string . ".dockerignore\n  ")
+ (rear-context-string . "15 Aug 22 16:46 ")
+ (position . 252))
+("service"
+ (filename . "~/Rea/developer/cp-services/")
+ (front-context-string . ".git\n  -rw-r--r-")
+ (rear-context-string . "08 Aug 21 21:17 ")
+ (position . 246))
+("xml"
+ (filename . "~/Rea/developer/rex-reaxml-mapper/")
+ (front-context-string . ".git\n  -rw-r--r-")
+ (rear-context-string . "42 Aug 19 21:36 ")
+ (position . 252))
+("cp-domain"
+ (filename . "~/Rea/developer/cp-domain/")
+ (front-context-string . "..\n  drwxr-xr-x ")
+ (rear-context-string . "36 Aug 18 12:08 ")
+ (position . 197))
+("postgre"
  (filename . "~/Dropbox/org/program/sql/postgresql.org")
  (front-context-string)
  (rear-context-string . "es\n   #+END_SRC\n")
