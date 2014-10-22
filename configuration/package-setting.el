@@ -66,6 +66,7 @@
 
          ;; document
          babel
+         pandoc-mode
          org-mode
          org-jira
          o-blog
