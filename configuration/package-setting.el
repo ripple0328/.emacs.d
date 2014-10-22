@@ -53,13 +53,17 @@
          ;; print on mac
          mac-print-mode
          ;; pkg-info ;; s,epl
+
          ;; color-theme
+         ;; tomorrow-theme
          powerline
          ;; emacs-powerline
          moe-theme
          ;; smart-mode-line
          fancy-narrow
          smooth-scrolling
+
+
          ;; document
          babel
          org-mode
