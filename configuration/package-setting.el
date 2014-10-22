@@ -47,6 +47,8 @@
          dired+
          bash-completion
          discover
+         ido-vertical-mode
+         ;; print on mac
          mac-print-mode
          ;; pkg-info ;; s,epl
          color-theme

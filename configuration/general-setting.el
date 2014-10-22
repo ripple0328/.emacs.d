@@ -48,6 +48,8 @@
 (setq-default indent-tabs-mode nil) ; stop mixed tab and spaces
 
 (ido-mode t)
+(ido-vertical-mode 1)
+
 ;(nav)
 ; 括号自动配对，与ruby-electric功能冲突，设置成nil仍然关不掉
 ;; (electric-pair-mode t) 
