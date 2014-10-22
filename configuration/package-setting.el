@@ -46,6 +46,7 @@
          smex
          dired+
          bash-completion
+         makey
          discover
          ido-vertical-mode
          ;; print on mac
