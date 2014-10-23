@@ -1,4 +1,5 @@
 (require 'yasnippet)
 (setq yas-snippet-dirs (concat emacs-dir "snippets"))
 (setq yas-x-pretty-prompt-templates t)
-(yas-global-mode 1)
+;; global yas setting
+;; (yas-global-mode 1)
