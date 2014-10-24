@@ -30,7 +30,7 @@
 ;;------------------------------------------------------------------------------
 ;; org project
 ;;------------------------------------------------------------------------------
-(setq org-publish-use-timestamps-flag nil)
+;; (setq org-publish-use-timestamps-flag nil)
 
 (setq org-publish-project-alist
       '(
