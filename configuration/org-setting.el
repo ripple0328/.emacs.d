@@ -1,4 +1,4 @@
-;;; mu4e --- emacs email client
+;;; org-mode --- 
 ;;; Commentary:
 ;;; Code:
 
@@ -34,36 +34,71 @@
 
 (setq org-publish-project-alist
       '(
-        ("org-notes"
-         :base-directory "~/Dropbox/org"
+        ("blog" :components ("blog-article" "assets" "blog-rss"))
+
+        ("blog-article"
+         :html-extension "html"
          :base-extension "org"
-         :publishing-directory "~/Dropbox/html"
-;				 :publishing-directory "/Volumes/econoline.websitewelcome.com"
-				 
+         :base-directory "~/Dropbox/org"
+         :publishing-directory "~/Dropbox/ripple0328.github.io"
          :recursive t
-         :publishing-function org-publish-org-to-html
+         :section-numbers nil  ; don't create numbered sections
+         :with-toc t
+         :with-latex t
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
          :exclude ".git/*"
-         :exclude "sitemap0.org"
-         :headline-levels 999
-         :auto-preamble t
-
+         :exclude "rss.org\\|archive.org\\|theindex.org"
+         :exclude "private/*"
+         :html-inline-images t
          :auto-sitemap t
-         :sitemap-filename "sitemap0.org"
-         :sitemap-title "Document Sitemap"
-         :sitemap-style 'tree
+         :sitemap-filename "archive.org"
+         :sitemap-title "Archive"
+         :sitemap-sort-files anti-chronologically
+         :sitemap-style list
+         :makeindex t
+         ;; :sub-superscript nil
+         ;; :html-link-home "/"
+         ;; :html-link-up ""
+         :html-head-include-default-style nil
+         :html-head-include-scripts nil
+         :html-link-use-abs-url nil
+         :org-html-use-infojs t
+         :html-preamble "<div class=\"header\">
+              <div class=\"nav\">
+                  <a href=\"http://blog.rubyer.info/archive.html\">Archive</a>  
+                  <a href=\"http://blog.rubyer.info/about.html\">| AboutMe</a>  
+                  <a href=\"http://blog.rubyer.info/theindex.html\">| Index</a>  
+              </div>
+          </div>"
 
-         :headline-level 999
-         :section-numbers nil
-         :sub-superscript nil
+         :html-postamble 
+         (lambda (info)
+           "Do not show disqus for Archive and Recent Posts"
+           (cond ((string= (car (plist-get info :title)) "Archive") "")
+                 (t "<div id=\"disqus_thread\"></div>
+                     <script type=\"text/javascript\" src=\"http://blog.rubyer.info/scripts/disqus.js\"></script>")))
 
-         :style-include-default nil
-         ;; :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"~/.emacs.d/org-templates/css/stylesheet.css\" />"
-         ;;在每一层的目录下面写了,不知道有好办法没有
+         :html-head  "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://blog.rubyer.info/css/worg.css\" />
+                      <link rel=\"stylesheet\" type=\"text/css\" href=\"http://blog.rubyer.info/css/blog.css\" />"
+         :html-head-extra "<link rel=\"alternate\" type=\"appliation/rss+xml\" href=\"http://blog.rubyer.info/rss.xml\" title=\"RSS feed for Qingbo\"/>"
          :author "Qingbo"
-         :email "ripple0328@gmail.com"
+         :email "ripple0328 at gmail dot com"
          )
 
-        
+        ("blog-rss"
+         :base-directory "~/Dropbox/org"
+         :base-extension "org"
+         :publishing-directory "~/Dropbox/ripple0328.github.io"
+         :publishing-function org-rss-publish-to-rss
+         :html-link-home "http://blog.rubyer.info/"
+         :html-link-use-abs-url t
+         :exclude ".*"
+         :include ("rss.org")
+         :with-toc nil
+         :section-numbers nil
+         :title "Rss for ripple's blog"
+         )
         ;; ("org-pdf"
         ;;  :base-deirectory "~/Document/org/"
         ;;  :base-extension "org"
@@ -73,18 +108,12 @@
         ;;  :title "pdf-work"
         ;;  )
 
-        ("org-static"
+        ("assets"
          :base-directory "~/Dropbox/org/"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|tiff"
-         :publishing-directory "~/Dropbox/html"
-;				 :publishing-directory  "/Volumes/econoline.websitewelcome.com"
-
+         :publishing-directory "~/Dropbox/ripple0328.github.io"
          :recursive t
          :publishing-function org-publish-attachment
-         )
-	
-        ("org"
-         :components ("org-notes" "org-static")
          )
         ))
 
