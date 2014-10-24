@@ -47,8 +47,7 @@
          :with-latex t
          :publishing-function org-html-publish-to-html
          :headline-levels 4
-         :exclude ".git/*\\|private/*\\|org-templates/*"
-         :exclude "rss.org\\|archive.org\\|theindex.org"
+         :exclude ".git/*\\|private/*\\|org-templates/*\\|rss.org"
          :html-inline-images t
          :auto-sitemap t
          :sitemap-filename "archive.org"
