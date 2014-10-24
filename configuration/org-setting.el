@@ -47,9 +47,8 @@
          :with-latex t
          :publishing-function org-html-publish-to-html
          :headline-levels 4
-         :exclude ".git/*"
+         :exclude ".git/*\\|private/*\\|org-templates/*"
          :exclude "rss.org\\|archive.org\\|theindex.org"
-         :exclude "private/*"
          :html-inline-images t
          :auto-sitemap t
          :sitemap-filename "archive.org"
@@ -66,7 +65,8 @@
          :org-html-use-infojs t
          :html-preamble "<div class=\"header\">
               <div class=\"nav\">
-                  <a href=\"http://blog.rubyer.info/archive.html\">Archive</a>  
+                  <a href=\"http://blog.rubyer.info/\">Recent</a>  
+                  <a href=\"http://blog.rubyer.info/archive.html\">| Archive</a>  
                   <a href=\"http://blog.rubyer.info/about.html\">| AboutMe</a>  
                   <a href=\"http://blog.rubyer.info/theindex.html\">| Index</a>  
               </div>
