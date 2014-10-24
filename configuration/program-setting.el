@@ -6,6 +6,7 @@
             (flyspell-prog-mode)
             (smartscan-mode)
             (subword-mode)
+            (global-linum-mode)
             ))
 ;; database
 (add-hook 'sql-interactive-mode-hook
