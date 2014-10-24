@@ -62,11 +62,6 @@
  (front-context-string)
  (rear-context-string . "es\n   #+END_SRC\n")
  (position . 443))
-("ingestion"
- (filename . "~/Dropbox/org/investor-api-data-ingestion.org")
- (front-context-string . "ement\n\n* data so")
- (rear-context-string . "     \n*** requir")
- (position . 772))
 ("kic"
  (filename . "~/program/kic-lab/")
  (front-context-string . ".bundle\n  drwxr-")
