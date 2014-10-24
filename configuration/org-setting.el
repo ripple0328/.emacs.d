@@ -30,7 +30,7 @@
 ;;------------------------------------------------------------------------------
 ;; org project
 ;;------------------------------------------------------------------------------
-;; (setq org-publish-use-timestamps-flag nil)
+(setq org-publish-use-timestamps-flag t)
 
 (setq org-publish-project-alist
       '(
@@ -77,10 +77,10 @@
            "Do not show disqus for Archive and Recent Posts"
            (cond ((string= (car (plist-get info :title)) "Archive") "")
                  (t "<div id=\"disqus_thread\"></div>
-                     <script type=\"text/javascript\" src=\"http://blog.rubyer.info/scripts/disqus.js\"></script>")))
+                     <script type=\"text/javascript\" src=\"http://blog.rubyer.info/assets/scripts/disqus.js\"></script>")))
 
-         :html-head  "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://blog.rubyer.info/css/worg.css\" />
-                      <link rel=\"stylesheet\" type=\"text/css\" href=\"http://blog.rubyer.info/css/blog.css\" />"
+         :html-head  "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://blog.rubyer.info/assets/css/worg.css\" />
+                      <link rel=\"stylesheet\" type=\"text/css\" href=\"http://blog.rubyer.info/assets/css/blog.css\" />"
          :html-head-extra "<link rel=\"alternate\" type=\"appliation/rss+xml\" href=\"http://blog.rubyer.info/rss.xml\" title=\"RSS feed for Qingbo\"/>"
          :author "Qingbo"
          :email "ripple0328 at gmail dot com"
