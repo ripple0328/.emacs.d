@@ -158,9 +158,6 @@
 (add-to-list 'org-modules 'org-mac-iCal)
 (setq org-agenda-include-diary t)
 
-;; support for mac link from other app
-(add-hook 'org-mode-hook (lambda () 
-  (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)))
 
 ;; capture
 
@@ -183,10 +180,11 @@
 ; MY PROJECTS    -*- mode: org; -*-
 (setq org-insert-mode-line-in-empty-file t)
 
-(add-hook 'org-mode-hook 'turn-on-font-lock)
+(add-hook 'org-mode-hook (lambda ()
+                           (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link) ;; support for mac link from other app
+                           (yas-minor-mode)
+                           (turn-on-font-lock)))
 
-(add-hook 'org-mode-hook (lambda () 
-  (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)))
 
 
 ; add structure editing keybindings not set by default
