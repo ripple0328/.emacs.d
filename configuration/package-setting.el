@@ -146,7 +146,7 @@
          rvm ;; essetiall if you use rvm to manage ruby
          enh-ruby-mode
          ruby-compilation
-         robe-mode ;; inf-ruby
+         ;; robe-mode ;; inf-ruby
          bundler
          rubocop ;; need rubocop gem installed
          rspec-mode

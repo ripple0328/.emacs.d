@@ -1,6 +1,6 @@
 (add-hook 'prog-mode-hook
           (lambda ()
-            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'cperl-mode-hook 'perl-mode-hook)
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'cperl-mode-hook 'perl-mode-hook 'ruby-mode-hook 'enh-ruby-mode)
               (ggtags-mode))
             (yas-minor-mode)
             (flyspell-prog-mode)
