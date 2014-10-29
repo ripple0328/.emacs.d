@@ -68,6 +68,7 @@
                   <a href=\"http://blog.rubyer.info/archive.html\">| Archive</a>  
                   <a href=\"http://blog.rubyer.info/about.html\">| AboutMe</a>  
                   <a href=\"http://blog.rubyer.info/theindex.html\">| Index</a>  
+                  <a href=\"http://blog.rubyer.info/rss.xml\">| RSS</a>  
               </div>
           </div>"
 
@@ -76,8 +77,7 @@
            "Do not show disqus for Archive and Recent Posts"
            (cond ((string= (car (plist-get info :title)) "Archive") "")
                  (t "<div id=\"disqus_thread\"></div>
-                     <script type=\"text/javascript\" src=\"http://blog.rubyer.info/assets/scripts/disqus.js\"></script>
-                     <script type=\"text/javascript\" src=\"http://blog.rubyer.info/assets/scripts/ga.js\"></script>")))
+                     <script type=\"text/javascript\" src=\"http://blog.rubyer.info/assets/scripts/disqus.js\"></script>")))
 
          :html-head  "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://blog.rubyer.info/assets/css/worg.css\" />
                       <link rel=\"stylesheet\" type=\"text/css\" href=\"http://blog.rubyer.info/assets/css/blog.css\" />"
@@ -110,7 +110,7 @@
 
         ("assets"
          :base-directory "~/Dropbox/org/"
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|tiff"
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|tiff\\|xlsx"
          :publishing-directory "~/Dropbox/ripple0328.github.io"
          :recursive t
          :publishing-function org-publish-attachment
