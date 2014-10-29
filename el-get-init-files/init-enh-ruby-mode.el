@@ -18,20 +18,17 @@
 			     ;; (require 'ruby-compilation)
 			     ))
 
-(add-hook 'enh-ruby-mode-hook 'rubocop-mode)
-(add-hook 'enh-ruby-mode-hook 'flycheck-mode)
-
 ;; (getenv "GEM_PATH")
-(add-hook 'enh-ruby-mode-hook     (lambda () (flyspell-prog-mode)))
-(add-hook 'web-mode-hook          (lambda () (flyspell-prog-mode)))
-(add-hook 'enh-ruby-mode-hook     (lambda () (rvm-activate-corresponding-ruby)))
-(add-hook 'enh-ruby-mode-hook     (lambda () (robe-mode)))
+(add-hook 'enh-ruby-mode-hook     (lambda () 
+                                    (rvm-activate-corresponding-ruby)
+                                    (rubocop-mode)
+                                    (flycheck-mode)
+                                    ;; (robe-mode)
+                                    ))
 
 (define-key enh-ruby-mode-map (kbd "C-c g") 'ruby-compilation-this-buffer)
 
 ;; check english spell
-(setq flyspell-issue-message-flag nil)
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
-(defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
-  (rvm-activate-corresponding-ruby))
+
+(rvm-activate-corresponding-ruby)

@@ -5,6 +5,7 @@
 ;; )
             (yas-minor-mode)
             (flyspell-prog-mode)
+            (setq flyspell-issue-message-flag nil)
             (smartscan-mode)
             (subword-mode)
             (global-linum-mode)
