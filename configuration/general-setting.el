@@ -119,5 +119,10 @@
 ;; enable narrow-to-region
 (put 'narrow-to-region 'disabled nil)
 
+
+;; change default initial buffer
+(setq initial-scratch-message "")
+(setq initial-major-mode 'org-mode)
+
 (provide 'general-setting)
 
