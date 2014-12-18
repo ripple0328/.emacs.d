@@ -42,7 +42,7 @@
 
 ;; TODO adjust key binding systemly
 (setq mac-option-modifier 'meta)
-(setq mac-right-command-modifier 'super)
+(setq mac-command-modifier 'super)
 ;; (setq mac-control-modifier 'ctrl)
 
 
