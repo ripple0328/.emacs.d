@@ -15,6 +15,7 @@
 (setenv "TERM" "xterm-256color")
 (setenv "SHELL" shell-file-name)
 (global-set-key "\C-cs" 'shell)
+(global-set-key (kbd "C-`") 'shell-or-last-buffer)
 
 ;; removing ^M character
 (add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m)
