@@ -14,6 +14,7 @@
 
 (add-to-list 'ac-modes 'enh-ruby-mode)
 (add-to-list 'ac-modes 'web-mode)
+
 ; setting ac backend
 (setq-default ac-sources '(ac-source-words-in-same-mode-buffers
                            ac-source-abbrev
@@ -23,7 +24,8 @@
                            ac-source-yasnippet
                            ac-source-functions
                            ac-source-files-in-current-dir
-													 ac-source-robe))
+													 ac-source-robe
+                           ))
 ;(setq ac-auto-start 2) ; less then 8, otherwise use yasnippet.
 (setq ac-use-quick-help t)
 (setq ac-auto-show-menu t)
