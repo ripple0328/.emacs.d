@@ -8,10 +8,11 @@
 (print-log "setting elpa repository")
 
 (require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
+(setq package-archives '(
+                         ;; ("gnu" . "http://elpa.gnu.org/packages/")
+                         ;; ("tromey" . "http://tromey.com/elpa/")
+                         ;; ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")
-                         ("tromey" . "http://tromey.com/elpa/")
                         ))
 (package-initialize)
 (when (not package-archive-contents)
@@ -25,10 +26,9 @@
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
       (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (let (el-get-master-branch)
-      (goto-char (point-max))
-      (eval-print-last-sexp))))
+       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
 ;;add its initialization code to a file named init-<package>.el with <package> replaced with the package name
 (add-to-list 'el-get-recipe-path  (concat emacs-dir "el-get-recipes/"))
 
