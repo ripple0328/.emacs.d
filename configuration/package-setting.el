@@ -107,7 +107,8 @@
          smartparens
          rainbow-delimiters
          quickrun
-         ggtags 
+         restclient
+         ggtags
          ;; shell-pop
          ;; vcs and project ;;
          magit ;; git-modes,cl-lib
@@ -139,24 +140,24 @@
          scss-mode
          ;; helm-css-scss
          rainbow-mode
-         ;; yaml
          yaml-mode
          
          ;; ruby
          rvm ;; essetiall if you use rvm to manage ruby
          enh-ruby-mode
          ruby-compilation
-         ;; robe-mode ;; inf-ruby
+         robe
          bundler
          rubocop ;; need rubocop gem installed
          rspec-mode
          feature-mode
          yari
-         motion-mode
+         ;; motion-mode
 
          ;; rails
          ;; rinari
          ;; js
+         projectile-rails ;; dash,s,pkg-info
          coffee-mode
          web-mode
          ;; skewer-mode ;; js2-mode,simple-httpd
