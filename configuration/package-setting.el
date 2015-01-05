@@ -51,7 +51,7 @@
          smartscan
          ido-vertical-mode
          ;; print on mac
-         mac-print-mode
+         ;; mac-print-mode
          ;; pkg-info ;; s,epl
 
          ;; color-theme
@@ -71,7 +71,7 @@
 
          ;; edit
          switch-window
-         workgroups2
+         ;; workgroups2
          rebox2
          nyan-mode
          golden-ratio
@@ -80,19 +80,20 @@
          ;; services
          ;; google-maps ;; some problem
          google-this
-         google-contacts ;; oauth2,use `flet' is an obsolete macro
          google-translate
          weibo.emacs
          dash-at-point
          twittering-mode
 
          ;; facilities
-         emacs-w3m ;; browser
+         ;; emacs-w3m ;; browser
          mu4e ;; email client
+         ;; jabber
 
          ;; adaptive-wrap
 
          ;; code
+         shell-toggle
          yasnippet
          flycheck ;; s dash cl-lib f pkg-info
          flycheck-color-mode-line
@@ -122,7 +123,7 @@
          grizzl
          flx
          projectile
-         projectile-rails ;; dash,s,pkg-info
+
          ;; eproject
          es-windows
          project-explorer;;helm
@@ -139,7 +140,7 @@
          ;; css
          scss-mode
          ;; helm-css-scss
-         rainbow-mode
+         ;; rainbow-mode
          yaml-mode
          
          ;; ruby
