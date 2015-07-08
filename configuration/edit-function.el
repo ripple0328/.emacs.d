@@ -105,7 +105,5 @@
 (global-set-key (kbd "s-n") 'move-text-down)
 (global-set-key (kbd "s-p") 'move-text-up)
 
-(setq ispell-local-dictionary "en")
-
-
+;; (setq ispell-local-dictionary "en")
 (provide 'edit-function)

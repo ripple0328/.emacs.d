@@ -1,4 +1,3 @@
-(require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (setq ac-ignore-case nil)
@@ -24,7 +23,7 @@
                            ac-source-yasnippet
                            ac-source-functions
                            ac-source-files-in-current-dir
-													 ac-source-robe
+													 ;; ac-source-robe
                            ))
 ;(setq ac-auto-start 2) ; less then 8, otherwise use yasnippet.
 (setq ac-use-quick-help t)

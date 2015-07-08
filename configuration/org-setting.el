@@ -6,6 +6,7 @@
 ;;                              Org Configuration                            
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
 (print-log "loading org setting")
 ;;------------------------------------------------------------------------------
 ;; active babel languages
@@ -31,7 +32,9 @@
 ;; org project
 ;;------------------------------------------------------------------------------
 (setq org-publish-use-timestamps-flag t)
-
+(setq postamble (with-temp-buffer
+                  (insert-file-contents "assets/html/postamble.html")
+                  (buffer-string)))
 (setq org-publish-project-alist
       '(
         ("blog" :components ("blog-article" "assets" "blog-rss"))
@@ -62,15 +65,16 @@
          :html-head-include-scripts nil
          :html-link-use-abs-url nil
          :org-html-use-infojs t
-         :html-preamble "<div class=\"header\">
-              <div class=\"nav\">
-                  <a href=\"http://blog.rubyer.info/\">Recent</a>  
-                  <a href=\"http://blog.rubyer.info/archive.html\">| Archive</a>  
-                  <a href=\"http://blog.rubyer.info/about.html\">| AboutMe</a>  
-                  <a href=\"http://blog.rubyer.info/theindex.html\">| Index</a>  
-                  <a href=\"http://blog.rubyer.info/rss.xml\">| RSS</a>  
-              </div>
-          </div>"
+         :html-preamble ,preamble
+         ;; "<div class=\"header\">
+         ;;      <div class=\"nav\">
+         ;;          <a href=\"http://blog.rubyer.info/\">Recent</a>  
+         ;;          <a href=\"http://blog.rubyer.info/archive.html\">| Archive</a>  
+         ;;          <a href=\"http://blog.rubyer.info/about.html\">| AboutMe</a>  
+         ;;          <a href=\"http://blog.rubyer.info/theindex.html\">| Index</a>  
+         ;;          <a href=\"http://blog.rubyer.info/rss.xml\">| RSS</a>  
+         ;;      </div>
+         ;;  </div>"
 
          :html-postamble 
          (lambda (info)
@@ -205,5 +209,6 @@
 
 ;; automatically adjust footnotes after insert/delete.
 (setq org-footnote-auto-adjust t)
+(setq org-image-actual-width nil)
 (provide 'org-setting)
 

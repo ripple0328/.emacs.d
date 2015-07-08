@@ -11,7 +11,7 @@
 (setq package-archives '(
                          ;; ("gnu" . "http://elpa.gnu.org/packages/")
                          ;; ("tromey" . "http://tromey.com/elpa/")
-                         ;; ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")
                         ))
 (package-initialize)
@@ -54,6 +54,8 @@
          ;; mac-print-mode
          ;; pkg-info ;; s,epl
 
+         ;;lazy-loading
+         use-package
          ;; color-theme
          ;; tomorrow-theme
          powerline
@@ -81,7 +83,7 @@
          ;; google-maps ;; some problem
          google-this
          google-translate
-         weibo.emacs
+         ;; weibo.emacs
          dash-at-point
          twittering-mode
 
@@ -95,19 +97,19 @@
          ;; code
          shell-toggle
          yasnippet
-         flycheck ;; s dash cl-lib f pkg-info
+         ;; flycheck ;; s dash cl-lib f pkg-info
          flycheck-color-mode-line
          expand-region
          ace-jump-mode
          multiple-cursors
          helm
          ag
-         ack-and-a-half
+         ;; ack-and-a-half
          undo-tree
          enclose
          smartparens
          rainbow-delimiters
-         quickrun
+         ;; quickrun
          restclient
          ggtags
          ;; shell-pop
@@ -146,8 +148,9 @@
          ;; ruby
          rvm ;; essetiall if you use rvm to manage ruby
          enh-ruby-mode
-         ruby-compilation
-         robe
+         ;; ruby-compilation
+         inf-ruby
+         ;; robe
          bundler
          rubocop ;; need rubocop gem installed
          rspec-mode
@@ -158,15 +161,16 @@
          ;; rails
          ;; rinari
          ;; js
-         projectile-rails ;; dash,s,pkg-info
+         ;projectile-rails ;; dash,s,pkg-info
          coffee-mode
          web-mode
          ;; skewer-mode ;; js2-mode,simple-httpd
          ac-js2;;  skewer-mode,js2-mode,auto-complete
          json-mode;; json-reformat
-         
+         ;;react
+
          ;;  perl
-         cperl-mode
+         ;; cperl-mode
          ;; ios
          motion-mode
          ;; tags

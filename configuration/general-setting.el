@@ -116,13 +116,19 @@
 ;; toggle-debug-on-error
 (setq debug-on-error t)
 
-;; enable narrow-to-region
-(put 'narrow-to-region 'disabled nil)
 
 
 ;; change default initial buffer
 (setq initial-scratch-message "")
 (setq initial-major-mode 'org-mode)
 
-(provide 'general-setting)
+;; enable narrow-to-region
+(put 'narrow-to-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
 
+
+;; fore dired mode to display details
+(setq dired-hide-details-hide-information-lines nil)
+(setq dired-hide-details-hide-symlink-targets nil)
+(provide 'general-setting)

@@ -9,13 +9,14 @@
  mu4e-sent-messages-behavior 'delete
  message-send-mail-function 'smtpmail-send-it
  message-kill-buffer-on-exit t
- mu4e-view-prefer-html t
+ mu4e-html2text-command "html2text -utf8 -width 80"
+ mu4e-view-prefer-html nil
  mu4e-show-images t
  mu4e-view-image-max-width 800
  4e-update-interval 300
  mu4e-use-fancy-chars t
  mu4e-attachment-dir "~/Downloads"
- mu4e-html2text-command "html2text -utf8 -width 80"
+
  org-mu4e-convert-to-html t
 
  mail-user-agent 'mu4e-user-agent

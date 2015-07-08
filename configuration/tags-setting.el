@@ -36,6 +36,7 @@
 
 (global-unset-key (kbd"M-."))
 (global-set-key (kbd "M-.") 'my-find-tag)
+(setq tags-table-list '("~/Rea/finance/finance-ui/TAGS"))
 
 (provide 'tags-setting)
 
